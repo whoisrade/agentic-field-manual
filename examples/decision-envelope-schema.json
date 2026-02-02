@@ -1,0 +1,218 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DecisionEnvelope",
+  "description": "The context required to explain and reproduce any AI system output. Attach this to every critical output.",
+  "type": "object",
+  "required": ["trace_id", "timestamp", "inputs", "output", "policy"],
+  "properties": {
+    "trace_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for this decision chain. Use to correlate across services."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the decision was made (ISO 8601)"
+    },
+    "inputs": {
+      "type": "object",
+      "description": "What the system knew when making this decision",
+      "required": ["user_action"],
+      "properties": {
+        "user_action": {
+          "type": "string",
+          "description": "The action that triggered this decision (e.g., 'generate', 'regenerate', 'edit')"
+        },
+        "user_id": {
+          "type": "string",
+          "description": "Who triggered the action"
+        },
+        "session_id": {
+          "type": "string",
+          "description": "Session context for grouping related decisions"
+        },
+        "context_hash": {
+          "type": "string",
+          "description": "Hash of the context window content for reproducibility"
+        },
+        "context_snapshot_id": {
+          "type": "string",
+          "description": "Reference to stored context snapshot (if full context is stored separately)"
+        },
+        "prior_state_id": {
+          "type": ["string", "null"],
+          "description": "Reference to the previous state, if this is a modification"
+        },
+        "input_data": {
+          "type": "object",
+          "description": "Key input parameters (schema varies by use case)"
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "description": "What rules governed this decision",
+      "required": ["prompt_version", "model_version"],
+      "properties": {
+        "prompt_version": {
+          "type": "string",
+          "description": "Version of the prompt template used"
+        },
+        "model_version": {
+          "type": "string",
+          "description": "Model identifier (e.g., 'gpt-4-0125-preview', 'claude-3-opus-20240229')"
+        },
+        "guardrails_version": {
+          "type": "string",
+          "description": "Version of safety/content filters applied"
+        },
+        "policy_rules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Named policy rules that were active"
+        }
+      }
+    },
+    "tool_calls": {
+      "type": "array",
+      "description": "External tools invoked during this decision",
+      "items": {
+        "type": "object",
+        "required": ["tool", "timestamp"],
+        "properties": {
+          "tool": {
+            "type": "string",
+            "description": "Name of the tool called"
+          },
+          "input_hash": {
+            "type": "string",
+            "description": "Hash of tool input for reproducibility"
+          },
+          "output_hash": {
+            "type": "string",
+            "description": "Hash of tool output"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "latency_ms": {
+            "type": "integer",
+            "description": "How long the tool call took"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "retries": {
+            "type": "integer",
+            "default": 0
+          },
+          "error": {
+            "type": ["string", "null"],
+            "description": "Error message if failed"
+          }
+        }
+      }
+    },
+    "reasoning": {
+      "type": "object",
+      "description": "Why this output was chosen",
+      "properties": {
+        "alternatives_considered": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Other options that were evaluated"
+        },
+        "selection_rationale": {
+          "type": "string",
+          "description": "Why the chosen output was selected"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Model's confidence in the output"
+        },
+        "uncertainty_flags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Areas where the model expressed uncertainty"
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "description": "What was produced",
+      "required": ["result_id", "state"],
+      "properties": {
+        "result_id": {
+          "type": "string",
+          "description": "Unique identifier for this output"
+        },
+        "state": {
+          "type": "string",
+          "enum": ["draft", "committed", "rejected"],
+          "description": "Current state of this output"
+        },
+        "content_hash": {
+          "type": "string",
+          "description": "Hash of output content for integrity verification"
+        },
+        "quality_score": {
+          "type": "number",
+          "description": "Automated quality assessment if available"
+        }
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "description": "Human approvals or rejections",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "action"],
+        "properties": {
+          "approver": {
+            "type": "string",
+            "description": "Who approved/rejected (user ID or role)"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "action": {
+            "type": "string",
+            "enum": ["approved", "rejected", "escalated", "modified"]
+          },
+          "notes": {
+            "type": "string",
+            "description": "Optional notes on the approval decision"
+          }
+        }
+      }
+    },
+    "cost": {
+      "type": "object",
+      "description": "Resource consumption for this decision",
+      "properties": {
+        "inference_cost_usd": {
+          "type": "number"
+        },
+        "input_tokens": {
+          "type": "integer"
+        },
+        "output_tokens": {
+          "type": "integer"
+        },
+        "total_latency_ms": {
+          "type": "integer"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional context (schema varies by use case)",
+      "additionalProperties": true
+    }
+  }
+}

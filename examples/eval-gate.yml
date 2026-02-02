@@ -1,0 +1,401 @@
+# =============================================================================
+# GitHub Action: Eval Gate
+# =============================================================================
+#
+# Blocks deployment if eval metrics fall below thresholds.
+#
+# This is a GATE, not a report. If evals fail, the deployment doesn't happen.
+#
+# Usage:
+#   1. Copy this file to .github/workflows/eval-gate.yml
+#   2. Set up your eval runner (eval_runner.py)
+#   3. Configure thresholds for your use case
+#   4. Require this workflow to pass before merge
+#
+# =============================================================================
+
+name: Eval Gate
+
+on:
+  pull_request:
+    branches: [main, master]
+    paths:
+      - 'prompts/**'
+      - 'src/ai/**'
+      - 'src/agents/**'
+      - 'config/model*.yaml'
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: 'Force run even without changes'
+        required: false
+        default: 'false'
+
+# Prevent concurrent eval runs (they're expensive)
+concurrency:
+  group: eval-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Eval thresholds - CUSTOMIZE THESE
+  MIN_MEAN_SCORE: 4.0           # Average score across all evals (1-5 scale)
+  MIN_P10_SCORE: 3.0            # Tail quality - catches rare failures
+  MAX_FAIL_RATE: 0.05           # Max 5% of evals can fail
+  MAX_REGRESSION_DELTA: 0.1     # Max 10% regression from baseline
+
+  # Cost controls
+  MAX_EVAL_COST_USD: 50.0       # Kill eval if it exceeds this
+  MAX_EVAL_TIME_MINUTES: 30     # Timeout for entire eval run
+
+jobs:
+  # =========================================================================
+  # Pre-flight: Decide if we need to run evals
+  # =========================================================================
+  pre-flight:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+      eval_scope: ${{ steps.check.outputs.eval_scope }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine eval scope
+        id: check
+        run: |
+          # Check what changed
+          CHANGED_FILES=$(git diff --name-only origin/main...HEAD)
+
+          # Determine scope based on changes
+          if echo "$CHANGED_FILES" | grep -q "prompts/"; then
+            echo "should_run=true" >> $GITHUB_OUTPUT
+            echo "eval_scope=full" >> $GITHUB_OUTPUT
+            echo "[INFO] Prompt changes detected - running FULL eval suite"
+          elif echo "$CHANGED_FILES" | grep -q "src/ai/"; then
+            echo "should_run=true" >> $GITHUB_OUTPUT
+            echo "eval_scope=core" >> $GITHUB_OUTPUT
+            echo "[INFO] AI code changes detected - running CORE eval suite"
+          elif echo "$CHANGED_FILES" | grep -q "src/agents/"; then
+            echo "should_run=true" >> $GITHUB_OUTPUT
+            echo "eval_scope=agents" >> $GITHUB_OUTPUT
+            echo "[INFO] Agent changes detected - running AGENT eval suite"
+          else
+            echo "should_run=false" >> $GITHUB_OUTPUT
+            echo "eval_scope=none" >> $GITHUB_OUTPUT
+            echo "[SKIP] No AI-related changes - skipping evals"
+          fi
+
+          # Force run override
+          if [ "${{ github.event.inputs.force_run }}" == "true" ]; then
+            echo "should_run=true" >> $GITHUB_OUTPUT
+            echo "eval_scope=full" >> $GITHUB_OUTPUT
+            echo "[OVERRIDE] Force run requested - running FULL eval suite"
+          fi
+
+  # =========================================================================
+  # Golden Set Eval: Deterministic regression tests
+  # =========================================================================
+  golden-set:
+    needs: pre-flight
+    if: needs.pre-flight.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -r requirements-eval.txt
+
+      - name: Run golden set eval
+        id: golden
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EVAL_SCOPE: ${{ needs.pre-flight.outputs.eval_scope }}
+        run: |
+          python -m eval.golden_set_runner \
+            --scope $EVAL_SCOPE \
+            --output results/golden_set.json \
+            --max-cost ${{ env.MAX_EVAL_COST_USD }}
+
+          # Extract metrics for gate check
+          PASS_RATE=$(jq '.pass_rate' results/golden_set.json)
+          CRITICAL_FAILURES=$(jq '.critical_failures' results/golden_set.json)
+
+          echo "pass_rate=$PASS_RATE" >> $GITHUB_OUTPUT
+          echo "critical_failures=$CRITICAL_FAILURES" >> $GITHUB_OUTPUT
+
+      - name: Check golden set gate
+        run: |
+          PASS_RATE=${{ steps.golden.outputs.pass_rate }}
+          CRITICAL_FAILURES=${{ steps.golden.outputs.critical_failures }}
+
+          echo "[METRICS] Golden Set Results:"
+          echo "   Pass rate: $PASS_RATE"
+          echo "   Critical failures: $CRITICAL_FAILURES"
+
+          if [ "$CRITICAL_FAILURES" != "0" ]; then
+            echo "[FAIL] GATE FAILED: Critical test failures detected"
+            exit 1
+          fi
+
+          # Pass rate check (using bc for float comparison)
+          if (( $(echo "$PASS_RATE < 0.95" | bc -l) )); then
+            echo "[FAIL] GATE FAILED: Pass rate $PASS_RATE below threshold 0.95"
+            exit 1
+          fi
+
+          echo "[PASS] Golden set gate PASSED"
+
+      - name: Upload golden set results
+        uses: actions/upload-artifact@v4
+        with:
+          name: golden-set-results
+          path: results/golden_set.json
+
+  # =========================================================================
+  # LLM-as-Judge Eval: Semantic quality evaluation
+  # =========================================================================
+  llm-judge:
+    needs: pre-flight
+    if: needs.pre-flight.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -r requirements-eval.txt
+
+      - name: Run LLM-as-Judge eval
+        id: judge
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          EVAL_SCOPE: ${{ needs.pre-flight.outputs.eval_scope }}
+        run: |
+          python -m eval.llm_judge_runner \
+            --scope $EVAL_SCOPE \
+            --output results/llm_judge.json \
+            --max-cost ${{ env.MAX_EVAL_COST_USD }} \
+            --concurrency 10
+
+          # Extract metrics
+          MEAN_SCORE=$(jq '.mean_score' results/llm_judge.json)
+          P10_SCORE=$(jq '.p10_score' results/llm_judge.json)
+          FAIL_RATE=$(jq '.fail_rate' results/llm_judge.json)
+          EVAL_COST=$(jq '.total_cost_usd' results/llm_judge.json)
+
+          echo "mean_score=$MEAN_SCORE" >> $GITHUB_OUTPUT
+          echo "p10_score=$P10_SCORE" >> $GITHUB_OUTPUT
+          echo "fail_rate=$FAIL_RATE" >> $GITHUB_OUTPUT
+          echo "eval_cost=$EVAL_COST" >> $GITHUB_OUTPUT
+
+      - name: Check LLM judge gate
+        run: |
+          MEAN_SCORE=${{ steps.judge.outputs.mean_score }}
+          P10_SCORE=${{ steps.judge.outputs.p10_score }}
+          FAIL_RATE=${{ steps.judge.outputs.fail_rate }}
+
+          echo "[METRICS] LLM Judge Results:"
+          echo "   Mean score: $MEAN_SCORE (threshold: ${{ env.MIN_MEAN_SCORE }})"
+          echo "   P10 score: $P10_SCORE (threshold: ${{ env.MIN_P10_SCORE }})"
+          echo "   Fail rate: $FAIL_RATE (threshold: ${{ env.MAX_FAIL_RATE }})"
+
+          FAILED=0
+
+          if (( $(echo "$MEAN_SCORE < ${{ env.MIN_MEAN_SCORE }}" | bc -l) )); then
+            echo "[FAIL] Mean score below threshold"
+            FAILED=1
+          fi
+
+          if (( $(echo "$P10_SCORE < ${{ env.MIN_P10_SCORE }}" | bc -l) )); then
+            echo "[FAIL] P10 score below threshold (tail quality issue)"
+            FAILED=1
+          fi
+
+          if (( $(echo "$FAIL_RATE > ${{ env.MAX_FAIL_RATE }}" | bc -l) )); then
+            echo "[FAIL] Fail rate above threshold"
+            FAILED=1
+          fi
+
+          if [ "$FAILED" == "1" ]; then
+            echo "[FAIL] GATE FAILED: Quality thresholds not met"
+            exit 1
+          fi
+
+          echo "[PASS] LLM judge gate PASSED"
+
+      - name: Upload LLM judge results
+        uses: actions/upload-artifact@v4
+        with:
+          name: llm-judge-results
+          path: results/llm_judge.json
+
+  # =========================================================================
+  # Regression Check: Compare against baseline
+  # =========================================================================
+  regression:
+    needs: [pre-flight, golden-set, llm-judge]
+    if: needs.pre-flight.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download current results
+        uses: actions/download-artifact@v4
+        with:
+          path: results/
+
+      - name: Download baseline (from main branch)
+        continue-on-error: true  # Baseline might not exist yet
+        run: |
+          # Fetch baseline from main branch artifacts or storage
+          # This is simplified - in production, store baselines in S3/GCS
+          mkdir -p baseline/
+
+          # Try to get baseline from previous successful run
+          # gh run download --name eval-baseline --dir baseline/ || true
+
+          echo "Note: Implement baseline fetching for your storage solution"
+
+      - name: Check for regression
+        id: regression
+        run: |
+          # Compare current vs baseline
+          # This is a simplified check - extend based on your needs
+
+          if [ -f "baseline/metrics.json" ]; then
+            BASELINE_SCORE=$(jq '.mean_score' baseline/metrics.json)
+            CURRENT_SCORE=$(jq '.mean_score' results/llm-judge-results/llm_judge.json)
+
+            DELTA=$(echo "$CURRENT_SCORE - $BASELINE_SCORE" | bc -l)
+            RELATIVE_DELTA=$(echo "$DELTA / $BASELINE_SCORE" | bc -l)
+
+            echo "[METRICS] Regression Check:"
+            echo "   Baseline: $BASELINE_SCORE"
+            echo "   Current: $CURRENT_SCORE"
+            echo "   Delta: $DELTA ($RELATIVE_DELTA relative)"
+
+            # Check for significant regression
+            THRESHOLD=-${{ env.MAX_REGRESSION_DELTA }}
+            if (( $(echo "$RELATIVE_DELTA < $THRESHOLD" | bc -l) )); then
+              echo "[FAIL] REGRESSION DETECTED: Score dropped by more than ${{ env.MAX_REGRESSION_DELTA }}"
+              echo "regression=true" >> $GITHUB_OUTPUT
+              exit 1
+            fi
+
+            echo "[PASS] No significant regression detected"
+          else
+            echo "[WARN] No baseline found - skipping regression check"
+            echo "   This is expected for the first run"
+          fi
+
+          echo "regression=false" >> $GITHUB_OUTPUT
+
+  # =========================================================================
+  # Summary: Aggregate all results
+  # =========================================================================
+  summary:
+    needs: [pre-flight, golden-set, llm-judge, regression]
+    if: always() && needs.pre-flight.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download all results
+        uses: actions/download-artifact@v4
+        with:
+          path: results/
+
+      - name: Generate summary
+        run: |
+          echo "## [METRICS] Eval Gate Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Golden Set
+          if [ "${{ needs.golden-set.result }}" == "success" ]; then
+            echo "[PASS] **Golden Set**: Passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "[FAIL] **Golden Set**: Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # LLM Judge
+          if [ "${{ needs.llm-judge.result }}" == "success" ]; then
+            echo "[PASS] **LLM Judge**: Passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "[FAIL] **LLM Judge**: Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Regression
+          if [ "${{ needs.regression.result }}" == "success" ]; then
+            echo "[PASS] **Regression Check**: Passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "[FAIL] **Regression Check**: Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Overall verdict
+          if [ "${{ needs.golden-set.result }}" == "success" ] && \
+             [ "${{ needs.llm-judge.result }}" == "success" ] && \
+             [ "${{ needs.regression.result }}" == "success" ]; then
+            echo "### [PASS] All gates passed - Ready to deploy" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### [FAIL] Gates failed - Do not deploy" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Review the failed checks above and fix before merging." >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Fail if any gate failed
+        if: |
+          needs.golden-set.result != 'success' ||
+          needs.llm-judge.result != 'success' ||
+          needs.regression.result != 'success'
+        run: |
+          echo "One or more eval gates failed"
+          exit 1
+
+  # =========================================================================
+  # Update Baseline: Store results for future comparison
+  # =========================================================================
+  update-baseline:
+    needs: [golden-set, llm-judge, regression]
+    if: github.ref == 'refs/heads/main' && needs.regression.result == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download results
+        uses: actions/download-artifact@v4
+        with:
+          path: results/
+
+      - name: Update baseline
+        run: |
+          # In production: upload to S3/GCS for persistence
+          echo "Updating baseline with current results"
+          echo "Implement storage upload for your infrastructure"
+
+          # Example for S3:
+          # aws s3 cp results/llm-judge-results/llm_judge.json s3://your-bucket/eval-baselines/main.json
