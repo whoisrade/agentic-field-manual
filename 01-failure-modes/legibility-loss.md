@@ -36,6 +36,9 @@ flowchart TD
     style D fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
     style E fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
     style F fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    
+    click A "../02-architecture/interaction-contract.md" "See Interaction Contract"
+    click F "auditability-gap.md" "See Auditability Gap"
 ```
 
 This loop compounds until no one can explain what happened.
@@ -95,6 +98,8 @@ flowchart LR
     style B fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
     style C fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
     style D fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    
+    click D "../07-examples/decision-envelope-schema.json" "View Decision Envelope Schema"
 ```
 
 <details>

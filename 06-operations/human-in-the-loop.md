@@ -68,6 +68,9 @@ flowchart TB
     style Gate fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
     style Escalate fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
     style Roles fill:#f8fafc,stroke:#475569,stroke-width:2px
+    
+    click Gate "safety-surface.md" "See Safety Surface"
+    click Escalate "../04-compliance/audit-preparation.md" "See Audit Preparation"
 ```
 
 **1. Role-based ownership**

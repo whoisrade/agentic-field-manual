@@ -44,6 +44,8 @@ flowchart TB
     style Solution fill:#d1fae5,stroke:#059669,stroke-width:2px
     style Pain fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
     style Fixed fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    
+    click Baseline "../00-templates/pre-ship-checklist.md" "See Pre-Ship Checklist"
 ```
 
 But:

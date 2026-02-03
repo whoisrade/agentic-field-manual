@@ -53,6 +53,11 @@ flowchart LR
     style P2 fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
     style P3 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
     style P4 fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    
+    click P1 "01-failure-modes/legibility-loss.md" "See Legibility Loss"
+    click P2 "06-operations/tool-reliability.md" "See Tool Reliability"
+    click P3 "03-economics/hidden-recompute.md" "See Hidden Recompute"
+    click P4 "04-compliance/audit-preparation.md" "See Audit Preparation"
 ```
 
 Your score determines your starting phase:

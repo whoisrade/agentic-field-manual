@@ -40,6 +40,9 @@ flowchart TB
     style Problem fill:#fee2e2,stroke:#dc2626,stroke-width:2px
     style Examples fill:#f1f5f9,stroke:#64748b,stroke-width:2px
     style Cost fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    
+    click Cost "../03-economics/cost-investigation.md" "See Cost Investigation"
+    click Recompute "../03-economics/hidden-recompute.md" "See Hidden Recompute"
 ```
 
 The problem is not that users are doing something wrong. The problem is that your system made the expensive path feel free.

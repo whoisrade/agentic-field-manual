@@ -83,6 +83,9 @@ flowchart TB
     style Reject fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
     style Redact fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
     style Deny fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    
+    click L4 "../07-examples/guardrails.py" "See Guardrails Example"
+    click Model "../06-operations/human-in-the-loop.md" "See Human in the Loop"
 ```
 
 ### Layer 1: Input Guards

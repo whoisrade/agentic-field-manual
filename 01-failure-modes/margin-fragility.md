@@ -137,6 +137,9 @@ flowchart LR
     style Ready fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
     style Optimize fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
     style Rebuild fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    
+    click Optimize "../03-economics/cost-investigation.md" "See Cost Investigation"
+    click Rebuild "../03-economics/hidden-recompute.md" "See Hidden Recompute"
 ```
 
 | Answer | Interpretation |

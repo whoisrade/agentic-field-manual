@@ -53,6 +53,9 @@ flowchart TB
     style Orchestrator fill:#dbeafe,stroke:#2563eb,stroke-width:2px
     style Agents fill:#d1fae5,stroke:#059669,stroke-width:2px
     style Tools fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    
+    click Trace "../02-architecture/state-model.md" "See State Model"
+    click Tools "tool-reliability.md" "See Tool Reliability"
 ```
 
 - Routes tasks to agents based on capability and context
@@ -94,6 +97,8 @@ flowchart TB
     style Router fill:#fef3c7,stroke:#d97706,stroke-width:2px
     style Parallel fill:#d1fae5,stroke:#059669,stroke-width:2px
     style Hierarchical fill:#ede9fe,stroke:#7c3aed,stroke-width:2px
+    
+    click HV "human-in-the-loop.md" "See Human in the Loop"
 ```
 
 | Pattern | When To Use | Trade-offs |

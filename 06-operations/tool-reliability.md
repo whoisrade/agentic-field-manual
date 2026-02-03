@@ -46,6 +46,8 @@ flowchart LR
     style T4 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
     style T5 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
     style Result fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    
+    click Result "../07-examples/orchestrator.py" "See Orchestrator Example"
 ```
 
 ---

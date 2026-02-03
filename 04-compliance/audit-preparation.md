@@ -48,6 +48,9 @@ flowchart LR
     style Questions fill:#fef3c7,stroke:#d97706,stroke-width:2px
     style DryRun fill:#d1fae5,stroke:#059669,stroke-width:2px
     style Audit fill:#ede9fe,stroke:#7c3aed,stroke-width:2px
+    
+    click P1 "../02-architecture/state-model.md" "See State Model"
+    click Q5 "../06-operations/human-in-the-loop.md" "See Human in the Loop"
 ```
 
 ---

@@ -47,6 +47,8 @@ flowchart TB
     style M fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
     style U fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
     style P fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    
+    click P "incident-postmortem.md" "See Post-Mortem Template"
 ```
 
 ---

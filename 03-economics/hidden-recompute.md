@@ -52,6 +52,9 @@ flowchart TB
     style AS fill:#fee2e2,stroke:#dc2626,stroke-width:1px
     style UF fill:#fee2e2,stroke:#dc2626,stroke-width:1px
     style Cost fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    
+    click Cost "../01-failure-modes/margin-fragility.md" "See Margin Fragility"
+    click UF "../01-failure-modes/control-surface-drift.md" "See Control Surface Drift"
 ```
 
 | Source | What Happens |

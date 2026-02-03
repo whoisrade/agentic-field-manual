@@ -61,6 +61,8 @@ flowchart LR
     style A6 fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
     style A7 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
     style A8 fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    
+    click A6 "human-in-the-loop.md" "See Human in the Loop"
 ```
 
 Traditional CRUD applications have a simple state model: data goes in, data comes out. AI applications have a more complex reality:
@@ -169,6 +171,8 @@ flowchart TB
     style Inputs fill:#fef3c7,stroke:#d97706,stroke-width:2px
     style Policy fill:#d1fae5,stroke:#059669,stroke-width:2px
     style State fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    
+    click Envelope "../07-examples/decision-envelope-schema.json" "View full schema"
 ```
 
 ```json

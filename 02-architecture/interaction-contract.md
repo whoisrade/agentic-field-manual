@@ -45,6 +45,9 @@ flowchart LR
     style Behavior fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
     style Recompute fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
     style Cost fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    
+    click Cost "../03-economics/cost-investigation.md" "See Cost Investigation"
+    click Recompute "../03-economics/hidden-recompute.md" "See Hidden Recompute"
 ```
 
 If your interaction contract allows users to trigger expensive compute without knowing it, they will. Not because they are malicious, but because you made it easy.
@@ -114,6 +117,8 @@ flowchart LR
     style Explore fill:#dbeafe,stroke:#2563eb,stroke-width:2px
     style Commit fill:#d1fae5,stroke:#059669,stroke-width:2px
     style Gate fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    
+    click Commit "../02-architecture/state-model.md" "See State Model"
 ```
 
 | Mode | Characteristics |

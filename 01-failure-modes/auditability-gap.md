@@ -43,6 +43,10 @@ flowchart TB
     style Needed fill:#d1fae5,stroke:#059669,stroke-width:2px
     style Gap fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
     style Consequence fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    
+    click N1 "../02-architecture/state-model.md" "See State Model"
+    click N2 "../04-compliance/audit-preparation.md" "See Audit Preparation"
+    click N3 "../06-operations/human-in-the-loop.md" "See Human in the Loop"
 ```
 
 | Component | Logged? | Auditable? |

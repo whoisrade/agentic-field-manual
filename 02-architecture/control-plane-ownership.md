@@ -134,6 +134,10 @@ flowchart TB
     
     style Owned fill:#d1fae5,stroke:#059669,stroke-width:2px
     style Rented fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    
+    click O1 "../06-operations/orchestration.md" "See Orchestration"
+    click O2 "../02-architecture/state-model.md" "See State Model"
+    click R1 "../03-economics/api-vs-owned.md" "See API vs Owned"
 ```
 
 | Component | Own | Rent |

@@ -43,6 +43,9 @@ flowchart LR
     style Sum fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
     style Divide fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
     style Result fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    
+    click RC "hidden-recompute.md" "See Hidden Recompute"
+    click Result "../07-examples/metrics-reference.md" "See Metrics Reference"
 ```
 
 ```

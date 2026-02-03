@@ -53,6 +53,9 @@ flowchart LR
     style PreDeploy fill:#fef3c7,stroke:#d97706,stroke-width:2px
     style Deploy fill:#d1fae5,stroke:#059669,stroke-width:2px
     style PostDeploy fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    
+    click LLM "../07-examples/llm-as-judge-prompts.md" "See LLM-as-Judge Prompts"
+    click G "../07-examples/eval-gate.yml" "See Eval Gate Config"
 ```
 
 | Eval Type | What It Catches | When To Run |
