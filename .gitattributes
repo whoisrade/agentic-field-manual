@@ -1,10 +1,15 @@
-# Mark this as a documentation repository
-*.md linguist-documentation
-*.py linguist-documentation
-*.sql linguist-documentation
-*.json linguist-documentation
-*.yml linguist-documentation
-*.yaml linguist-documentation
+# Documentation repository with code examples
+# Mark what each file type actually is
 
-# Ensure markdown is counted as the primary language
-*.md linguist-detectable
+# Primary content: Documentation
+*.md linguist-language=Markdown
+
+# Example code (not production code)
+*.py linguist-language=Python
+*.sql linguist-language=SQL
+*.json linguist-language=JSON
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+
+# Mark examples directory as sample code
+07-examples/* linguist-vendored
