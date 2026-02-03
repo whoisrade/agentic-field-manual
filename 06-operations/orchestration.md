@@ -22,26 +22,26 @@ In multi-agent systems, orchestration is the product. Without it, behavior becom
 
 ```mermaid
 flowchart TB
-    Task[Incoming Task] --> Orchestrator
+    Task["Incoming Task"] --> Orchestrator
     
     subgraph Orchestrator["ORCHESTRATOR"]
-        Router[Route by capability]
-        Constraints[Enforce constraints]
-        State[Shared state]
-        Trace[Traceability]
-        Arbiter[Conflict resolution]
+        Router["Route by capability"]
+        Constraints["Enforce constraints"]
+        State["Shared state"]
+        Trace["Traceability"]
+        Arbiter["Conflict resolution"]
     end
     
     subgraph Agents["AGENTS"]
-        A1[Agent A]
-        A2[Agent B]
-        A3[Agent C]
+        A1["Agent A"]
+        A2["Agent B"]
+        A3["Agent C"]
     end
     
     subgraph Tools["TOOLS"]
-        T1[Search]
-        T2[Calculate]
-        T3[Execute]
+        T1["Search"]
+        T2["Calculate"]
+        T3["Execute"]
     end
     
     Router --> A1 & A2 & A3
@@ -50,11 +50,12 @@ flowchart TB
     State --> Trace
     A1 & A2 --> Arbiter
     
-    Constraints -.->|limits| A1 & A2 & A3
+    Constraints -.->|"limits"| A1 & A2 & A3
     
-    style Orchestrator fill:#e7f5ff,stroke:#1971c2
-    style Agents fill:#d3f9d8,stroke:#2f9e44
-    style Tools fill:#fff3bf,stroke:#fab005
+    style Task fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style Orchestrator fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    style Agents fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style Tools fill:#fef3c7,stroke:#d97706,stroke-width:2px
 ```
 
 - Routes tasks to agents based on capability and context
@@ -70,32 +71,32 @@ flowchart TB
 ```mermaid
 flowchart TB
     subgraph Sequential["Sequential Chain"]
-        S1[Step 1] --> S2[Step 2] --> S3[Step 3]
+        S1["Step 1"] --> S2["Step 2"] --> S3["Step 3"]
     end
     
     subgraph Router["Router Pattern"]
-        R0[Input] --> RC{Intent?}
-        RC -->|Type A| RA[Agent A]
-        RC -->|Type B| RB[Agent B]
-        RC -->|Type C| RCC[Agent C]
+        R0["Input"] --> RC{"Intent?"}
+        RC -->|"Type A"| RA["Agent A"]
+        RC -->|"Type B"| RB["Agent B"]
+        RC -->|"Type C"| RCC["Agent C"]
     end
     
     subgraph Parallel["Parallel Fan-Out"]
-        P0[Task] --> P1[Subtask 1] & P2[Subtask 2] & P3[Subtask 3]
-        P1 & P2 & P3 --> PA[Aggregate]
+        P0["Task"] --> P1["Subtask 1"] & P2["Subtask 2"] & P3["Subtask 3"]
+        P1 & P2 & P3 --> PA["Aggregate"]
     end
     
     subgraph Hierarchical["Hierarchical"]
-        H0[Supervisor] --> H1[Worker 1]
-        H0 --> H2[Worker 2]
+        H0["Supervisor"] --> H1["Worker 1"]
+        H0 --> H2["Worker 2"]
         H1 & H2 --> H0
-        H0 --> HV{Validate}
+        H0 --> HV{"Validate"}
     end
     
-    style Sequential fill:#e7f5ff,stroke:#1971c2
-    style Router fill:#fff3bf,stroke:#fab005
-    style Parallel fill:#d3f9d8,stroke:#2f9e44
-    style Hierarchical fill:#f3d9fa,stroke:#ae3ec9
+    style Sequential fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    style Router fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    style Parallel fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style Hierarchical fill:#ede9fe,stroke:#7c3aed,stroke-width:2px
 ```
 
 | Pattern | When To Use | Trade-offs |

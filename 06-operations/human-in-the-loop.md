@@ -47,16 +47,16 @@ What happens:
 
 ```mermaid
 flowchart TB
-    Output[AI Output] --> Check{What type?}
+    Output["AI Output"] --> Check{"What type?"}
     
-    Check -->|Low risk| Auto[Auto-approve]
-    Check -->|Medium risk| Sample["Sample review<br/>(5% checked)"]
-    Check -->|High risk| Gate["Approval gate<br/>(always checked)"]
-    Check -->|Low confidence| Escalate[Escalate to human]
+    Check -->|"Low risk"| Auto["Auto-approve"]
+    Check -->|"Medium risk"| Sample["Sample review<br/>(5% checked)"]
+    Check -->|"High risk"| Gate["Approval gate<br/>(always checked)"]
+    Check -->|"Low confidence"| Escalate["Escalate to human"]
     
-    Sample --> Reviewer[Reviewer]
-    Gate --> Approver[Approver]
-    Escalate --> Expert[Domain Expert]
+    Sample --> Reviewer["Reviewer"]
+    Gate --> Approver["Approver"]
+    Escalate --> Expert["Domain Expert"]
     
     subgraph Roles["Role-based Ownership"]
         R1["Legal outputs → Legal team"]
@@ -64,10 +64,13 @@ flowchart TB
         R3["Customer comms → CS"]
     end
     
-    style Auto fill:#69db7c,stroke:#2f9e44
-    style Sample fill:#ffd43b,stroke:#fab005
-    style Gate fill:#ff8787,stroke:#c92a2a
-    style Escalate fill:#da77f2,stroke:#ae3ec9
+    style Output fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style Check fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    style Auto fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style Sample fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style Gate fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    style Escalate fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    style Roles fill:#f8fafc,stroke:#475569,stroke-width:2px
 ```
 
 **1. Role-based ownership**

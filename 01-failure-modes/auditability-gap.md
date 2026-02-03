@@ -39,12 +39,13 @@ flowchart TB
         N4["Reconstruction capability"]
     end
     
-    Current -->|"Gap"| Gap[Evidence Chain Broken]
+    Current -->|"Gap"| Gap["Evidence Chain Broken"]
     Gap --> Consequence["Can show activity<br/>Can't prove intent"]
     
-    style Current fill:#ffe3e3,stroke:#c92a2a
-    style Needed fill:#d3f9d8,stroke:#2f9e44
-    style Gap fill:#ff6b6b,stroke:#c92a2a,color:#fff
+    style Current fill:#fee2e2,stroke:#dc2626,stroke-width:2px
+    style Needed fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style Gap fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style Consequence fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
 ```
 
 | Component | Logged? | Auditable? |

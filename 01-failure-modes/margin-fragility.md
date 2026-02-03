@@ -122,21 +122,24 @@ At 10x usage, do your unit economics improve, stay flat, or collapse?
 
 ```mermaid
 flowchart LR
-    Usage[10x Usage] --> Test{How does<br/>cost scale?}
+    Usage["10x Usage"] --> Test{"How does<br/>cost scale?"}
     
     Test -->|"< 10x cost"| Scale["SCALE<br/>Caching, shared compute"]
     Test -->|"= 10x cost"| Business["BUSINESS<br/>Linear growth works"]
     Test -->|"> 10x cost"| Demo["DEMO<br/>Margin collapses"]
     
-    Scale --> Ready[Ready for growth]
-    Business --> Optimize[Optimize before scaling]
-    Demo --> Rebuild[Fix architecture first]
+    Scale --> Ready["Ready for growth"]
+    Business --> Optimize["Optimize before scaling"]
+    Demo --> Rebuild["Fix architecture first"]
     
-    style Scale fill:#69db7c,stroke:#2f9e44
-    style Business fill:#ffd43b,stroke:#fab005
-    style Demo fill:#ff6b6b,stroke:#c92a2a
-    style Ready fill:#d3f9d8,stroke:#2f9e44
-    style Rebuild fill:#ffe3e3,stroke:#c92a2a
+    style Usage fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style Test fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    style Scale fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style Business fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style Demo fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    style Ready fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style Optimize fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style Rebuild fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
 ```
 
 | Answer | Interpretation |

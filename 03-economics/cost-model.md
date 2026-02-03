@@ -23,25 +23,29 @@ If you don't track cost per successful outcome, you're flying blind. This doc gi
 ```mermaid
 flowchart LR
     subgraph Costs["Total Costs"]
-        IC[Inference Cost]
-        OC[Orchestration Overhead]
-        RC[Retry Cost]
+        IC["Inference Cost"]
+        OC["Orchestration Overhead"]
+        RC["Retry Cost"]
     end
     
     subgraph Outputs["Outputs"]
-        SO[Successful Outcomes<br/>state = committed]
+        SO["Successful Outcomes<br/>state = committed"]
     end
     
-    IC & OC & RC --> Sum[Sum]
-    Sum --> Divide[Divide]
+    IC & OC & RC --> Sum["Sum"]
+    Sum --> Divide["÷"]
     SO --> Divide
-    Divide --> Result[Cost per Outcome]
+    Divide --> Result["Cost per Outcome"]
     
-    style IC fill:#ff8787,stroke:#c92a2a
-    style OC fill:#ffd43b,stroke:#fab005
-    style RC fill:#ffa94d,stroke:#e67700
-    style SO fill:#69db7c,stroke:#2f9e44
-    style Result fill:#4dabf7,stroke:#1971c2
+    style Costs fill:#fee2e2,stroke:#dc2626,stroke-width:2px
+    style Outputs fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style IC fill:#fee2e2,stroke:#dc2626,stroke-width:1px,color:#991b1b
+    style OC fill:#fef3c7,stroke:#d97706,stroke-width:1px,color:#92400e
+    style RC fill:#fef3c7,stroke:#d97706,stroke-width:1px,color:#92400e
+    style SO fill:#d1fae5,stroke:#059669,stroke-width:1px,color:#065f46
+    style Sum fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style Divide fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style Result fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
 ```
 
 ```

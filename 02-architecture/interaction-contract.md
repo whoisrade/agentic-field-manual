@@ -39,15 +39,15 @@ Once users depend on a behavior, removing it feels like a regression.
 
 ```mermaid
 flowchart LR
-    UX[UX Design] -->|shapes| Behavior[User Behavior]
-    Behavior -->|triggers| Recompute[Recompute]
-    Recompute -->|determines| Cost[Cost]
-    Cost -->|constrains| UX
+    UX["UX Design"] -->|"shapes"| Behavior["User Behavior"]
+    Behavior -->|"triggers"| Recompute["Recompute"]
+    Recompute -->|"determines"| Cost["Cost"]
+    Cost -->|"constrains"| UX
     
-    style UX fill:#4dabf7,stroke:#1971c2
-    style Behavior fill:#69db7c,stroke:#2f9e44
-    style Recompute fill:#ffd43b,stroke:#fab005
-    style Cost fill:#ff6b6b,stroke:#c92a2a
+    style UX fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    style Behavior fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style Recompute fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style Cost fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
 ```
 
 If your interaction contract allows users to trigger expensive compute without knowing it, they will. Not because they are malicious, but because you made it easy.
@@ -97,25 +97,26 @@ Exploration should be cheap. Commitment should be explicit.
 ```mermaid
 flowchart LR
     subgraph Explore["EXPLORE MODE"]
-        E1[Cheap]
-        E2[Cached]
-        E3[Reversible]
+        E1["Cheap"]
+        E2["Cached"]
+        E3["Reversible"]
     end
     
     subgraph Commit["COMMIT MODE"]
-        C1[Confirmed]
-        C2[Tracked]
-        C3[Permanent]
+        C1["Confirmed"]
+        C2["Tracked"]
+        C3["Permanent"]
     end
     
-    User[User] --> Explore
-    Explore -->|"Ready to finalize"| Gate{Confirm?}
-    Gate -->|Yes| Commit
-    Gate -->|No| Explore
+    User["User"] --> Explore
+    Explore -->|"Ready to finalize"| Gate{"Confirm?"}
+    Gate -->|"Yes"| Commit
+    Gate -->|"No"| Explore
     
-    style Explore fill:#e7f5ff,stroke:#1971c2
-    style Commit fill:#d3f9d8,stroke:#2f9e44
-    style Gate fill:#fff3bf,stroke:#fab005
+    style User fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style Explore fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    style Commit fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style Gate fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
 ```
 
 | Mode | Characteristics |

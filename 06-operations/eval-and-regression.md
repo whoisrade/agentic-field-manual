@@ -34,27 +34,28 @@ Then a regression ships. Quality drops. But there's no signal because there's no
 ```mermaid
 flowchart LR
     subgraph PreDeploy["PRE-DEPLOY"]
-        G[Golden Set<br/>Syntax regressions]
-        LLM[LLM-as-Judge<br/>Semantic quality]
+        G["Golden Set<br/>Syntax regressions"]
+        LLM["LLM-as-Judge<br/>Semantic quality"]
     end
     
     subgraph Deploy["DEPLOY"]
-        AB[A/B Test<br/>User behavior]
+        AB["A/B Test<br/>User behavior"]
     end
     
     subgraph PostDeploy["POST-DEPLOY"]
-        RS[Regression Similarity<br/>Drift detection]
-        HR[Human Review<br/>Edge cases]
+        RS["Regression Similarity<br/>Drift detection"]
+        HR["Human Review<br/>Edge cases"]
     end
     
-    Code[Code Change] --> PreDeploy
-    PreDeploy -->|Pass gates| Deploy
+    Code["Code Change"] --> PreDeploy
+    PreDeploy -->|"Pass gates"| Deploy
     Deploy --> PostDeploy
-    PostDeploy -->|Issues found| Code
+    PostDeploy -->|"Issues found"| Code
     
-    style PreDeploy fill:#fff3bf,stroke:#fab005
-    style Deploy fill:#d3f9d8,stroke:#2f9e44
-    style PostDeploy fill:#e7f5ff,stroke:#1971c2
+    style Code fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style PreDeploy fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    style Deploy fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style PostDeploy fill:#dbeafe,stroke:#2563eb,stroke-width:2px
 ```
 
 | Eval Type | What It Catches | When To Run |

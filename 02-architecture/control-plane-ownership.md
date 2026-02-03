@@ -118,25 +118,25 @@ Even if you rent execution (inference), you can own:
 ```mermaid
 flowchart TB
     subgraph Owned["YOU OWN: Control Plane"]
-        O1[Orchestration]
-        O2[Logging & Tracing]
-        O3[Policy Enforcement]
-        O4[Data & State]
+        O1["Orchestration"]
+        O2["Logging & Tracing"]
+        O3["Policy Enforcement"]
+        O4["Data & State"]
     end
     
     subgraph Rented["YOU RENT: Execution Plane"]
-        R1[Inference API]
-        R2[Tool APIs]
+        R1["Inference API"]
+        R2["Tool APIs"]
     end
     
     O1 --> R1
     O1 --> R2
     R1 --> O2
     R2 --> O2
-    O3 -.->|enforces| O1
+    O3 -.->|"enforces"| O1
     
-    style Owned fill:#d3f9d8,stroke:#2f9e44
-    style Rented fill:#fff3bf,stroke:#fab005
+    style Owned fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style Rented fill:#fef3c7,stroke:#d97706,stroke-width:2px
 ```
 
 | Component | Own | Rent |

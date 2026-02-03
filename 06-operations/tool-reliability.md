@@ -42,12 +42,13 @@ flowchart LR
     
     T5 --> Result["Combined: 77%<br/>(0.95^5 = 0.77)"]
     
-    style T1 fill:#d3f9d8,stroke:#2f9e44
-    style T2 fill:#b2f2bb,stroke:#2f9e44
-    style T3 fill:#8ce99a,stroke:#2f9e44
-    style T4 fill:#69db7c,stroke:#2f9e44
-    style T5 fill:#51cf66,stroke:#2f9e44
-    style Result fill:#ffd43b,stroke:#fab005
+    style Chain fill:#f8fafc,stroke:#475569,stroke-width:2px
+    style T1 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style T2 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style T3 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style T4 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style T5 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style Result fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
 ```
 
 ---

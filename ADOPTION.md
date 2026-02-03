@@ -50,10 +50,11 @@ flowchart LR
     P3 -.- T3["Decision envelopes<br/>30% cost reduction"]
     P4 -.- T4["Full audit trail<br/>Enterprise ready"]
     
-    style P1 fill:#ff8787,stroke:#c92a2a
-    style P2 fill:#ffd43b,stroke:#fab005
-    style P3 fill:#69db7c,stroke:#2f9e44
-    style P4 fill:#4dabf7,stroke:#1971c2
+    style Phases fill:#f8fafc,stroke:#475569,stroke-width:2px
+    style P1 fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    style P2 fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style P3 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style P4 fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
 ```
 
 Your score determines your starting phase:

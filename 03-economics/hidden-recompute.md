@@ -26,30 +26,35 @@ flowchart TB
         direction TB
         
         subgraph SR["Silent Retries"]
-            SR1[API call fails] --> SR2[Auto-retry x3]
+            SR1["API call fails"] --> SR2["Auto-retry x3"]
         end
         
         subgraph CI["Context Invalidation"]
-            CI1[Small edit] --> CI2[Full re-embedding]
+            CI1["Small edit"] --> CI2["Full re-embedding"]
         end
         
         subgraph PF["Partial Failures"]
-            PF1[Tool 3/5 fails] --> PF2[Restart from scratch]
+            PF1["Tool 3/5 fails"] --> PF2["Restart from scratch"]
         end
         
         subgraph AS["Auto-Saves"]
-            AS1[Background save] --> AS2[Full pipeline run]
+            AS1["Background save"] --> AS2["Full pipeline run"]
         end
         
         subgraph UF["Undo Flows"]
-            UF1[User hits undo] --> UF2[Recompute everything]
+            UF1["User hits undo"] --> UF2["Recompute everything"]
         end
     end
     
-    SR & CI & PF & AS & UF --> Cost[Hidden Cost]
+    SR & CI & PF & AS & UF --> Cost["Hidden Cost"]
     
-    style Hidden fill:#ffe3e3,stroke:#c92a2a
-    style Cost fill:#ff6b6b,stroke:#c92a2a,color:#fff
+    style Hidden fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    style SR fill:#fee2e2,stroke:#dc2626,stroke-width:1px
+    style CI fill:#fee2e2,stroke:#dc2626,stroke-width:1px
+    style PF fill:#fee2e2,stroke:#dc2626,stroke-width:1px
+    style AS fill:#fee2e2,stroke:#dc2626,stroke-width:1px
+    style UF fill:#fee2e2,stroke:#dc2626,stroke-width:1px
+    style Cost fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
 ```
 
 | Source | What Happens |

@@ -19,38 +19,38 @@ Use this when a customer or regulator asks for evidence of how your AI system ma
 ```mermaid
 flowchart LR
     subgraph Prep["PREPARATION (1 week before)"]
-        P1[Documentation]
-        P2[Technical capability]
-        P3[Evidence samples]
+        P1["Documentation"]
+        P2["Technical capability"]
+        P3["Evidence samples"]
     end
     
     subgraph Questions["UNDERSTAND QUESTIONS"]
-        Q1[Decision making]
-        Q2[Data handling]
-        Q3[Model governance]
-        Q4[Security]
-        Q5[Human oversight]
+        Q1["Decision making"]
+        Q2["Data handling"]
+        Q3["Model governance"]
+        Q4["Security"]
+        Q5["Human oversight"]
     end
     
     subgraph DryRun["DRY RUN"]
-        D1[Pick 5 random outputs]
-        D2[Attempt reconstruction]
-        D3[Time each: target < 10min]
-        D4[Document gaps]
+        D1["Pick 5 random outputs"]
+        D2["Attempt reconstruction"]
+        D3["Time each: target < 10min"]
+        D4["Document gaps"]
     end
     
     subgraph Audit["AUDIT DAY"]
-        A1[Present evidence]
-        A2[Answer questions]
-        A3[Note follow-ups]
+        A1["Present evidence"]
+        A2["Answer questions"]
+        A3["Note follow-ups"]
     end
     
     Prep --> Questions --> DryRun --> Audit
     
-    style Prep fill:#e7f5ff,stroke:#1971c2
-    style Questions fill:#fff3bf,stroke:#fab005
-    style DryRun fill:#d3f9d8,stroke:#2f9e44
-    style Audit fill:#f3d9fa,stroke:#ae3ec9
+    style Prep fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    style Questions fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    style DryRun fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style Audit fill:#ede9fe,stroke:#7c3aed,stroke-width:2px
 ```
 
 ---

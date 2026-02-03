@@ -248,11 +248,13 @@ flowchart LR
     Goal["This manual<br/>gets you here"] -.-> L3
     Goal -.-> L4
     
-    style L1 fill:#ff6b6b,stroke:#c92a2a
-    style L2 fill:#ffa94d,stroke:#e67700
-    style L3 fill:#ffd43b,stroke:#fab005
-    style L4 fill:#69db7c,stroke:#2f9e44
-    style L5 fill:#4dabf7,stroke:#1971c2
+    style L1 fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    style L2 fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style L3 fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style L4 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style L5 fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    style Most fill:#f1f5f9,stroke:#64748b,stroke-width:1px,color:#475569
+    style Goal fill:#f1f5f9,stroke:#64748b,stroke-width:1px,color:#475569
 ```
 
 | Level | Traceability | Economics | Auditability | Reliability |
@@ -300,10 +302,15 @@ flowchart TB
     AG --> Fix3["Fix: Provenance logging"]
     MF --> Fix4["Fix: Cost-per-outcome tracking"]
     
-    style LL fill:#ff8787,stroke:#c92a2a
-    style CSD fill:#ffd43b,stroke:#fab005
-    style AG fill:#da77f2,stroke:#ae3ec9
-    style MF fill:#ffa94d,stroke:#e67700
+    style Failures fill:#f8fafc,stroke:#475569,stroke-width:2px
+    style LL fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    style CSD fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style AG fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    style MF fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style Fix1 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style Fix2 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style Fix3 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style Fix4 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
 ```
 
 | Failure Mode | Signal | Root Cause |
@@ -329,11 +336,16 @@ flowchart LR
     IC -->|"hardens because"| H2["UX → User habits"]
     CP -->|"hardens because"| H3["Contracts → Lock-in"]
     
-    Time[Time] -.->|"Reversibility window closes"| Decisions
+    Time["Time"] -.->|"Reversibility window closes"| Decisions
     
-    style SM fill:#4dabf7,stroke:#1971c2
-    style IC fill:#69db7c,stroke:#2f9e44
-    style CP fill:#da77f2,stroke:#ae3ec9
+    style Decisions fill:#f8fafc,stroke:#475569,stroke-width:2px
+    style SM fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    style IC fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style CP fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    style H1 fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style H2 fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style H3 fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style Time fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
 ```
 
 | Decision | Controls | Why It Hardens |

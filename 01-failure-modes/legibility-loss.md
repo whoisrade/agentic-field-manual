@@ -24,20 +24,21 @@ Legibility loss is a loop, not a bug.
 
 ```mermaid
 flowchart TD
-    A[User behavior mutates state] --> B[State triggers recompute]
-    B --> C[Recompute alters latency & quality]
-    C --> D[Latency & quality change behavior]
+    A["User behavior mutates state"] --> B["State triggers recompute"]
+    B --> C["Recompute alters latency & quality"]
+    C --> D["Latency & quality change behavior"]
     D --> A
     
-    D --> E{Traceability<br/>intact?}
-    E -->|Yes| A
-    E -->|No| F[LEGIBILITY LOST]
+    D --> E{"Traceability<br/>intact?"}
+    E -->|"Yes"| A
+    E -->|"No"| F["LEGIBILITY LOST"]
     
-    style F fill:#ff6b6b,stroke:#c92a2a,color:#fff
-    style A fill:#4dabf7,stroke:#1971c2
-    style B fill:#69db7c,stroke:#2f9e44
-    style C fill:#ffd43b,stroke:#fab005
-    style D fill:#da77f2,stroke:#ae3ec9
+    style A fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    style B fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style C fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style D fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    style E fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style F fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
 ```
 
 This loop compounds until no one can explain what happened.
@@ -85,18 +86,18 @@ Every output should be traceable through this chain:
 
 ```mermaid
 flowchart LR
-    A[User Action] --> B[State Snapshot]
-    B --> C[Tool Calls]
-    C --> D[Output]
+    A["User Action"] --> B["State Snapshot"]
+    B --> C["Tool Calls"]
+    C --> D["Output"]
     
-    A -.->|trace_id| B
-    B -.->|trace_id| C
-    C -.->|trace_id| D
+    A -.->|"trace_id"| B
+    B -.->|"trace_id"| C
+    C -.->|"trace_id"| D
     
-    style A fill:#4dabf7,stroke:#1971c2
-    style B fill:#69db7c,stroke:#2f9e44
-    style C fill:#ffd43b,stroke:#fab005
-    style D fill:#da77f2,stroke:#ae3ec9
+    style A fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    style B fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style C fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style D fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
 ```
 
 <details>

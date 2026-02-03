@@ -27,7 +27,7 @@ flowchart TB
     subgraph Problem["THE DRIFT"]
         UX["UX makes expensive<br/>actions feel FREE"] --> Habit["Users develop<br/>expensive habits"]
         Habit --> Recompute["Hidden recompute<br/>multiplies"]
-        Recompute --> Cost[Margin erodes]
+        Recompute --> Cost["Margin erodes"]
         Cost -.->|"Can't afford to fix UX"| UX
     end
     
@@ -40,8 +40,9 @@ flowchart TB
     
     Examples --> Problem
     
-    style Problem fill:#ffe3e3,stroke:#c92a2a
-    style Cost fill:#ff6b6b,stroke:#c92a2a,color:#fff
+    style Problem fill:#fee2e2,stroke:#dc2626,stroke-width:2px
+    style Examples fill:#f1f5f9,stroke:#64748b,stroke-width:2px
+    style Cost fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
 ```
 
 The problem is not that users are doing something wrong. The problem is that your system made the expensive path feel free.

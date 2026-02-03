@@ -18,37 +18,37 @@ Use this when you do not have time for a full investigation. Act first, understa
 ```mermaid
 flowchart TB
     subgraph T["HOUR 0-2: TRIAGE"]
-        A1[Identify signal]
-        A2[Contain immediately]
+        A1["Identify signal"]
+        A2["Contain immediately"]
     end
     
     subgraph I["HOUR 2-8: INSTRUMENT"]
-        B1[Pull metrics]
-        B2[Find root cause]
+        B1["Pull metrics"]
+        B2["Find root cause"]
     end
     
     subgraph M["HOUR 8-24: MITIGATE"]
-        C1[Deploy fix]
-        C2[Verify impact]
+        C1["Deploy fix"]
+        C2["Verify impact"]
     end
     
     subgraph U["HOUR 24-48: UNDERSTAND"]
-        D1[Root cause analysis]
-        D2[Plan long-term fixes]
+        D1["Root cause analysis"]
+        D2["Plan long-term fixes"]
     end
     
     subgraph P["POST-INCIDENT"]
-        E1[Document learnings]
-        E2[Improve monitoring]
+        E1["Document learnings"]
+        E2["Improve monitoring"]
     end
     
     T --> I --> M --> U --> P
     
-    style T fill:#ff6b6b,stroke:#c92a2a
-    style I fill:#ffd43b,stroke:#fab005
-    style M fill:#69db7c,stroke:#2f9e44
-    style U fill:#4dabf7,stroke:#1971c2
-    style P fill:#da77f2,stroke:#ae3ec9
+    style T fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    style I fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style M fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style U fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    style P fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
 ```
 
 ---

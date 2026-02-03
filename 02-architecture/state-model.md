@@ -40,27 +40,30 @@ AI creates **speculative state**: drafts, retries, partials, intermediate output
 ```mermaid
 flowchart LR
     subgraph Traditional["Traditional CRUD"]
-        T1[Input] --> T2[Process] --> T3[Output]
+        T1["Input"] --> T2["Process"] --> T3["Output"]
     end
     
     subgraph AI["AI Systems"]
-        A1[Input] --> A2[Generate]
-        A2 --> A3[Draft 1]
-        A2 --> A4[Draft 2]
-        A2 --> A5[Draft N...]
-        A3 --> A6{User<br/>Decision}
+        A1["Input"] --> A2["Generate"]
+        A2 --> A3["Draft 1"]
+        A2 --> A4["Draft 2"]
+        A2 --> A5["Draft N..."]
+        A3 --> A6{"User<br/>Decision"}
         A4 --> A6
         A5 --> A6
-        A6 -->|Accept| A7[Committed]
-        A6 -->|Reject| A8[Rejected]
-        A6 -->|Retry| A2
+        A6 -->|"Accept"| A7["Committed"]
+        A6 -->|"Reject"| A8["Rejected"]
+        A6 -->|"Retry"| A2
     end
     
-    style A7 fill:#69db7c,stroke:#2f9e44
-    style A8 fill:#ff6b6b,stroke:#c92a2a
-    style A3 fill:#ffd43b,stroke:#fab005
-    style A4 fill:#ffd43b,stroke:#fab005
-    style A5 fill:#ffd43b,stroke:#fab005
+    style Traditional fill:#f1f5f9,stroke:#64748b,stroke-width:2px
+    style AI fill:#f8fafc,stroke:#475569,stroke-width:2px
+    style A3 fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style A4 fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style A5 fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style A6 fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
+    style A7 fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style A8 fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
 ```
 
 Traditional CRUD applications have a simple state model: data goes in, data comes out. AI applications have a more complex reality:
@@ -151,24 +154,24 @@ flowchart TB
         ID["output_id + trace_id"]
         
         subgraph Inputs["Inputs"]
-            I1[user_action]
-            I2[context_hash]
-            I3[prior_state_id]
+            I1["user_action"]
+            I2["context_hash"]
+            I3["prior_state_id"]
         end
         
         subgraph Policy["Policy"]
-            P1[prompt_version]
-            P2[model_version]
+            P1["prompt_version"]
+            P2["model_version"]
         end
         
         State["State: draft | committed | rejected"]
         Time["created_at"]
     end
     
-    style Envelope fill:#f8f9fa,stroke:#495057
-    style State fill:#4dabf7,stroke:#1971c2
-    style Policy fill:#69db7c,stroke:#2f9e44
-    style Inputs fill:#ffd43b,stroke:#fab005
+    style Envelope fill:#f8fafc,stroke:#475569,stroke-width:2px
+    style Inputs fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    style Policy fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style State fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e40af
 ```
 
 ```json

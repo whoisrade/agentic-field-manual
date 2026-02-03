@@ -25,8 +25,8 @@ Teams deploy a model update. Something goes wrong. They try to revert.
 ```mermaid
 flowchart TB
     subgraph Problem["What Goes Wrong"]
-        Deploy[Deploy Update] --> Fail[Something Breaks]
-        Fail --> Revert{Try to Revert?}
+        Deploy["Deploy Update"] --> Fail["Something Breaks"]
+        Fail --> Revert{"Try to Revert?"}
         
         Revert --> Q1["Which prompt version?"]
         Revert --> Q2["Which policy?"]
@@ -37,16 +37,16 @@ flowchart TB
     end
     
     subgraph Solution["What Should Happen"]
-        D2[Deploy] --> F2[Issue Detected]
-        F2 --> R2[Rollback]
+        D2["Deploy"] --> F2["Issue Detected"]
+        F2 --> R2["Rollback"]
         R2 --> Baseline["Known-good baseline<br/>(model + prompt + policy + tools)"]
         Baseline --> Fixed["Fixed in minutes"]
     end
     
-    style Problem fill:#ffe3e3,stroke:#c92a2a
-    style Solution fill:#d3f9d8,stroke:#2f9e44
-    style Pain fill:#ff6b6b,stroke:#c92a2a,color:#fff
-    style Fixed fill:#69db7c,stroke:#2f9e44
+    style Problem fill:#fee2e2,stroke:#dc2626,stroke-width:2px
+    style Solution fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style Pain fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    style Fixed fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
 ```
 
 But:

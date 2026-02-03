@@ -37,50 +37,55 @@ Agentic systems expand the abuse surface. Every tool, every state mutation, ever
 
 ```mermaid
 flowchart TB
-    Input[User Input] --> L1
+    Input["User Input"] --> L1
     
     subgraph L1["Layer 1: Input Guards"]
-        IG1[Regex patterns]
-        IG2[ML classifier]
-        IG3[Blocklist check]
+        IG1["Regex patterns"]
+        IG2["ML classifier"]
+        IG3["Blocklist check"]
     end
     
     L1 --> L2
     
     subgraph L2["Layer 2: Context Isolation"]
-        CI1[System vs User separation]
-        CI2[XML/delimiter isolation]
-        CI3[Role-based access]
+        CI1["System vs User separation"]
+        CI2["XML/delimiter isolation"]
+        CI3["Role-based access"]
     end
     
-    L2 --> Model[Model Inference]
+    L2 --> Model["Model Inference"]
     Model --> L3
     
     subgraph L3["Layer 3: Output Guards"]
-        OG1[PII detection]
-        OG2[Harmful content check]
-        OG3[System leak detection]
+        OG1["PII detection"]
+        OG2["Harmful content check"]
+        OG3["System leak detection"]
     end
     
     L3 --> L4
     
     subgraph L4["Layer 4: Tool Guardrails"]
-        TG1[Allowlists]
-        TG2[Rate limits]
-        TG3[Tenant isolation]
+        TG1["Allowlists"]
+        TG2["Rate limits"]
+        TG3["Tenant isolation"]
     end
     
-    L4 --> Output[Safe Output]
+    L4 --> Output["Safe Output"]
     
-    L1 -->|Block| Reject[Rejected]
-    L3 -->|Redact| Redact[Redacted]
-    L4 -->|Deny| Deny[Tool Denied]
+    L1 -->|"Block"| Reject["Rejected"]
+    L3 -->|"Redact"| Redact["Redacted"]
+    L4 -->|"Deny"| Deny["Tool Denied"]
     
-    style L1 fill:#ff8787,stroke:#c92a2a
-    style L2 fill:#ffd43b,stroke:#fab005
-    style L3 fill:#69db7c,stroke:#2f9e44
-    style L4 fill:#4dabf7,stroke:#1971c2
-    style Reject fill:#ff6b6b,stroke:#c92a2a
+    style Input fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style L1 fill:#fee2e2,stroke:#dc2626,stroke-width:2px
+    style L2 fill:#fef3c7,stroke:#d97706,stroke-width:2px
+    style L3 fill:#d1fae5,stroke:#059669,stroke-width:2px
+    style L4 fill:#dbeafe,stroke:#2563eb,stroke-width:2px
+    style Model fill:#f1f5f9,stroke:#64748b,stroke-width:2px,color:#334155
+    style Output fill:#d1fae5,stroke:#059669,stroke-width:2px,color:#065f46
+    style Reject fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
+    style Redact fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    style Deny fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#991b1b
 ```
 
 ### Layer 1: Input Guards
