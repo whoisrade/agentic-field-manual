@@ -78,5 +78,5 @@ The fix is always the same: restore traceability.
 ## Related
 
 - [Pre-Ship Checklist](../00-templates/pre-ship-checklist.md) - Prevent these before they start
-- [First 48 Hours](../00-templates/first-48-hours.md) - If a failure mode is causing an incident
+- [Crisis Playbook](../00-templates/crisis-playbook.md) - If a failure mode is causing an incident
 - [Cost Investigation](../03-economics/cost-investigation.md) - Deep dive on cost failures

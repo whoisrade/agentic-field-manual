@@ -1,4 +1,4 @@
-# First 48 Hours
+# Crisis Playbook
 
 > [!CAUTION]
 > **Use when:** System is failing, margin collapsing, quality dropping, or unexplained behavior at scale.

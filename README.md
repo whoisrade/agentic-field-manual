@@ -12,7 +12,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Author](https://img.shields.io/badge/Author-Rade_Joksimovic-orange)](AUTHOR.md)
 
-**[Quick Start](#quick-start-5-minutes)** · **[Assess Your System](ASSESS.md)** · **[Crisis Mode](00-templates/first-48-hours.md)** · **[Quick Reference](QUICK-REFERENCE.md)**
+**[Quick Start](#quick-start-5-minutes)** · **[Assess Your System](ASSESS.md)** · **[Crisis Playbook](00-templates/crisis-playbook.md)** · **[Quick Reference](QUICK-REFERENCE.md)**
 
 </div>
 
@@ -105,7 +105,7 @@ FROM inference_logs WHERE created_at > NOW() - INTERVAL '7 days';
 |-----------|------------|-----------|
 | **Just inherited a system** | [System Assessment](ASSESS.md) | [Failure Modes](01-failure-modes/README.md) |
 | **Building something new** | [State Model](02-architecture/state-model.md) | [Interaction Contract](02-architecture/interaction-contract.md) |
-| **In crisis mode** | [First 48 Hours](00-templates/first-48-hours.md) | [Cost Spike Runbook](00-templates/cost-spike-runbook.md) |
+| **In crisis mode** | [Crisis Playbook](00-templates/crisis-playbook.md) | [Cost Spike Runbook](00-templates/cost-spike-runbook.md) |
 | **Presenting to leadership** | [Board Explainer](05-communication/board-explainer.md) | [Stakeholder Glossary](05-communication/stakeholder-glossary.md) |
 | **Setting up observability** | [Metrics Reference](07-examples/metrics-reference.md) | [Eval and Regression](06-operations/eval-and-regression.md) |
 
@@ -120,7 +120,7 @@ FROM inference_logs WHERE created_at > NOW() - INTERVAL '7 days';
 
 | Situation | Do This | Time |
 |-----------|---------|------|
-| System is failing, costs exploding, quality collapsing | [First 48 Hours](00-templates/first-48-hours.md) | 2-8 hours |
+| System is failing, costs exploding, quality collapsing | [Crisis Playbook](00-templates/crisis-playbook.md) | 2-8 hours |
 | Cannot explain why the system did something | [Legibility Loss](01-failure-modes/legibility-loss.md) | 30 min read, then fix |
 | Costs rising but traffic is flat | [Cost Spike Runbook](00-templates/cost-spike-runbook.md) | 30-60 min |
 | Enterprise deal dying due to audit questions | [Audit Preparation](04-compliance/audit-preparation.md) | 2-4 hours |
@@ -210,7 +210,7 @@ Use these when assessing any agentic system:
 **Scoring:**
 - All checked: Healthy
 - Most checked: Warning - prioritize gaps
-- Few checked: Critical - use [First 48 Hours](00-templates/first-48-hours.md)
+- Few checked: Critical - use [Crisis Playbook](00-templates/crisis-playbook.md)
 
 ---
 
@@ -282,7 +282,7 @@ When something goes wrong, classify it:
 | **P2** | Feature degraded, workaround exists | Within 4 hours | Slow responses, intermittent failures |
 | **P3** | Minor issue, no revenue impact | Within 1 week | Edge case bug, cosmetic issue |
 
-Use [First 48 Hours](00-templates/first-48-hours.md) for P0/P1. Regular process for P2/P3.
+Use [Crisis Playbook](00-templates/crisis-playbook.md) for P0/P1. Regular process for P2/P3.
 
 ---
 

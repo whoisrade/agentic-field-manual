@@ -105,4 +105,4 @@ Observability is not optional. It is the foundation of operational control.
 
 - [Metrics Reference](../07-examples/metrics-reference.md) - All formulas and queries
 - [Examples](../07-examples/) - Production code for orchestration and guardrails
-- [First 48 Hours](../00-templates/first-48-hours.md) - When operations break down
+- [Crisis Playbook](../00-templates/crisis-playbook.md) - When operations break down

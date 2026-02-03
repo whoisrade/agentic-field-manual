@@ -8,7 +8,7 @@ Actionable documents you copy and fill in.
 
 | Situation | Template | Time Required |
 |-----------|----------|---------------|
-| System is failing, margin collapsing, quality dropping | [First 48 Hours](first-48-hours.md) | 2-8 hours |
+| System is failing, margin collapsing, quality dropping | [Crisis Playbook](crisis-playbook.md) | 2-8 hours |
 | Costs spiked unexpectedly | [Cost Spike Runbook](cost-spike-runbook.md) | 30-60 min |
 | Weekly operations review | [Weekly Ops Checklist](weekly-ops-checklist.md) | 30 min |
 | After resolving a P0/P1 incident | [Incident Post-Mortem](incident-postmortem.md) | 1-2 hours |
@@ -30,7 +30,7 @@ Actionable documents you copy and fill in.
 
 | Template | You Will Have |
 |----------|---------------|
-| First 48 Hours | Containment action taken, visibility into metrics, fix underway |
+| Crisis Playbook | Containment action taken, visibility into metrics, fix underway |
 | Cost Spike Runbook | Root cause identified, mitigation applied, alert created |
 | Weekly Ops Checklist | Early warning of drift, action items assigned |
 | Incident Post-Mortem | Documented learnings, preventive actions assigned |
@@ -49,7 +49,7 @@ Pick a random output from yesterday. Can you explain it in under 10 minutes?
 
 - Under 10 min: Healthy
 - 10-60 min: Warning - see [Legibility Loss](../01-failure-modes/legibility-loss.md)
-- Over 1 hour: Critical - use [First 48 Hours](first-48-hours.md)
+- Over 1 hour: Critical - use [Crisis Playbook](crisis-playbook.md)
 
 ### Economics
 

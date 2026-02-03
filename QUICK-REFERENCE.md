@@ -13,7 +13,7 @@ Print this. Keep it visible.
 | **P2** | Feature degraded, workaround exists | Within 4 hours |
 | **P3** | Minor issue, no revenue impact | Within 1 week |
 
-**P0/P1:** Use [First 48 Hours](00-templates/first-48-hours.md)
+**P0/P1:** Use [Crisis Playbook](00-templates/crisis-playbook.md)
 
 ---
 
@@ -142,7 +142,7 @@ async def call_external(request):
 
 | Need | Document |
 |------|----------|
-| Crisis | [First 48 Hours](00-templates/first-48-hours.md) |
+| Crisis | [Crisis Playbook](00-templates/crisis-playbook.md) |
 | Cost spike | [Cost Spike Runbook](00-templates/cost-spike-runbook.md) |
 | Assessment | [ASSESS.md](ASSESS.md) |
 | Pre-ship | [Pre-Ship Checklist](00-templates/pre-ship-checklist.md) |
