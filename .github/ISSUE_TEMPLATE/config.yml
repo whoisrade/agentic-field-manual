@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a Question (Discussions)
+    url: https://github.com/whoisrade/agentic-field-manual/discussions/new?category=q-a
+    about: For questions about applying patterns, use Discussions instead of Issues.
+  - name: Share Your Experience (Discussions)
+    url: https://github.com/whoisrade/agentic-field-manual/discussions/new?category=show-and-tell
+    about: Share how you implemented these patterns in your system.
