@@ -6,3 +6,6 @@ contact_links:
   - name: Share Your Experience (Discussions)
     url: https://github.com/whoisrade/agentic-field-manual/discussions/new?category=show-and-tell
     about: Share how you implemented these patterns in your system.
+  - name: Share a War Story (Discussions)
+    url: https://github.com/whoisrade/agentic-field-manual/discussions/new?category=war-stories
+    about: Share anonymized production incidents and lessons learned.
