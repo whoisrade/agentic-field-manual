@@ -297,7 +297,7 @@ Use [First 48 Hours](00-templates/first-48-hours.md) for P0/P1. Regular process 
 | [Anti-Patterns](ANTI-PATTERNS.md) | Common mistakes to avoid |
 | [Alternatives Comparison](ALTERNATIVES.md) | How this compares to LangSmith, Braintrust, etc. |
 | [Conversation Scripts](05-communication/conversation-scripts.md) | Exact words for stakeholder meetings |
-| [Glossary](glossary.md) | All terms with technical and executive definitions |
+| [Glossary](GLOSSARY.md) | All terms with technical and executive definitions |
 | [Metrics Reference](07-examples/metrics-reference.md) | Formulas and queries for every metric |
 | [Examples](07-examples/README.md) | Production code and schemas |
 | [Templates](00-templates/README.md) | Documents you copy and fill in |

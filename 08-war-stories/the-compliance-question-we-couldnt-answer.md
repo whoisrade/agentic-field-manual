@@ -17,7 +17,7 @@ A story about auditability gaps, enterprise deals, and the question that kills.
 Prerequisites:
 - [Auditability Gap](../01-failure-modes/auditability-gap.md) - why logging isn't enough
 - [Auditability](../04-compliance/auditability.md) - what evidence you need
-- [Decision Envelope](../glossary.md) - the minimum context for reproducibility
+- [Decision Envelope](../GLOSSARY.md) - the minimum context for reproducibility
 
 ---
 

@@ -16,7 +16,7 @@ A story about state model decisions, reversibility windows, and the migrations t
 
 Prerequisites:
 - [State Model](../02-architecture/state-model.md) - the foundational principles
-- [Speculative State](../glossary.md) - why AI outputs are different from CRUD data
+- [Speculative State](../GLOSSARY.md) - why AI outputs are different from CRUD data
 - Martin Kleppmann's work on [Designing Data-Intensive Applications](https://dataintensive.net/) - the definitive reference on data layer decisions
 
 ---

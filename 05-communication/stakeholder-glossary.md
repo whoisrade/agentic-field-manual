@@ -171,4 +171,4 @@ Depends on control plane ownership. If a vendor outage becomes our incident, we 
 ## Related
 
 - [Board Explainer](board-explainer.md) - Full presentation template
-- [Glossary](../glossary.md) - Technical definitions
+- [Glossary](../GLOSSARY.md) - Technical definitions
