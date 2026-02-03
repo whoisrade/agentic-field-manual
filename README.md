@@ -6,34 +6,11 @@ Production patterns for teams building autonomous AI systems.
 
 ## Start Here
 
-```mermaid
-flowchart TD
-    START[What do you need?] --> FIRE{Is something<br/>on fire?}
-    FIRE -->|Yes| P0{P0/P1?}
-    P0 -->|Yes| FIRST48[First 48 Hours]
-    P0 -->|No| DIAG[Diagnose the issue]
-    
-    FIRE -->|No| PHASE{What phase<br/>are you in?}
-    
-    PHASE -->|Inheriting a system| ASSESS[Run Assessment]
-    PHASE -->|Building new| DESIGN[Design Docs]
-    PHASE -->|About to ship| PRECHECK[Pre-Ship Checklist]
-    PHASE -->|Operating| MONITOR[Check Metrics]
-    
-    ASSESS --> ASSESS_LINK[ASSESS.md]
-    DESIGN --> STATE[State Model]
-    PRECHECK --> PRESHIP[Pre-Ship Checklist]
-    MONITOR --> METRICS[Metrics Reference]
-    FIRST48 --> FIRST48_LINK[00-templates/first-48-hours.md]
-    
-    click ASSESS_LINK "ASSESS.md"
-    click STATE "02-architecture/state-model.md"
-    click PRESHIP "00-templates/pre-ship-checklist.md"
-    click METRICS "07-examples/metrics-reference.md"
-    click FIRST48_LINK "00-templates/first-48-hours.md"
-```
+**New to this system?** [Run the 10-minute assessment](ASSESS.md) to find your gaps and get specific recommendations.
 
-**Or:** [Run the 10-minute assessment](ASSESS.md) to find out where you are.
+**In a crisis?** Go directly to [First 48 Hours](00-templates/first-48-hours.md).
+
+**Need a quick reference?** Print the [Quick Reference Card](QUICK-REFERENCE.md).
 
 ---
 
