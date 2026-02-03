@@ -1,0 +1,10 @@
+# Mark this as a documentation repository
+*.md linguist-documentation
+*.py linguist-documentation
+*.sql linguist-documentation
+*.json linguist-documentation
+*.yml linguist-documentation
+*.yaml linguist-documentation
+
+# Ensure markdown is counted as the primary language
+*.md linguist-detectable
