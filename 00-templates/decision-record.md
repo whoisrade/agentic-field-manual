@@ -26,93 +26,43 @@ A decision is "hard to reverse" when more than two teams or systems depend on it
 
 ## Context
 
-**What problem are we solving?**
+| Question | Answer |
+|----------|--------|
+| What problem are we solving? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| What constraints exist? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| What changes at 10x usage? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 *Be specific. "Improve performance" is not a problem statement. "Reduce p95 latency from 3s to under 1s for the summarization endpoint" is.*
-
-**What constraints exist now?**
-
-*Technical constraints, team capacity, timeline, budget, compliance requirements.*
-
-**What changes if usage is 10x?**
-
-*This question surfaces hidden assumptions about cost, latency, and architecture.*
 
 ---
 
 ## Options Considered
 
-### Option A
-
-**Description:**
-
-**Pros:**
-- 
-
-**Cons:**
-- 
-
-**Risk:**
-
-**Estimated effort:**
-
-### Option B
-
-**Description:**
-
-**Pros:**
-- 
-
-**Cons:**
-- 
-
-**Risk:**
-
-**Estimated effort:**
-
-### Option C (if applicable)
-
-**Description:**
-
-**Pros:**
-- 
-
-**Cons:**
-- 
-
-**Risk:**
-
-**Estimated effort:**
+| Option | Description | Pros | Cons | Risk | Effort |
+|--------|-------------|------|------|------|--------|
+| A | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| B | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| C | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ---
 
 ## Decision
 
-**Which option?**
-
-**Why this option?**
-
-*What evidence supports this choice?*
-
-**What does it trade off?**
-
-*Every decision trades something. Be explicit.*
-
-**What breaks if this is wrong?**
-
-*How would you know? What is the blast radius?*
+| Question | Answer |
+|----------|--------|
+| Which option? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Why this option? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| What does it trade off? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| What breaks if wrong? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ---
 
 ## Reversibility Analysis
 
-**When does this become expensive to reverse?**
-
-*Be specific: after X users, after Y months, after Z teams depend on it.*
-
-**What signals tell us we should revisit?**
-
-*Metrics, user feedback, cost thresholds, team pain.*
+| Question | Answer |
+|----------|--------|
+| When does this become expensive to reverse? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| What signals tell us to revisit? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 **Dependencies that will lock us in:**
 
@@ -125,11 +75,11 @@ A decision is "hard to reverse" when more than two teams or systems depend on it
 
 ## Rollback Plan
 
-**How do we unwind this in under 30 days?**
-
-**What data migration or behavior change is required?**
-
-**Who owns the rollback if needed?**
+| Question | Answer |
+|----------|--------|
+| How do we unwind in under 30 days? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| What migration/change is required? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Who owns the rollback? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ---
 
@@ -162,11 +112,13 @@ If you cannot answer this, the decision needs more work.
 
 ---
 
-**Decision logged by:**
+## Sign-off
 
-**Date:**
-
-**Reviewed by:**
+| Role | Name | Date |
+|------|------|------|
+| Decision logged by | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Reviewed by | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Approved by | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ---
 
