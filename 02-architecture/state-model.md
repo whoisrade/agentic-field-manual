@@ -162,9 +162,9 @@ Use this before committing to a state model:
 
 ---
 
-## The Test
+## The Litmus Test
 
-If a user asks "why did this happen?" can you answer with evidence rather than narrative?
+> If a user asks "why did this happen?" can you answer with evidence rather than narrative?
 
 If the answer requires guesswork, your state model is missing provenance.
 

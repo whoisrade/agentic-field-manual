@@ -136,9 +136,9 @@ Use this to assess your current legibility:
 
 ---
 
-## The Test
+## The Litmus Test
 
-Pick a random output from yesterday. Can your team explain it in under 10 minutes without guesswork?
+> Pick a random output from yesterday. Can your team explain it in under 10 minutes without guesswork?
 
 If the answer is no, you already have legibility loss. The question is how bad it is.
 

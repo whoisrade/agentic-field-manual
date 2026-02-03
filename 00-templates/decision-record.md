@@ -104,11 +104,16 @@ A decision is "hard to reverse" when more than two teams or systems depend on it
 
 ---
 
-## The Test
+## The Litmus Test
 
 > If this decision is wrong, can you explain how you will detect it within one quarter?
 
 If you cannot answer this, the decision needs more work.
+
+| Question | Answer |
+|----------|--------|
+| How will we detect if wrong? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Detection timeline | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ---
 

@@ -157,9 +157,9 @@ Use this to assess your control plane ownership:
 
 ---
 
-## The Test
+## The Litmus Test
 
-If a vendor outage becomes a regulatory incident for you, do you own the control plane?
+> If a vendor outage becomes a regulatory incident for you, do you own the control plane?
 
 If your answer is "we would have to escalate to the vendor," you do not own it.
 

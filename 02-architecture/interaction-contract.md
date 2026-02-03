@@ -160,9 +160,9 @@ Use this to audit your current contract:
 
 ---
 
-## The Test
+## The Litmus Test
 
-List the top 5 most expensive actions in your system. Are they user-visible and explicitly confirmed?
+> List the top 5 most expensive actions in your system. Are they user-visible and explicitly confirmed?
 
 If any expensive action is invisible or automatic, your contract is missing a gate.
 

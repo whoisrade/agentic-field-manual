@@ -122,9 +122,9 @@ When you suspect control surface drift:
 
 ---
 
-## The Test
+## The Litmus Test
 
-List the top 10 user actions in your product. Which ones trigger recompute silently?
+> List the top 10 user actions in your product. Which ones trigger recompute silently?
 
 Those are your control surfaces. If you cannot name them, you are already drifting.
 

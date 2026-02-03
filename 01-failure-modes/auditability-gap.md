@@ -173,9 +173,9 @@ Target: Complete this in under 10 minutes.
 
 ---
 
-## The Test
+## The Litmus Test
 
-Can you reproduce why a decision was made last quarter without live systems?
+> Can you reproduce why a decision was made last quarter without live systems?
 
 If the answer involves "we would have to check with the team" or "we would need to look at the logs," you have an auditability gap.
 

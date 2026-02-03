@@ -156,9 +156,9 @@ See: [Cost Investigation](../03-economics/cost-investigation.md) for the full pr
 
 ---
 
-## The Test
+## The Litmus Test
 
-Can you show stable or improved unit economics at 10x usage in a simple model?
+> Can you show stable or improved unit economics at 10x usage in a simple model?
 
 If the answer is "we have not modeled that," you have margin fragility. You just have not felt it yet.
 
