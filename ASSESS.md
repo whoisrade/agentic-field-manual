@@ -22,18 +22,20 @@
 
 Can you explain what happened and why?
 
-| Question | Yes (2) | Partial (1) | No (0) | Score |
-|----------|---------|-------------|--------|-------|
-| Pick a random output from yesterday. Can you find the trace ID within 2 minutes? | | | | |
-| Can you see what model version produced that output? | | | | |
-| Can you see what prompt version was used? | | | | |
-| Can you see what user action triggered the inference? | | | | |
-| Can you see what context (documents, conversation history) was included? | | | | |
-| Can you see what tools were called and their responses? | | | | |
-| Can you explain the output to a non-engineer in under 10 minutes? | | | | |
-| Do trace IDs follow requests across all services (not just the LLM call)? | | | | |
-| Are traces retained for at least 90 days? | | | | |
-| Can you filter traces by user, session, model version, or outcome? | | | | |
+| Question | Yes | Partial | No | Score |
+|----------|:---:|:-------:|:--:|:-----:|
+| Pick a random output from yesterday. Can you find the trace ID within 2 minutes? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you see what model version produced that output? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you see what prompt version was used? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you see what user action triggered the inference? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you see what context (documents, conversation history) was included? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you see what tools were called and their responses? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you explain the output to a non-engineer in under 10 minutes? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do trace IDs follow requests across all services (not just the LLM call)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Are traces retained for at least 90 days? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you filter traces by user, session, model version, or outcome? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+
+**Scoring: Yes = 2, Partial = 1, No = 0**
 
 **Section 1 Total:** ___ / 20
 
@@ -49,18 +51,20 @@ Can you explain what happened and why?
 
 How do you handle the difference between "thinking" and "done"?
 
-| Question | Yes (2) | Partial (1) | No (0) | Score |
-|----------|---------|-------------|--------|-------|
-| Is there a clear distinction between speculative state (drafts) and committed state (final)? | | | | |
-| Can users see what the AI is "thinking" vs what is saved? | | | | |
-| Is every state transition recorded with timestamp and trigger? | | | | |
-| Can you reconstruct the state at any point in time? | | | | |
-| Are failed/abandoned generations recorded (not just deleted)? | | | | |
-| Is the state model documented? | | | | |
-| Do more than 2 teams depend on this state model? | If yes: (0) If no: (2) | | | |
-| Can you migrate state schema without downtime? | | | | |
-| Is speculative state garbage-collected on a defined schedule? | | | | |
-| Is there a TTL (time-to-live) for drafts/uncommitted state? | | | | |
+| Question | Yes | Partial | No | Score |
+|----------|:---:|:-------:|:--:|:-----:|
+| Is there a clear distinction between speculative state (drafts) and committed state (final)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can users see what the AI is "thinking" vs what is saved? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Is every state transition recorded with timestamp and trigger? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you reconstruct the state at any point in time? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Are failed/abandoned generations recorded (not just deleted)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Is the state model documented? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do more than 2 teams depend on this state model? (Yes=0, No=2) | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you migrate state schema without downtime? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Is speculative state garbage-collected on a defined schedule? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Is there a TTL (time-to-live) for drafts/uncommitted state? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+
+**Scoring: Yes = 2, Partial = 1, No = 0**
 
 **Section 2 Total:** ___ / 20
 
@@ -76,18 +80,20 @@ How do you handle the difference between "thinking" and "done"?
 
 Do you understand your costs?
 
-| Question | Yes (2) | Partial (1) | No (0) | Score |
-|----------|---------|-------------|--------|-------|
-| Do you know your cost per successful outcome (not just per token)? | | | | |
-| Can you break down cost by: explicit user action vs hidden recompute? | | | | |
-| Do you know your hidden recompute ratio (retries, auto-saves, undo)? | | | | |
-| Do you have alerts for cost anomalies (> 2x normal daily spend)? | | | | |
-| Can you attribute cost to specific users, features, or workflows? | | | | |
-| Do you have a cost model that projects costs at 10x usage? | | | | |
-| Do unit economics improve, stay flat, or degrade at scale? | Improve: (2), Flat: (1), Degrade: (0) | | | |
-| Do you track cost per model version? | | | | |
-| Can you identify which prompts/features have the worst cost/value ratio? | | | | |
-| Do you have a cost cap or budget alert per user session? | | | | |
+| Question | Yes | Partial | No | Score |
+|----------|:---:|:-------:|:--:|:-----:|
+| Do you know your cost per successful outcome (not just per token)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you break down cost by: explicit user action vs hidden recompute? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you know your hidden recompute ratio (retries, auto-saves, undo)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have alerts for cost anomalies (> 2x normal daily spend)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you attribute cost to specific users, features, or workflows? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have a cost model that projects costs at 10x usage? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do unit economics improve, stay flat, or degrade at scale? (Improve=2, Flat=1, Degrade=0) | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you track cost per model version? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you identify which prompts/features have the worst cost/value ratio? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have a cost cap or budget alert per user session? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+
+**Scoring: Yes = 2, Partial = 1, No = 0**
 
 **Section 3 Total:** ___ / 20
 
@@ -103,18 +109,20 @@ Do you understand your costs?
 
 Can you prove what happened?
 
-| Question | Yes (2) | Partial (1) | No (0) | Score |
-|----------|---------|-------------|--------|-------|
-| Can you prove what the system knew at the time of any decision? | | | | |
-| Are human approvals recorded with timestamp, approver ID, and what was approved? | | | | |
-| Do you have decision envelopes (full input/output/policy snapshots) for critical outputs? | | | | |
-| Can you reconstruct a decision from 6 months ago with all context? | | | | |
-| Do you meet your industry's data retention requirements? | | | | |
-| Can you generate an audit log for any user or session on demand? | | | | |
-| Are policy versions (what rules applied) recorded with outputs? | | | | |
-| Is there an immutable audit trail (not just logs that can be deleted)? | | | | |
-| Have you tested your audit capability with a mock audit? | | | | |
-| Can you explain your AI decision-making to a regulator in writing? | | | | |
+| Question | Yes | Partial | No | Score |
+|----------|:---:|:-------:|:--:|:-----:|
+| Can you prove what the system knew at the time of any decision? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Are human approvals recorded with timestamp, approver ID, and what was approved? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have decision envelopes (full input/output/policy snapshots) for critical outputs? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you reconstruct a decision from 6 months ago with all context? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you meet your industry's data retention requirements? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you generate an audit log for any user or session on demand? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Are policy versions (what rules applied) recorded with outputs? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Is there an immutable audit trail (not just logs that can be deleted)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Have you tested your audit capability with a mock audit? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you explain your AI decision-making to a regulator in writing? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+
+**Scoring: Yes = 2, Partial = 1, No = 0**
 
 **Section 4 Total:** ___ / 20
 
@@ -130,18 +138,20 @@ Can you prove what happened?
 
 Can you fail gracefully and recover quickly?
 
-| Question | Yes (2) | Partial (1) | No (0) | Score |
-|----------|---------|-------------|--------|-------|
-| Do you have circuit breakers for external dependencies (model APIs, tools)? | | | | |
-| Can you roll back a deployment in under 5 minutes? | | | | |
-| Do you have eval gates that block deploys when quality drops? | | | | |
-| Do you track success rate for every external tool call? | | | | |
-| Do you have defined SLOs for latency (p50, p95, p99)? | | | | |
-| Do you have fallback behavior when the primary model is unavailable? | | | | |
-| Are retries capped and exponentially backed off? | | | | |
-| Do you monitor retry rate as a leading indicator of problems? | | | | |
-| Can you gracefully degrade (serve cached/simpler responses) under load? | | | | |
-| Do you have runbooks for common failure scenarios? | | | | |
+| Question | Yes | Partial | No | Score |
+|----------|:---:|:-------:|:--:|:-----:|
+| Do you have circuit breakers for external dependencies (model APIs, tools)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you roll back a deployment in under 5 minutes? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have eval gates that block deploys when quality drops? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you track success rate for every external tool call? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have defined SLOs for latency (p50, p95, p99)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have fallback behavior when the primary model is unavailable? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Are retries capped and exponentially backed off? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you monitor retry rate as a leading indicator of problems? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you gracefully degrade (serve cached/simpler responses) under load? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have runbooks for common failure scenarios? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+
+**Scoring: Yes = 2, Partial = 1, No = 0**
 
 **Section 5 Total:** ___ / 20
 
@@ -157,18 +167,20 @@ Can you fail gracefully and recover quickly?
 
 What prevents bad outputs?
 
-| Question | Yes (2) | Partial (1) | No (0) | Score |
-|----------|---------|-------------|--------|-------|
-| Do you have input validation (blocklists, format checks) before model calls? | | | | |
-| Do you have output filtering (content classification, PII detection) after model calls? | | | | |
-| Are guardrails layered (multiple independent checks)? | | | | |
-| Do you log blocked requests for analysis? | | | | |
-| Can you update guardrails without a full deploy? | | | | |
-| Do you have rate limits per user/session? | | | | |
-| Do you have cost caps per user/session? | | | | |
-| Have you tested guardrails with adversarial inputs? | | | | |
-| Is there a human escalation path for edge cases? | | | | |
-| Do you track guardrail trigger rate as a metric? | | | | |
+| Question | Yes | Partial | No | Score |
+|----------|:---:|:-------:|:--:|:-----:|
+| Do you have input validation (blocklists, format checks) before model calls? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have output filtering (content classification, PII detection) after model calls? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Are guardrails layered (multiple independent checks)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you log blocked requests for analysis? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you update guardrails without a full deploy? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have rate limits per user/session? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have cost caps per user/session? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Have you tested guardrails with adversarial inputs? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Is there a human escalation path for edge cases? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you track guardrail trigger rate as a metric? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+
+**Scoring: Yes = 2, Partial = 1, No = 0**
 
 **Section 6 Total:** ___ / 20
 
@@ -184,18 +196,20 @@ What prevents bad outputs?
 
 How are multi-step workflows managed?
 
-| Question | Yes (2) | Partial (1) | No (0) | Score |
-|----------|---------|-------------|--------|-------|
-| Are orchestration decisions (what to do next) logged? | | | | |
-| Is there a clear orchestration pattern (chain, router, parallel, state machine)? | | | | |
-| Can you trace the full path of a multi-agent interaction? | | | | |
-| Are there timeouts for long-running orchestrations? | | | | |
-| Is there a maximum depth/iteration limit for recursive agent calls? | | | | |
-| Can you cancel/abort an in-progress orchestration cleanly? | | | | |
-| Are intermediate results persisted (not lost on crash)? | | | | |
-| Do you track orchestration latency breakdown (which step took how long)? | | | | |
-| Is the orchestration pattern documented? | | | | |
-| Can you replay a failed orchestration from a checkpoint? | | | | |
+| Question | Yes | Partial | No | Score |
+|----------|:---:|:-------:|:--:|:-----:|
+| Are orchestration decisions (what to do next) logged? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Is there a clear orchestration pattern (chain, router, parallel, state machine)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you trace the full path of a multi-agent interaction? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Are there timeouts for long-running orchestrations? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Is there a maximum depth/iteration limit for recursive agent calls? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you cancel/abort an in-progress orchestration cleanly? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Are intermediate results persisted (not lost on crash)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you track orchestration latency breakdown (which step took how long)? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Is the orchestration pattern documented? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you replay a failed orchestration from a checkpoint? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+
+**Scoring: Yes = 2, Partial = 1, No = 0**
 
 **Section 7 Total:** ___ / 20
 
@@ -211,18 +225,20 @@ How are multi-step workflows managed?
 
 What do you control vs what controls you?
 
-| Question | Yes (2) | Partial (1) | No (0) | Score |
-|----------|---------|-------------|--------|-------|
-| Could you switch model providers within 30 days if needed? | | | | |
-| Do you have a documented exit strategy for every critical vendor? | | | | |
-| Can you run evaluations without calling the production model API? | | | | |
-| Do you own your training/fine-tuning data? | | | | |
-| Do you own your evaluation datasets? | | | | |
-| Can you deploy in a different region if required? | | | | |
-| Is there a single vendor whose outage would stop your entire system? | If yes: (0) If no: (2) | | | |
-| Have you tested recovery from a vendor outage? | | | | |
-| Are vendor contracts reviewed for data usage rights? | | | | |
-| Do you have leverage (alternatives) in vendor negotiations? | | | | |
+| Question | Yes | Partial | No | Score |
+|----------|:---:|:-------:|:--:|:-----:|
+| Could you switch model providers within 30 days if needed? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have a documented exit strategy for every critical vendor? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you run evaluations without calling the production model API? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you own your training/fine-tuning data? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you own your evaluation datasets? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Can you deploy in a different region if required? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Is there a single vendor whose outage would stop your entire system? (Yes=0, No=2) | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Have you tested recovery from a vendor outage? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Are vendor contracts reviewed for data usage rights? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+| Do you have leverage (alternatives) in vendor negotiations? | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; | &emsp;&emsp; |
+
+**Scoring: Yes = 2, Partial = 1, No = 0**
 
 **Section 8 Total:** ___ / 20
 
@@ -237,16 +253,16 @@ What do you control vs what controls you?
 ## Score Summary
 
 | Section | Score | Max | Status |
-|---------|-------|-----|--------|
-| 1. Traceability | | 20 | |
-| 2. State Management | | 20 | |
-| 3. Economics | | 20 | |
-| 4. Auditability | | 20 | |
-| 5. Reliability | | 20 | |
-| 6. Safety & Guardrails | | 20 | |
-| 7. Orchestration | | 20 | |
-| 8. Control Plane | | 20 | |
-| **Total** | | **160** | |
+|---------|:-----:|:---:|:------:|
+| 1. Traceability | &emsp;&emsp;&emsp; | 20 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| 2. State Management | &emsp;&emsp;&emsp; | 20 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| 3. Economics | &emsp;&emsp;&emsp; | 20 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| 4. Auditability | &emsp;&emsp;&emsp; | 20 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| 5. Reliability | &emsp;&emsp;&emsp; | 20 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| 6. Safety & Guardrails | &emsp;&emsp;&emsp; | 20 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| 7. Orchestration | &emsp;&emsp;&emsp; | 20 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| 8. Control Plane | &emsp;&emsp;&emsp; | 20 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| **Total** | &emsp;&emsp;&emsp; | **160** | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ### Maturity Level
 
@@ -264,9 +280,11 @@ What do you control vs what controls you?
 
 List your three lowest-scoring sections:
 
-1. **Lowest:** ________________ (Score: ___/20)
-2. **Second:** ________________ (Score: ___/20)
-3. **Third:** ________________ (Score: ___/20)
+| Priority | Section | Score |
+|:--------:|---------|:-----:|
+| 1 (Lowest) | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;/20 |
+| 2 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;/20 |
+| 3 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;/20 |
 
 ---
 
@@ -555,11 +573,11 @@ class OrchestrationLogger:
 **Quick win (2 hours):** Document dependencies and exits:
 
 | Dependency | Vendor | What Breaks If They Fail | Exit Time | Exit Cost |
-|------------|--------|--------------------------|-----------|-----------|
-| Primary model | | | | |
-| Embeddings | | | | |
-| Vector DB | | | | |
-| Tool APIs | | | | |
+|------------|:------:|--------------------------|:---------:|:---------:|
+| Primary model | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp; |
+| Embeddings | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp; |
+| Vector DB | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp; |
+| Tool APIs | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp; |
 
 **This week:**
 1. List all critical vendor dependencies
@@ -578,21 +596,21 @@ class OrchestrationLogger:
 Based on your gap analysis, fill in:
 
 | Priority | Section | First Action | Owner | Due Date |
-|----------|---------|--------------|-------|----------|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+|:--------:|:-------:|--------------|:-----:|:--------:|
+| 1 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| 2 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| 3 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ---
 
 ## Re-Assessment Schedule
 
 | Date | Assessor | Total Score | Lowest Section | Notes |
-|------|----------|-------------|----------------|-------|
-| | | /160 | | Initial assessment |
-| +2 weeks | | /160 | | |
-| +1 month | | /160 | | |
-| +1 quarter | | /160 | | |
+|:----:|:--------:|:-----------:|:--------------:|:-----:|
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;/160 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Initial |
+| +2 weeks | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;/160 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| +1 month | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;/160 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| +1 quarter | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;/160 | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ---
 
