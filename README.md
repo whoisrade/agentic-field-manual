@@ -25,18 +25,6 @@ This manual contains everything I learned building systems with 1.5M+ MAU, 30M+ 
 
 ---
 
-## What Others Say
-
-> "Finally, a resource that treats AI systems like actual production infrastructure instead of magic demos."
-
-> "The hidden recompute framework alone saved us from a 6-figure mistake."
-
-> "I share this with every engineer who joins our AI team."
-
-*Have a story? [Tell me](mailto:rade.joksimovic@gmail.com) or [submit a war story](CONTRIBUTING.md).*
-
----
-
 ## Who This Is For
 
 - **Principal Engineers** inheriting or building agentic systems
