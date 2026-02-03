@@ -444,16 +444,6 @@ Found a bug? Have a war story to share? See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Thanks to the teams at [Filekit](https://filekit.ai), [ShortlistIQ](https://shortlistiq.com), [Olovka](https://olovka.ai), and [Rumora](https://rumora.ai) for battle-testing these patterns across diverse agentic architectures—from document generation to autonomous interviewing to social media orchestration.
 
-<p align="left">
-<a href="https://filekit.ai"><img src="assets/logos/filekit.png" alt="Filekit" height="24"/></a>
-&emsp;
-<a href="https://shortlistiq.com"><img src="assets/logos/shortlist.png" alt="ShortlistIQ" height="24"/></a>
-&emsp;
-<a href="https://olovka.ai"><img src="assets/logos/olovka.png" alt="Olovka" height="24"/></a>
-&emsp;
-<a href="https://rumora.ai"><img src="assets/logos/rumora.png" alt="Rumora" height="24"/></a>
-</p>
-
 Special thanks to everyone who shared war stories, reported issues, and contributed patterns from their own production systems.
 
 ---
