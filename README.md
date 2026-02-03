@@ -1,11 +1,52 @@
+<div align="center">
+
 # Agentic Field Manual
 
+### The missing operations manual for production AI systems.
+
+<br/>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/whoisrade/agentic-field-manual)](https://github.com/whoisrade/agentic-field-manual/commits/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/whoisrade/agentic-field-manual)](https://github.com/whoisrade/agentic-field-manual/commits/main)
+[![GitHub stars](https://img.shields.io/github/stars/whoisrade/agentic-field-manual?style=social)](https://github.com/whoisrade/agentic-field-manual/stargazers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Author](https://img.shields.io/badge/Author-Rade_Joksimovic-orange)](AUTHOR.md)
 
-**The missing operations manual for production AI systems.**
+**[Quick Start](#quick-start-5-minutes)** · **[Assess Your System](ASSESS.md)** · **[Crisis Mode](00-templates/first-48-hours.md)** · **[Quick Reference](QUICK-REFERENCE.md)**
 
-Agentic systems fail silently, expensively, then catastrophically. This manual gives you the patterns, checklists, and code to prevent that.
+</div>
+
+---
+
+**Agentic systems fail silently, expensively, then catastrophically.** This manual gives you the patterns, checklists, and code to prevent that—from a team that learned operating 1.5M+ MAU systems the hard way.
+
+---
+
+## Table of Contents
+
+- [Why This Exists](#why-this-exists)
+- [Who This Is For](#who-this-is-for)
+- [Quick Start (5 minutes)](#quick-start-5-minutes)
+- [What's Your Situation?](#whats-your-situation)
+- [Maturity Levels](#maturity-levels)
+- [The 4 Failure Modes](#the-4-failure-modes)
+- [Case Studies](#case-studies)
+- [Reference](#reference)
+- [Contributing](#contributing)
+
+---
+
+## Used By
+
+<div align="center">
+
+| | | | |
+|:---:|:---:|:---:|:---:|
+| [**Filekit**](https://filekit.ai) | [**ShortlistIQ**](https://shortlistiq.com) | [**Olovka**](https://olovka.ai) | [**Rumora**](https://rumora.ai) |
+| Agentic document generation | Autonomous interview agents | Academic AI with 100K+ users | 50K+ social media agents |
+| McKinsey-level docs at scale | First-round candidate screening | 20M source citation database | Brand placement orchestration |
+
+</div>
 
 ---
 
@@ -45,52 +86,45 @@ This manual is for production systems where failure has consequences.
 
 ## Quick Start (5 minutes)
 
-Add this to your AI inference calls today:
+Add this to your inference calls today:
 
 ```python
-import uuid
-from datetime import datetime
-
+# Minimum viable traceability - start here
 def log_inference(request, response, model_version, prompt_version):
     return {
         "trace_id": str(uuid.uuid4()),
-        "timestamp": datetime.utcnow().isoformat(),
         "trigger_type": request.get("trigger", "user_explicit"),
         "model_version": model_version,
         "prompt_version": prompt_version,
-        "input_tokens": response.usage.prompt_tokens,
-        "output_tokens": response.usage.completion_tokens,
         "cost_usd": calculate_cost(response.usage),
-        "latency_ms": response.response_ms,
-        "user_id": request.get("user_id"),
-        "state": "speculative",  # Changes to "committed" when user accepts
+        "state": "speculative",  # → "committed" when user accepts
     }
 ```
 
-Then run this query weekly:
+Then run weekly:
 
 ```sql
-SELECT
-  SUM(cost_usd) / NULLIF(
-    COUNT(DISTINCT CASE WHEN state = 'committed' THEN trace_id END), 0
-  ) as cost_per_outcome,
-  SUM(CASE WHEN trigger_type != 'user_explicit' THEN 1 ELSE 0 END)::float 
-    / COUNT(*) as hidden_recompute_ratio
-FROM inference_logs
-WHERE created_at > NOW() - INTERVAL '7 days';
+SELECT SUM(cost_usd) / NULLIF(COUNT(DISTINCT CASE 
+  WHEN state = 'committed' THEN trace_id END), 0) as cost_per_outcome
+FROM inference_logs WHERE created_at > NOW() - INTERVAL '7 days';
 ```
 
-If `cost_per_outcome` is rising or `hidden_recompute_ratio` is above 20%, you have a problem. Read [Cost Investigation](03-economics/cost-investigation.md).
+**If cost per outcome is rising**, you have a problem → [Cost Investigation](03-economics/cost-investigation.md)
 
 ---
 
-## Start Here
+## How to Use This Manual
 
-**New to this system?** [Run the 10-minute assessment](ASSESS.md) to find your gaps and get specific recommendations.
+| Your Role | Start Here | Then Read |
+|-----------|------------|-----------|
+| **Just inherited a system** | [System Assessment](ASSESS.md) | [Failure Modes](01-failure-modes/README.md) |
+| **Building something new** | [State Model](02-architecture/state-model.md) | [Interaction Contract](02-architecture/interaction-contract.md) |
+| **In crisis mode** | [First 48 Hours](00-templates/first-48-hours.md) | [Cost Spike Runbook](00-templates/cost-spike-runbook.md) |
+| **Presenting to leadership** | [Board Explainer](05-communication/board-explainer.md) | [Stakeholder Glossary](05-communication/stakeholder-glossary.md) |
+| **Setting up observability** | [Metrics Reference](07-examples/metrics-reference.md) | [Eval and Regression](06-operations/eval-and-regression.md) |
 
-**In a crisis?** Go directly to [First 48 Hours](00-templates/first-48-hours.md).
-
-**Need a quick reference?** Print the [Quick Reference Card](QUICK-REFERENCE.md).
+> [!TIP]
+> **First time here?** Run the [10-minute assessment](ASSESS.md) to identify your gaps and get personalized recommendations.
 
 ---
 
@@ -214,6 +248,27 @@ See [Metrics Reference](07-examples/metrics-reference.md) for how to calculate t
 
 Where is your system?
 
+```mermaid
+flowchart LR
+    L1["Level 1: BLIND<br/>Can't explain outputs"]
+    L2["Level 2: REACTIVE<br/>Explain with effort"]
+    L3["Level 3: OBSERVABLE<br/>Explain in 10 min"]
+    L4["Level 4: CONTROLLED<br/>Real-time tracing"]
+    L5["Level 5: OPTIMIZED<br/>Self-diagnosing"]
+    
+    L1 --> L2 --> L3 --> L4 --> L5
+    
+    Most["Most teams<br/>are here"] -.-> L2
+    Goal["This manual<br/>gets you here"] -.-> L3
+    Goal -.-> L4
+    
+    style L1 fill:#ff6b6b,stroke:#c92a2a
+    style L2 fill:#ffa94d,stroke:#e67700
+    style L3 fill:#ffd43b,stroke:#fab005
+    style L4 fill:#69db7c,stroke:#2f9e44
+    style L5 fill:#4dabf7,stroke:#1971c2
+```
+
 | Level | Traceability | Economics | Auditability | Reliability |
 |-------|--------------|-----------|--------------|-------------|
 | **1: Blind** | Cannot explain outputs | Do not know cost per outcome | Logs only | No circuit breakers |
@@ -245,6 +300,26 @@ Use [First 48 Hours](00-templates/first-48-hours.md) for P0/P1. Regular process 
 
 ## The 4 Failure Modes
 
+```mermaid
+flowchart TB
+    subgraph Failures["THE 4 FAILURE MODES"]
+        LL["Legibility Loss<br/>'Why did it do that?'"]
+        CSD["Control Surface Drift<br/>Costs up, traffic flat"]
+        AG["Auditability Gap<br/>Outputs without rationale"]
+        MF["Margin Fragility<br/>Success destroys margin"]
+    end
+    
+    LL --> Fix1["Fix: Decision envelopes"]
+    CSD --> Fix2["Fix: Interaction contracts"]
+    AG --> Fix3["Fix: Provenance logging"]
+    MF --> Fix4["Fix: Cost-per-outcome tracking"]
+    
+    style LL fill:#ff8787,stroke:#c92a2a
+    style CSD fill:#ffd43b,stroke:#fab005
+    style AG fill:#da77f2,stroke:#ae3ec9
+    style MF fill:#ffa94d,stroke:#e67700
+```
+
 | Failure Mode | Signal | Root Cause |
 |--------------|--------|------------|
 | [Legibility Loss](01-failure-modes/legibility-loss.md) | "Why did it do that?" takes hours | Missing decision context |
@@ -255,6 +330,25 @@ Use [First 48 Hours](00-templates/first-48-hours.md) for P0/P1. Regular process 
 ---
 
 ## The 3 Irreversible Decisions
+
+```mermaid
+flowchart LR
+    subgraph Decisions["DECISIONS THAT HARDEN"]
+        SM["State Model<br/>What you persist"]
+        IC["Interaction Contract<br/>What triggers compute"]
+        CP["Control Plane<br/>What you own vs rent"]
+    end
+    
+    SM -->|"hardens because"| H1["Schema → Migrations"]
+    IC -->|"hardens because"| H2["UX → User habits"]
+    CP -->|"hardens because"| H3["Contracts → Lock-in"]
+    
+    Time[Time] -.->|"Reversibility window closes"| Decisions
+    
+    style SM fill:#4dabf7,stroke:#1971c2
+    style IC fill:#69db7c,stroke:#2f9e44
+    style CP fill:#da77f2,stroke:#ae3ec9
+```
 
 | Decision | Controls | Why It Hardens |
 |----------|----------|----------------|
@@ -360,4 +454,21 @@ Found a bug? Have a war story to share? See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
-*If you can explain the output, you have control. If you cannot, you are negotiating with your own product.*
+## Acknowledgments
+
+Thanks to the teams at [Filekit](https://filekit.ai), [ShortlistIQ](https://shortlistiq.com), [Olovka](https://olovka.ai), and [Rumora](https://rumora.ai) for battle-testing these patterns across diverse agentic architectures—from document generation to autonomous interviewing to social media orchestration.
+
+Special thanks to everyone who shared war stories, reported issues, and contributed patterns from their own production systems.
+
+---
+
+<div align="center">
+
+*If you can explain the output, you have control.*  
+*If you cannot, you are negotiating with your own product.*
+
+<br/>
+
+**[⬆ Back to Top](#agentic-field-manual)**
+
+</div>

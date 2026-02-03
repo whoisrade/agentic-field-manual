@@ -1,12 +1,14 @@
 # Operational Independence
 
+> [!TIP]
 > **Read this when:** Assessing vendor risk, designing failover, or after a vendor outage affected you.
->
-> **Time:** 20 min to read. Complete the vendor dependency audit.
->
-> **After reading:** You will have a framework for assessing vendor risk and building resilience.
->
-> **Prerequisites:** Know your current vendor stack. See [API vs Owned](../03-economics/api-vs-owned.md) for economics.
+
+| | |
+|---|---|
+| **Time** | 20 min read |
+| **Outcome** | Vendor risk assessment framework, resilience patterns |
+| **Prerequisites** | Know your current vendor stack |
+| **Related** | [API vs Owned](../03-economics/api-vs-owned.md) ・ [Control Plane Ownership](../02-architecture/control-plane-ownership.md) |
 
 ---
 

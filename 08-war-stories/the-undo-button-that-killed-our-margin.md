@@ -1,10 +1,13 @@
 # The Undo Button That Killed Our Margin
 
+> [!NOTE]
 > **Read this when:** Costs are rising but traffic is flat, or you are adding "free" UX features.
->
-> **Time:** 15 min to read. Apply the investigation pattern to your system.
->
-> **After reading:** You will recognize hidden recompute patterns and know how to instrument for them.
+
+| | |
+|---|---|
+| **Time** | 15 min read |
+| **Outcome** | Hidden recompute pattern recognition, instrumentation approach |
+| **Related** | [Control Surface Drift](../01-failure-modes/control-surface-drift.md) ・ [Hidden Recompute](../03-economics/hidden-recompute.md) |
 
 ---
 
@@ -47,10 +50,10 @@ I instrumented compute by trigger type. One week of data:
 
 | Trigger Type | % of Compute |
 |-------------|-------------|
-| `user_generate` | ~30% |
-| `user_edit` | ~20% |
-| `user_undo` | ~35% |
-| `auto_save` | ~15% |
+| user_generate | ~30% |
+| user_edit | ~20% |
+| user_undo | ~35% |
+| auto_save | ~15% |
 
 Undo was the single largest cost driver. More than generate.
 

@@ -1,12 +1,14 @@
 # System Drift Review
 
+> [!TIP]
 > **Read this when:** Conducting your quarterly architecture review, or after noticing unexplained changes in system behavior.
->
-> **Time:** 2-4 hours with your team.
->
-> **After reading:** You will have identified drift in cost, quality, control surface, and architecture.
->
-> **Prerequisites:** Access to cost data, quality metrics, and user behavior analytics.
+
+| | |
+|---|---|
+| **Time** | 2-4 hours with your team |
+| **Outcome** | Drift identification in cost, quality, control surface, architecture |
+| **Prerequisites** | Cost data, quality metrics, user behavior analytics |
+| **Related** | [Weekly Ops Checklist](../00-templates/weekly-ops-checklist.md) ・ [Metrics Reference](../07-examples/metrics-reference.md) |
 
 ---
 
@@ -54,7 +56,11 @@ If yes, what drove it?
 
 | Action | Owner | Timeline |
 |--------|-------|----------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; |
 
 ---
 
@@ -88,7 +94,11 @@ If yes, what drove it?
 
 | Action | Owner | Timeline |
 |--------|-------|----------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; |
 
 ---
 
@@ -122,7 +132,11 @@ If yes, what drove it?
 
 | Action | Owner | Timeline |
 |--------|-------|----------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; |
 
 ---
 
@@ -144,7 +158,11 @@ Can we still explain what happened?
 
 | Gap | Impact | Remediation | Owner |
 |-----|--------|-------------|-------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
 
 ---
 
@@ -164,7 +182,9 @@ Have architecture decisions drifted from original intent?
 
 | Decision | Still reversible? | Cost to change now |
 |----------|-------------------|-------------------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; |
 
 ---
 
@@ -176,14 +196,20 @@ Have vendor or dependency risks changed?
 
 | Vendor/Dependency | Risk Level Last Quarter | Risk Level Now | Change |
 |-------------------|-------------------------|----------------|--------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
 
 ### New Dependencies Added
 
 | Dependency | Why Added | Risk Assessment | Contingency |
 |------------|-----------|-----------------|-------------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
 
 ---
 
@@ -224,7 +250,9 @@ Are we still audit-ready?
 
 | Decision | Options | Recommendation | Decision Maker |
 |----------|---------|----------------|----------------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
 
 ---
 

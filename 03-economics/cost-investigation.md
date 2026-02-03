@@ -1,12 +1,14 @@
 # Cost Investigation
 
+> [!TIP]
 > **Read this when:** Costs are rising but traffic is flat, or CFO is asking questions.
->
-> **Time:** 1-2 hours to complete the full investigation.
->
-> **After reading:** You will have identified the cost driver and have specific fixes to implement.
->
-> **Prerequisites:** Access to your inference logs and cost data.
+
+| | |
+|---|---|
+| **Time** | 1-2 hours for full investigation |
+| **Outcome** | Cost driver identification, specific fixes |
+| **Prerequisites** | Access to inference logs and cost data |
+| **Related** | [Cost Model](cost-model.md) ・ [Margin Fragility](../01-failure-modes/margin-fragility.md) |
 
 ---
 
@@ -78,8 +80,12 @@ ORDER BY total_cost DESC;
 
 | Trigger Type | Actual % | Expected % | Investigation Needed? |
 |--------------|----------|------------|-----------------------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
 
 ---
 
@@ -151,8 +157,11 @@ ORDER BY cost_per_action DESC;
 
 | User Action | Frequency | Cost per Action | Issue Identified |
 |-------------|-----------|-----------------|------------------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
 
 ---
 
@@ -206,9 +215,11 @@ Based on your investigation, prioritize fixes by impact and effort.
 
 | Fix | Cost Reduction | Effort | Priority |
 |-----|----------------|--------|----------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
 
 ### Priority Framework
 

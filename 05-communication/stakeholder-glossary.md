@@ -1,12 +1,14 @@
 # Stakeholder Glossary
 
+> [!TIP]
 > **Read this when:** Preparing for a meeting with non-technical stakeholders, or writing executive communications.
->
-> **Time:** Reference as needed. Use alongside [Conversation Scripts](conversation-scripts.md).
->
-> **After reading:** You will have plain-language definitions for every technical concept.
->
-> **Prerequisites:** None. This is the starting point for stakeholder communication.
+
+| | |
+|---|---|
+| **Time** | Reference as needed |
+| **Outcome** | Plain-language definitions for every technical concept |
+| **Prerequisites** | None |
+| **Related** | [Conversation Scripts](conversation-scripts.md) ・ [Board Explainer](board-explainer.md) |
 
 ---
 

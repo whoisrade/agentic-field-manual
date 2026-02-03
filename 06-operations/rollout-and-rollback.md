@@ -1,12 +1,14 @@
 # Rollout and Rollback
 
+> [!TIP]
 > **Read this when:** Planning a deployment, or after a rollback took too long.
->
-> **Time:** 20 min to read. Target rollback time: under 5 minutes.
->
-> **After reading:** You will have a deployment strategy that includes model, prompt, and policy versions.
->
-> **Prerequisites:** None. This is foundational for safe operations.
+
+| | |
+|---|---|
+| **Time** | 20 min read (target rollback: <5 min) |
+| **Outcome** | Deployment strategy covering model, prompt, and policy versions |
+| **Prerequisites** | None (foundational) |
+| **Related** | [Pre-Ship Checklist](../00-templates/pre-ship-checklist.md) ・ [Tool Reliability](tool-reliability.md) |
 
 ---
 
@@ -19,6 +21,33 @@ In AI systems, rollback must include model, prompt, policy, and tool versions. R
 ## The Failure Mode
 
 Teams deploy a model update. Something goes wrong. They try to revert.
+
+```mermaid
+flowchart TB
+    subgraph Problem["What Goes Wrong"]
+        Deploy[Deploy Update] --> Fail[Something Breaks]
+        Fail --> Revert{Try to Revert?}
+        
+        Revert --> Q1["Which prompt version?"]
+        Revert --> Q2["Which policy?"]
+        Revert --> Q3["Which tool config?"]
+        Revert --> Q4["What was baseline?"]
+        
+        Q1 & Q2 & Q3 & Q4 --> Pain["Multi-day investigation"]
+    end
+    
+    subgraph Solution["What Should Happen"]
+        D2[Deploy] --> F2[Issue Detected]
+        F2 --> R2[Rollback]
+        R2 --> Baseline["Known-good baseline<br/>(model + prompt + policy + tools)"]
+        Baseline --> Fixed["Fixed in minutes"]
+    end
+    
+    style Problem fill:#ffe3e3,stroke:#c92a2a
+    style Solution fill:#d3f9d8,stroke:#2f9e44
+    style Pain fill:#ff6b6b,stroke:#c92a2a,color:#fff
+    style Fixed fill:#69db7c,stroke:#2f9e44
+```
 
 But:
 - The prompt was updated in a separate deploy

@@ -1,10 +1,26 @@
 # Adoption Guide
 
+> [!TIP]
 > **Read this when:** You want to apply these patterns to an existing system incrementally.
->
-> **Time:** 10 min to read, 2-4 weeks to implement Phase 1.
->
-> **After reading:** You will have a prioritized adoption plan based on your starting point.
+
+| | |
+|---|---|
+| **Time** | 10 min read, 2-4 weeks to implement Phase 1 |
+| **Outcome** | Prioritized adoption plan based on your starting point |
+| **Related** | [ASSESS.md](ASSESS.md) ・ [Quick Reference](QUICK-REFERENCE.md) |
+
+---
+
+## Table of Contents
+
+- [Assess Your Starting Point](#assess-your-starting-point)
+- [Phase 1: Visibility (Week 1-2)](#phase-1-visibility-week-1-2)
+- [Phase 2: Control (Week 2-4)](#phase-2-control-week-2-4)
+- [Phase 3: Optimization (Week 4-8)](#phase-3-optimization-week-4-8)
+- [Phase 4: Excellence (Week 8+)](#phase-4-excellence-week-8)
+- [Adoption by Role](#adoption-by-role)
+- [Common Adoption Mistakes](#common-adoption-mistakes)
+- [Quick Reference: What to Adopt When](#quick-reference-what-to-adopt-when)
 
 ---
 
@@ -12,9 +28,33 @@ You don't adopt this entire manual at once. You adopt it incrementally, prioriti
 
 ---
 
-## Step 1: Assess Your Starting Point
+## Assess Your Starting Point
 
 Run the [10-minute assessment](ASSESS.md) to score your current state.
+
+```mermaid
+flowchart LR
+    subgraph Phases["ADOPTION PHASES"]
+        P1["Phase 1<br/>VISIBILITY<br/>Score: 0-40"]
+        P2["Phase 2<br/>CONTROL<br/>Score: 41-80"]
+        P3["Phase 3<br/>OPTIMIZATION<br/>Score: 81-120"]
+        P4["Phase 4<br/>EXCELLENCE<br/>Score: 121-160"]
+    end
+    
+    P1 -->|"Week 1-2"| P2
+    P2 -->|"Week 2-4"| P3
+    P3 -->|"Week 4-8"| P4
+    
+    P1 -.- T1["Trace IDs<br/>Basic logging"]
+    P2 -.- T2["Circuit breakers<br/>Cost tracking"]
+    P3 -.- T3["Decision envelopes<br/>30% cost reduction"]
+    P4 -.- T4["Full audit trail<br/>Enterprise ready"]
+    
+    style P1 fill:#ff8787,stroke:#c92a2a
+    style P2 fill:#ffd43b,stroke:#fab005
+    style P3 fill:#69db7c,stroke:#2f9e44
+    style P4 fill:#4dabf7,stroke:#1971c2
+```
 
 Your score determines your starting phase:
 
@@ -33,7 +73,7 @@ Your score determines your starting phase:
 
 ### Minimum Viable Changes
 
-1. **Add trace IDs to every inference call**
+1. **Add a trace ID to every inference call**
 
 ```python
 import uuid
@@ -55,7 +95,7 @@ log_entry = {
 }
 ```
 
-3. **Track trigger types**
+3. **Track trigger type**
 
 ```python
 # Before

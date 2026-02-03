@@ -1,12 +1,14 @@
 # State Model
 
+> [!TIP]
 > **Read this when:** Designing a new system, or inheriting one and assessing what is locked in.
->
-> **Time:** 30 min to read. If designing, add 2-4 hours to apply.
->
-> **After reading:** You will know what to persist, how to version it, and how to avoid rebuilding twice.
->
-> **Prerequisites:** None. This is foundational.
+
+| | |
+|---|---|
+| **Time** | 30 min read, 2-4 hours to apply |
+| **Outcome** | Persistence strategy, versioning approach, avoid rebuilding twice |
+| **Prerequisites** | None (foundational) |
+| **Related** | [Decision Envelope Schema](../07-examples/decision-envelope-schema.json) ・ [Legibility Loss](../01-failure-modes/legibility-loss.md) |
 
 ---
 
@@ -34,6 +36,32 @@ Once two teams depend on your state model, changes become migrations, not refact
 ## The AI-Specific Problem
 
 AI creates **speculative state**: drafts, retries, partials, intermediate outputs.
+
+```mermaid
+flowchart LR
+    subgraph Traditional["Traditional CRUD"]
+        T1[Input] --> T2[Process] --> T3[Output]
+    end
+    
+    subgraph AI["AI Systems"]
+        A1[Input] --> A2[Generate]
+        A2 --> A3[Draft 1]
+        A2 --> A4[Draft 2]
+        A2 --> A5[Draft N...]
+        A3 --> A6{User<br/>Decision}
+        A4 --> A6
+        A5 --> A6
+        A6 -->|Accept| A7[Committed]
+        A6 -->|Reject| A8[Rejected]
+        A6 -->|Retry| A2
+    end
+    
+    style A7 fill:#69db7c,stroke:#2f9e44
+    style A8 fill:#ff6b6b,stroke:#c92a2a
+    style A3 fill:#ffd43b,stroke:#fab005
+    style A4 fill:#ffd43b,stroke:#fab005
+    style A5 fill:#ffd43b,stroke:#fab005
+```
 
 Traditional CRUD applications have a simple state model: data goes in, data comes out. AI applications have a more complex reality:
 
@@ -106,15 +134,42 @@ Every output should be traceable back to:
 
 | Component | Record |
 |-----------|--------|
-| User action that triggered it | `user_action` field |
-| Context that informed it | `context_hash` or `context_snapshot_id` |
-| Policy/model version that produced it | `prompt_version`, `model_version` |
+| User action that triggered it | User action field |
+| Context that informed it | Context hash or snapshot ID |
+| Policy/model version that produced it | Prompt version, model version |
 
 ---
 
 ## The Decision Envelope
 
 Minimum viable state for any AI output:
+
+```mermaid
+flowchart TB
+    subgraph Envelope["Decision Envelope"]
+        direction TB
+        ID["output_id + trace_id"]
+        
+        subgraph Inputs["Inputs"]
+            I1[user_action]
+            I2[context_hash]
+            I3[prior_state_id]
+        end
+        
+        subgraph Policy["Policy"]
+            P1[prompt_version]
+            P2[model_version]
+        end
+        
+        State["State: draft | committed | rejected"]
+        Time["created_at"]
+    end
+    
+    style Envelope fill:#f8f9fa,stroke:#495057
+    style State fill:#4dabf7,stroke:#1971c2
+    style Policy fill:#69db7c,stroke:#2f9e44
+    style Inputs fill:#ffd43b,stroke:#fab005
+```
 
 ```json
 {

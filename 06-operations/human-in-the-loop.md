@@ -1,12 +1,14 @@
 # Human in the Loop
 
+> [!TIP]
 > **Read this when:** Designing approval workflows, or after accountability was unclear in an incident.
->
-> **Time:** 15 min to read. Answer the key questions for your system.
->
-> **After reading:** You will have a clear HITL ownership model with named responsibilities.
->
-> **Prerequisites:** Know your system's critical outputs. See [Safety Surface](safety-surface.md) for risk context.
+
+| | |
+|---|---|
+| **Time** | 15 min read |
+| **Outcome** | Clear HITL ownership model with named responsibilities |
+| **Prerequisites** | Know your system's critical outputs |
+| **Related** | [Safety Surface](safety-surface.md) ・ [Audit Preparation](../04-compliance/audit-preparation.md) |
 
 ---
 
@@ -42,6 +44,31 @@ What happens:
 ---
 
 ## Ownership Patterns
+
+```mermaid
+flowchart TB
+    Output[AI Output] --> Check{What type?}
+    
+    Check -->|Low risk| Auto[Auto-approve]
+    Check -->|Medium risk| Sample["Sample review<br/>(5% checked)"]
+    Check -->|High risk| Gate["Approval gate<br/>(always checked)"]
+    Check -->|Low confidence| Escalate[Escalate to human]
+    
+    Sample --> Reviewer[Reviewer]
+    Gate --> Approver[Approver]
+    Escalate --> Expert[Domain Expert]
+    
+    subgraph Roles["Role-based Ownership"]
+        R1["Legal outputs → Legal team"]
+        R2["Financial outputs → Finance"]
+        R3["Customer comms → CS"]
+    end
+    
+    style Auto fill:#69db7c,stroke:#2f9e44
+    style Sample fill:#ffd43b,stroke:#fab005
+    style Gate fill:#ff8787,stroke:#c92a2a
+    style Escalate fill:#da77f2,stroke:#ae3ec9
+```
 
 **1. Role-based ownership**
 

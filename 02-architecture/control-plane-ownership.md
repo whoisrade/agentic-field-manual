@@ -1,12 +1,14 @@
 # Control Plane Ownership
 
+> [!TIP]
 > **Read this when:** Evaluating build vs buy, or assessing vendor dependency risk.
->
-> **Time:** 30 min to read. Use [API vs Owned](../03-economics/api-vs-owned.md) for the economic analysis.
->
-> **After reading:** You will know what to own vs rent and have a framework for exit planning.
->
-> **Prerequisites:** None. See [From API to Owned in 90 Days](../08-war-stories/from-api-to-owned-in-90-days.md) for a case study.
+
+| | |
+|---|---|
+| **Time** | 30 min read |
+| **Outcome** | Own vs rent framework, exit planning guidance |
+| **Prerequisites** | None |
+| **Related** | [API vs Owned](../03-economics/api-vs-owned.md) ・ [From API to Owned in 90 Days](../08-war-stories/from-api-to-owned-in-90-days.md) |
 
 ---
 
@@ -102,11 +104,40 @@ Which workloads require isolation, auditability, or guaranteed latency? These ar
 
 | Workload | Isolation Required | Audit Required | Latency SLO | Ownership Candidate |
 |----------|-------------------|----------------|-------------|---------------------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; | &emsp; |
 
 ### 2. Separate Control Plane From Execution Plane
 
 Even if you rent execution (inference), you can own:
+
+```mermaid
+flowchart TB
+    subgraph Owned["YOU OWN: Control Plane"]
+        O1[Orchestration]
+        O2[Logging & Tracing]
+        O3[Policy Enforcement]
+        O4[Data & State]
+    end
+    
+    subgraph Rented["YOU RENT: Execution Plane"]
+        R1[Inference API]
+        R2[Tool APIs]
+    end
+    
+    O1 --> R1
+    O1 --> R2
+    R1 --> O2
+    R2 --> O2
+    O3 -.->|enforces| O1
+    
+    style Owned fill:#d3f9d8,stroke:#2f9e44
+    style Rented fill:#fff3bf,stroke:#fab005
+```
 
 | Component | Own | Rent |
 |-----------|-----|------|
@@ -121,7 +152,12 @@ For every critical path, document: "What do we do if the vendor is unreachable?"
 
 | Critical Path | Vendor | Runbook Without Vendor | Gap |
 |---------------|--------|------------------------|-----|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
 
 ### 4. Model Cost at 10x Before Committing
 

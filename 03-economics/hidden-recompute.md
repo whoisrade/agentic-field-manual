@@ -1,12 +1,14 @@
 # Hidden Recompute
 
+> [!TIP]
 > **Read this when:** Costs are rising but traffic is flat, or you suspect UX is driving invisible compute.
->
-> **Time:** 15 min to read. Run [this query](../07-examples/metrics-reference.md#hidden-recompute-ratio) to measure your ratio.
->
-> **After reading:** You will understand the sources of hidden recompute and have specific patterns to fix them.
->
-> **Prerequisites:** Access to your inference logs with trigger type data. If you do not log trigger types, add that first.
+
+| | |
+|---|---|
+| **Time** | 15 min read |
+| **Outcome** | Hidden recompute source identification, fix patterns |
+| **Prerequisites** | Inference logs with trigger type data |
+| **Related** | [Metrics Reference](../07-examples/metrics-reference.md#hidden-recompute-ratio) ・ [Control Surface Drift](../01-failure-modes/control-surface-drift.md) |
 
 ---
 
@@ -17,6 +19,38 @@ Hidden recompute is the primary cause of margin erosion in AI systems. It's comp
 ---
 
 ## Sources
+
+```mermaid
+flowchart TB
+    subgraph Hidden["HIDDEN RECOMPUTE SOURCES"]
+        direction TB
+        
+        subgraph SR["Silent Retries"]
+            SR1[API call fails] --> SR2[Auto-retry x3]
+        end
+        
+        subgraph CI["Context Invalidation"]
+            CI1[Small edit] --> CI2[Full re-embedding]
+        end
+        
+        subgraph PF["Partial Failures"]
+            PF1[Tool 3/5 fails] --> PF2[Restart from scratch]
+        end
+        
+        subgraph AS["Auto-Saves"]
+            AS1[Background save] --> AS2[Full pipeline run]
+        end
+        
+        subgraph UF["Undo Flows"]
+            UF1[User hits undo] --> UF2[Recompute everything]
+        end
+    end
+    
+    SR & CI & PF & AS & UF --> Cost[Hidden Cost]
+    
+    style Hidden fill:#ffe3e3,stroke:#c92a2a
+    style Cost fill:#ff6b6b,stroke:#c92a2a,color:#fff
+```
 
 | Source | What Happens |
 |--------|-------------|

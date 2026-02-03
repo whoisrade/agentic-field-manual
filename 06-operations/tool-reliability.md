@@ -1,12 +1,14 @@
 # Tool Reliability
 
+> [!TIP]
 > **Read this when:** Agents are failing due to external tool issues, or you are designing a new agent system.
->
-> **Time:** 25 min to read. See [orchestrator.py](../07-examples/orchestrator.py) for circuit breaker implementation.
->
-> **After reading:** You will understand tool failure patterns and have resilience patterns to implement.
->
-> **Prerequisites:** Understand your [Orchestration](orchestration.md) pattern first.
+
+| | |
+|---|---|
+| **Time** | 25 min read |
+| **Outcome** | Tool failure pattern understanding, resilience patterns |
+| **Prerequisites** | [Orchestration](orchestration.md) |
+| **Related** | [orchestrator.py](../07-examples/orchestrator.py) ・ [Rollout and Rollback](rollout-and-rollback.md) |
 
 ---
 
@@ -28,6 +30,25 @@ When agents depend on tools, tool failure becomes agent failure. Your system is 
 | **File operations** | Permissions, storage limits | Silent failures or data corruption |
 
 **The compounding problem**: Agents often chain tool calls. If each tool is 95% reliable, a 5-tool chain is only 77% reliable.
+
+```mermaid
+flowchart LR
+    subgraph Chain["5-Tool Chain Reliability"]
+        T1["Tool 1<br/>95%"] --> T2["Tool 2<br/>95%"]
+        T2 --> T3["Tool 3<br/>95%"]
+        T3 --> T4["Tool 4<br/>95%"]
+        T4 --> T5["Tool 5<br/>95%"]
+    end
+    
+    T5 --> Result["Combined: 77%<br/>(0.95^5 = 0.77)"]
+    
+    style T1 fill:#d3f9d8,stroke:#2f9e44
+    style T2 fill:#b2f2bb,stroke:#2f9e44
+    style T3 fill:#8ce99a,stroke:#2f9e44
+    style T4 fill:#69db7c,stroke:#2f9e44
+    style T5 fill:#51cf66,stroke:#2f9e44
+    style Result fill:#ffd43b,stroke:#fab005
+```
 
 ---
 
@@ -194,9 +215,9 @@ Track these metrics per tool:
 
 | Metric | Good | Concerning | Critical |
 |--------|------|------------|----------|
-| Success rate | > 99% | 95-99% | < 95% |
-| P50 latency | < 500ms | 500-2000ms | > 2000ms |
-| P99 latency | < 2s | 2-10s | > 10s |
+| Tool success rate | > 99% | 95-99% | < 95% |
+| p50 latency | < 500ms | 500-2000ms | > 2000ms |
+| p99 latency | < 2s | 2-10s | > 10s |
 | Timeout rate | < 0.1% | 0.1-1% | > 1% |
 | Circuit breaker trips | 0/day | 1-3/day | > 3/day |
 

@@ -1,12 +1,14 @@
 # Eval and Regression
 
+> [!TIP]
 > **Read this when:** Setting up quality gates, or after shipping a regression you did not catch.
->
-> **Time:** 30 min to read. See [eval-gate.yml](../07-examples/eval-gate.yml) for CI/CD implementation.
->
-> **After reading:** You will know the eval landscape, have patterns to implement, and understand anti-patterns to avoid.
->
-> **Prerequisites:** None. Have your test cases ready to implement.
+
+| | |
+|---|---|
+| **Time** | 30 min read |
+| **Outcome** | Eval landscape understanding, implementation patterns, anti-pattern awareness |
+| **Prerequisites** | None (have test cases ready) |
+| **Related** | [eval-gate.yml](../07-examples/eval-gate.yml) ・ [LLM-as-Judge Prompts](../07-examples/llm-as-judge-prompts.md) |
 
 ---
 
@@ -28,6 +30,32 @@ Then a regression ships. Quality drops. But there's no signal because there's no
 ---
 
 ## The Eval Landscape (2025-2026)
+
+```mermaid
+flowchart LR
+    subgraph PreDeploy["PRE-DEPLOY"]
+        G[Golden Set<br/>Syntax regressions]
+        LLM[LLM-as-Judge<br/>Semantic quality]
+    end
+    
+    subgraph Deploy["DEPLOY"]
+        AB[A/B Test<br/>User behavior]
+    end
+    
+    subgraph PostDeploy["POST-DEPLOY"]
+        RS[Regression Similarity<br/>Drift detection]
+        HR[Human Review<br/>Edge cases]
+    end
+    
+    Code[Code Change] --> PreDeploy
+    PreDeploy -->|Pass gates| Deploy
+    Deploy --> PostDeploy
+    PostDeploy -->|Issues found| Code
+    
+    style PreDeploy fill:#fff3bf,stroke:#fab005
+    style Deploy fill:#d3f9d8,stroke:#2f9e44
+    style PostDeploy fill:#e7f5ff,stroke:#1971c2
+```
 
 | Eval Type | What It Catches | When To Run |
 |-----------|-----------------|-------------|
@@ -159,7 +187,7 @@ Track these over time, not just per-release:
 
 | Metric | What It Tells You |
 |--------|-------------------|
-| **Pass rate** | % of golden set cases passing |
+| **Eval pass rate** | % of golden set cases passing |
 | **Mean quality score** | Average LLM-judge or human score |
 | **P95 quality** | Tail quality - catches rare failures |
 | **Drift distance** | Semantic distance from baseline outputs |

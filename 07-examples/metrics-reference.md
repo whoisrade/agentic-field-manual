@@ -1,12 +1,14 @@
 # Metrics Reference
 
+> [!TIP]
 > **Read this when:** You need to calculate any metric mentioned in the manual, or setting up observability.
->
-> **Time:** Reference as needed. Use Ctrl+F to find specific metrics.
->
-> **After reading:** You will have formulas and queries for every metric in this manual.
->
-> **Prerequisites:** Structured logging and SQL-compatible data store.
+
+| | |
+|---|---|
+| **Time** | Reference as needed (use Ctrl+F) |
+| **Outcome** | Formulas and queries for every metric |
+| **Prerequisites** | Structured logging, SQL-compatible data store |
+| **Related** | [Cost Model](../03-economics/cost-model.md) ・ [System Drift Review](../06-operations/system-drift-review.md) |
 
 ---
 
@@ -18,7 +20,7 @@ This document provides the formulas, queries, and instrumentation patterns for e
 
 ## Cost Metrics
 
-### Cost per Successful Outcome
+### Cost per Successful Outcome (`cost_per_outcome`)
 
 The most important metric. Not cost per request. Cost per outcome that delivered value.
 
@@ -57,7 +59,7 @@ ORDER BY 1;
 
 ---
 
-### Hidden Recompute Ratio
+### Hidden Recompute Ratio (`hidden_recompute_ratio`)
 
 Percentage of compute that happens without creating visible user value.
 
@@ -97,7 +99,7 @@ WHERE created_at > NOW() - INTERVAL '7 days';
 
 ---
 
-### Cost by Trigger Type
+### Cost by Trigger Type (`trigger_type`)
 
 Breakdown of where cost is coming from.
 
@@ -245,7 +247,7 @@ ORDER BY 1;
 
 ## Quality Metrics
 
-### Eval Pass Rate
+### Eval Pass Rate (`eval_pass_rate`)
 
 Percentage of outputs passing evaluation criteria.
 
@@ -353,7 +355,7 @@ ORDER BY 1;
 
 ---
 
-### Tool Success Rate
+### Tool Success Rate (`tool_success_rate`)
 
 For external tool calls, percentage that succeed.
 
@@ -404,9 +406,9 @@ ORDER BY 1, 2;
 
 ## Traceability Metrics
 
-### Decision Envelope Completeness
+### Decision Envelope Completeness (`decision_envelope_completeness`)
 
-Percentage of outputs with complete provenance.
+Percentage of outputs with complete `provenance`.
 
 **SQL:**
 ```sql
@@ -468,7 +470,7 @@ INSERT INTO reconstruction_tests (
 
 ## Cache Metrics
 
-### Cache Hit Rate
+### Cache Hit Rate (`cache_hit_rate`)
 
 **SQL:**
 ```sql
@@ -561,13 +563,13 @@ action_log = {
 
 Build a dashboard with these panels:
 
-1. **Cost per outcome trend** - Daily, 30-day view
-2. **Hidden recompute ratio** - Weekly trend
-3. **Cost breakdown by trigger type** - Pie chart
+1. **`cost_per_outcome` trend** - Daily, 30-day view
+2. **`hidden_recompute_ratio`** - Weekly trend
+3. **Cost breakdown by `trigger_type`** - Pie chart
 4. **Latency percentiles** - p50, p95, p99 over time
-5. **Retry rate by endpoint** - Table
-6. **Tool success rate** - Table
-7. **Eval pass rate trend** - Daily
+5. **`retry_rate` by endpoint** - Table
+6. **`tool_success_rate`** - Table
+7. **`eval_pass_rate` trend** - Daily
 8. **Circuit breaker trips** - Event timeline
 
 **Alert thresholds:** Set alerts for any metric crossing from Healthy to Warning.

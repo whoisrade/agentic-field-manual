@@ -1,12 +1,14 @@
 # Orchestration
 
+> [!TIP]
 > **Read this when:** Designing multi-agent coordination, or debugging why agents are not working together.
->
-> **Time:** 30 min to read. See [orchestrator.py](../07-examples/orchestrator.py) for implementation.
->
-> **After reading:** You will know the patterns, failure modes, and have a reference implementation.
->
-> **Prerequisites:** Understand your [State Model](../02-architecture/state-model.md) first.
+
+| | |
+|---|---|
+| **Time** | 30 min read |
+| **Outcome** | Orchestration patterns, failure mode awareness, reference implementation |
+| **Prerequisites** | [State Model](../02-architecture/state-model.md) |
+| **Related** | [orchestrator.py](../07-examples/orchestrator.py) ・ [Tool Reliability](tool-reliability.md) |
 
 ---
 
@@ -18,6 +20,43 @@ In multi-agent systems, orchestration is the product. Without it, behavior becom
 
 ## What Orchestration Does
 
+```mermaid
+flowchart TB
+    Task[Incoming Task] --> Orchestrator
+    
+    subgraph Orchestrator["ORCHESTRATOR"]
+        Router[Route by capability]
+        Constraints[Enforce constraints]
+        State[Shared state]
+        Trace[Traceability]
+        Arbiter[Conflict resolution]
+    end
+    
+    subgraph Agents["AGENTS"]
+        A1[Agent A]
+        A2[Agent B]
+        A3[Agent C]
+    end
+    
+    subgraph Tools["TOOLS"]
+        T1[Search]
+        T2[Calculate]
+        T3[Execute]
+    end
+    
+    Router --> A1 & A2 & A3
+    A1 & A2 & A3 --> Tools
+    Tools --> State
+    State --> Trace
+    A1 & A2 --> Arbiter
+    
+    Constraints -.->|limits| A1 & A2 & A3
+    
+    style Orchestrator fill:#e7f5ff,stroke:#1971c2
+    style Agents fill:#d3f9d8,stroke:#2f9e44
+    style Tools fill:#fff3bf,stroke:#fab005
+```
+
 - Routes tasks to agents based on capability and context
 - Enforces global constraints (cost, latency, safety)
 - Maintains a shared state model across agents
@@ -27,6 +66,37 @@ In multi-agent systems, orchestration is the product. Without it, behavior becom
 ---
 
 ## Orchestration Patterns (2025-2026)
+
+```mermaid
+flowchart TB
+    subgraph Sequential["Sequential Chain"]
+        S1[Step 1] --> S2[Step 2] --> S3[Step 3]
+    end
+    
+    subgraph Router["Router Pattern"]
+        R0[Input] --> RC{Intent?}
+        RC -->|Type A| RA[Agent A]
+        RC -->|Type B| RB[Agent B]
+        RC -->|Type C| RCC[Agent C]
+    end
+    
+    subgraph Parallel["Parallel Fan-Out"]
+        P0[Task] --> P1[Subtask 1] & P2[Subtask 2] & P3[Subtask 3]
+        P1 & P2 & P3 --> PA[Aggregate]
+    end
+    
+    subgraph Hierarchical["Hierarchical"]
+        H0[Supervisor] --> H1[Worker 1]
+        H0 --> H2[Worker 2]
+        H1 & H2 --> H0
+        H0 --> HV{Validate}
+    end
+    
+    style Sequential fill:#e7f5ff,stroke:#1971c2
+    style Router fill:#fff3bf,stroke:#fab005
+    style Parallel fill:#d3f9d8,stroke:#2f9e44
+    style Hierarchical fill:#f3d9fa,stroke:#ae3ec9
+```
 
 | Pattern | When To Use | Trade-offs |
 |---------|-------------|-----------|

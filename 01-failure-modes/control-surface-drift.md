@@ -1,12 +1,14 @@
 # Control Surface Drift
 
+> [!TIP]
 > **Read this when:** Costs are rising but traffic is flat, and you suspect UX is driving hidden compute.
->
-> **Time:** 20 min to read, then use [Cost Investigation](../03-economics/cost-investigation.md) for diagnosis.
->
-> **After reading:** You will understand how UX creates cost and have patterns to fix it.
->
-> **Prerequisites:** Know your hidden recompute ratio. If not, run [this query](../07-examples/metrics-reference.md#hidden-recompute-ratio) first.
+
+| | |
+|---|---|
+| **Time** | 20 min read, then use Cost Investigation for diagnosis |
+| **Outcome** | Understanding of UX-cost relationship, fix patterns |
+| **Prerequisites** | Know your [hidden recompute ratio](../07-examples/metrics-reference.md#hidden-recompute-ratio) |
+| **Related** | [Cost Investigation](../03-economics/cost-investigation.md) ・ [Hidden Recompute](../03-economics/hidden-recompute.md) |
 
 ---
 
@@ -19,6 +21,28 @@ Control surface drift is what happens when your UX makes expensive actions feel 
 ## The Mechanism
 
 UX shapes behavior. Behavior shapes recompute. Recompute shapes cost.
+
+```mermaid
+flowchart TB
+    subgraph Problem["THE DRIFT"]
+        UX["UX makes expensive<br/>actions feel FREE"] --> Habit["Users develop<br/>expensive habits"]
+        Habit --> Recompute["Hidden recompute<br/>multiplies"]
+        Recompute --> Cost[Margin erodes]
+        Cost -.->|"Can't afford to fix UX"| UX
+    end
+    
+    subgraph Examples["Common Examples"]
+        E1["Regenerate button<br/>(no cost shown)"]
+        E2["Undo triggers<br/>full recompute"]
+        E3["Auto-save runs<br/>entire pipeline"]
+        E4["Edit invalidates<br/>all cached context"]
+    end
+    
+    Examples --> Problem
+    
+    style Problem fill:#ffe3e3,stroke:#c92a2a
+    style Cost fill:#ff6b6b,stroke:#c92a2a,color:#fff
+```
 
 The problem is not that users are doing something wrong. The problem is that your system made the expensive path feel free.
 
@@ -62,7 +86,11 @@ List every user action that can trigger inference. For each one, answer:
 
 | User Action | Visible to User | User Knows Cost | User Can Avoid |
 |-------------|-----------------|-----------------|----------------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
 
 <details>
 <summary><strong>Example: Control surface audit</strong></summary>

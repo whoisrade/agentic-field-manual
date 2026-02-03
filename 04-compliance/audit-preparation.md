@@ -1,18 +1,57 @@
 # Audit Preparation
 
+> [!TIP]
 > **Read this when:** An enterprise customer requests a security review, or you are preparing for a compliance audit.
->
-> **Time:** 2-4 hours to complete the full preparation. Start at least 1 week before the audit.
->
-> **After reading:** You will have all documentation ready, evidence queued, and talking points prepared.
->
-> **Prerequisites:** You should have basic logging in place. If not, see [Auditability Gap](../01-failure-modes/auditability-gap.md) first.
+
+| | |
+|---|---|
+| **Time** | 2-4 hours (start 1 week before audit) |
+| **Outcome** | Documentation ready, evidence queued, talking points prepared |
+| **Prerequisites** | Basic logging in place |
+| **Related** | [Auditability Gap](../01-failure-modes/auditability-gap.md) ・ [Auditability](auditability.md) |
 
 ---
 
 Step-by-step process for preparing for enterprise security reviews and compliance audits.
 
 Use this when a customer or regulator asks for evidence of how your AI system makes decisions.
+
+```mermaid
+flowchart LR
+    subgraph Prep["PREPARATION (1 week before)"]
+        P1[Documentation]
+        P2[Technical capability]
+        P3[Evidence samples]
+    end
+    
+    subgraph Questions["UNDERSTAND QUESTIONS"]
+        Q1[Decision making]
+        Q2[Data handling]
+        Q3[Model governance]
+        Q4[Security]
+        Q5[Human oversight]
+    end
+    
+    subgraph DryRun["DRY RUN"]
+        D1[Pick 5 random outputs]
+        D2[Attempt reconstruction]
+        D3[Time each: target < 10min]
+        D4[Document gaps]
+    end
+    
+    subgraph Audit["AUDIT DAY"]
+        A1[Present evidence]
+        A2[Answer questions]
+        A3[Note follow-ups]
+    end
+    
+    Prep --> Questions --> DryRun --> Audit
+    
+    style Prep fill:#e7f5ff,stroke:#1971c2
+    style Questions fill:#fff3bf,stroke:#fab005
+    style DryRun fill:#d3f9d8,stroke:#2f9e44
+    style Audit fill:#f3d9fa,stroke:#ae3ec9
+```
 
 ---
 
@@ -216,8 +255,11 @@ Before the actual audit, do a dry run.
 
 | Output | Reconstruction Time | Missing Elements | Remediation |
 |--------|---------------------|------------------|-------------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
 
 ---
 

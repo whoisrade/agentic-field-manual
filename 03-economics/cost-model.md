@@ -1,12 +1,14 @@
 # Cost Model
 
+> [!TIP]
 > **Read this when:** You need to track cost per outcome, or CFO is asking about unit economics.
->
-> **Time:** 20 min to read. See [Metrics Reference](../07-examples/metrics-reference.md) for all queries.
->
-> **After reading:** You will have formulas to calculate true cost and queries to run.
->
-> **Prerequisites:** Access to your inference logs. If you do not log costs, add that first.
+
+| | |
+|---|---|
+| **Time** | 20 min read |
+| **Outcome** | Cost calculation formulas and ready-to-run queries |
+| **Prerequisites** | Access to inference logs with cost data |
+| **Related** | [Metrics Reference](../07-examples/metrics-reference.md) ・ [Margin Fragility](../01-failure-modes/margin-fragility.md) |
 
 ---
 
@@ -17,6 +19,30 @@ If you don't track cost per successful outcome, you're flying blind. This doc gi
 ---
 
 ## The Core Formula
+
+```mermaid
+flowchart LR
+    subgraph Costs["Total Costs"]
+        IC[Inference Cost]
+        OC[Orchestration Overhead]
+        RC[Retry Cost]
+    end
+    
+    subgraph Outputs["Outputs"]
+        SO[Successful Outcomes<br/>state = committed]
+    end
+    
+    IC & OC & RC --> Sum[Sum]
+    Sum --> Divide[Divide]
+    SO --> Divide
+    Divide --> Result[Cost per Outcome]
+    
+    style IC fill:#ff8787,stroke:#c92a2a
+    style OC fill:#ffd43b,stroke:#fab005
+    style RC fill:#ffa94d,stroke:#e67700
+    style SO fill:#69db7c,stroke:#2f9e44
+    style Result fill:#4dabf7,stroke:#1971c2
+```
 
 ```
 cost_per_outcome = (inference_cost + orchestration_overhead + retry_cost) / successful_outputs

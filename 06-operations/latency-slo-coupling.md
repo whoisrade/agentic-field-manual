@@ -1,12 +1,14 @@
 # Latency and SLO Coupling
 
+> [!TIP]
 > **Read this when:** Users are complaining about speed, or retries are spiking without traffic increase.
->
-> **Time:** 15 min to read. Check your p50/p95 latency to identify where you are in the loop.
->
-> **After reading:** You will understand the latency-behavior feedback loop and have patterns to break it.
->
-> **Prerequisites:** Access to your latency metrics. See [Metrics Reference](../07-examples/metrics-reference.md) for queries.
+
+| | |
+|---|---|
+| **Time** | 15 min read |
+| **Outcome** | Latency-behavior feedback loop understanding, break patterns |
+| **Prerequisites** | Access to latency metrics (p50/p95) |
+| **Related** | [Metrics Reference](../07-examples/metrics-reference.md) ・ [Control Surface Drift](../01-failure-modes/control-surface-drift.md) |
 
 ---
 

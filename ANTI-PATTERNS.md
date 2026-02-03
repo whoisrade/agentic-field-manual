@@ -1,10 +1,13 @@
 # Anti-Patterns in Agentic Systems
 
+> [!WARNING]
 > **Read this when:** Reviewing architecture, conducting code reviews, or debugging unexpected behavior.
->
-> **Time:** 15 min to read, ongoing to apply.
->
-> **After reading:** You will recognize the most common mistakes before they become expensive.
+
+| | |
+|---|---|
+| **Time** | 15 min read, ongoing to apply |
+| **Outcome** | Recognition of common mistakes before they become expensive |
+| **Related** | [Before/After Patterns](07-examples/before-after-patterns.md) ・ [Failure Modes](01-failure-modes/README.md) |
 
 ---
 
@@ -154,7 +157,7 @@ async def inference(request):
 
 **Why it fails:** You can't distinguish user-initiated work from system-initiated work (retries, auto-save, undo). 40% of your costs might be "hidden recompute."
 
-**The fix:** Log trigger type with every call: `user_explicit`, `undo`, `retry`, `auto_save`, `background_refresh`.
+**The fix:** Log trigger type with every call: user_explicit, undo, retry, auto_save, background_refresh.
 
 See: [Hidden Recompute](03-economics/hidden-recompute.md), [Control Surface Drift](01-failure-modes/control-surface-drift.md)
 

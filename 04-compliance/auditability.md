@@ -1,12 +1,14 @@
 # Auditability
 
+> [!TIP]
 > **Read this when:** Designing audit logging, or after discovering you cannot answer an auditor's question.
->
-> **Time:** 20 min to read. See [decision-envelope-schema.json](../07-examples/decision-envelope-schema.json) for implementation.
->
-> **After reading:** You will know the minimum evidence set required for auditability.
->
-> **Prerequisites:** None. This is foundational for enterprise readiness.
+
+| | |
+|---|---|
+| **Time** | 20 min read |
+| **Outcome** | Minimum evidence set required for auditability |
+| **Prerequisites** | None (foundational) |
+| **Related** | [decision-envelope-schema.json](../07-examples/decision-envelope-schema.json) ・ [Audit Preparation](audit-preparation.md) |
 
 ---
 

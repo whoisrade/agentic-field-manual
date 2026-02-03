@@ -1,10 +1,13 @@
 # The Compliance Question We Couldn't Answer
 
+> [!NOTE]
 > **Read this when:** Preparing for enterprise sales, or after losing a deal due to compliance gaps.
->
-> **Time:** 15 min to read. Use the question list to audit your own system.
->
-> **After reading:** You will know the questions enterprises ask and how to build systems that can answer them.
+
+| | |
+|---|---|
+| **Time** | 15 min read |
+| **Outcome** | Enterprise audit question awareness, compliance-ready architecture |
+| **Related** | [Auditability Gap](../01-failure-modes/auditability-gap.md) ・ [Audit Preparation](../04-compliance/audit-preparation.md) |
 
 ---
 

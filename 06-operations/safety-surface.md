@@ -1,12 +1,14 @@
 # Safety Surface
 
+> [!TIP]
 > **Read this when:** Designing guardrails, preparing for security review, or after a safety incident.
->
-> **Time:** 30 min to read. See [guardrails.py](../07-examples/guardrails.py) for implementation.
->
-> **After reading:** You will understand the threat model and have a layered defense pattern to implement.
->
-> **Prerequisites:** None. This is foundational for any agentic system.
+
+| | |
+|---|---|
+| **Time** | 30 min read |
+| **Outcome** | Threat model understanding, layered defense pattern |
+| **Prerequisites** | None (foundational) |
+| **Related** | [guardrails.py](../07-examples/guardrails.py) ・ [Human in the Loop](human-in-the-loop.md) |
 
 ---
 
@@ -32,6 +34,54 @@ Agentic systems expand the abuse surface. Every tool, every state mutation, ever
 ---
 
 ## Defense Layers
+
+```mermaid
+flowchart TB
+    Input[User Input] --> L1
+    
+    subgraph L1["Layer 1: Input Guards"]
+        IG1[Regex patterns]
+        IG2[ML classifier]
+        IG3[Blocklist check]
+    end
+    
+    L1 --> L2
+    
+    subgraph L2["Layer 2: Context Isolation"]
+        CI1[System vs User separation]
+        CI2[XML/delimiter isolation]
+        CI3[Role-based access]
+    end
+    
+    L2 --> Model[Model Inference]
+    Model --> L3
+    
+    subgraph L3["Layer 3: Output Guards"]
+        OG1[PII detection]
+        OG2[Harmful content check]
+        OG3[System leak detection]
+    end
+    
+    L3 --> L4
+    
+    subgraph L4["Layer 4: Tool Guardrails"]
+        TG1[Allowlists]
+        TG2[Rate limits]
+        TG3[Tenant isolation]
+    end
+    
+    L4 --> Output[Safe Output]
+    
+    L1 -->|Block| Reject[Rejected]
+    L3 -->|Redact| Redact[Redacted]
+    L4 -->|Deny| Deny[Tool Denied]
+    
+    style L1 fill:#ff8787,stroke:#c92a2a
+    style L2 fill:#ffd43b,stroke:#fab005
+    style L3 fill:#69db7c,stroke:#2f9e44
+    style L4 fill:#4dabf7,stroke:#1971c2
+    style Reject fill:#ff6b6b,stroke:#c92a2a
+```
 
 ### Layer 1: Input Guards
 

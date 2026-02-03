@@ -1,12 +1,14 @@
 # Interaction Contract
 
+> [!TIP]
 > **Read this when:** Designing what user actions trigger compute, or debugging why costs are tied to UX.
->
-> **Time:** 25 min to read. 2-4 hours to document your current contract.
->
-> **After reading:** You will understand how UX creates cost and have a framework for designing cost-aware interactions.
->
-> **Prerequisites:** Understand [Control Surface Drift](../01-failure-modes/control-surface-drift.md) to see what happens when this goes wrong.
+
+| | |
+|---|---|
+| **Time** | 25 min read, 2-4 hours to document |
+| **Outcome** | UX-cost relationship understanding, cost-aware interaction framework |
+| **Prerequisites** | [Control Surface Drift](../01-failure-modes/control-surface-drift.md) |
+| **Related** | [Cost Investigation](../03-economics/cost-investigation.md) ・ [System Drift Review](../06-operations/system-drift-review.md) |
 
 ---
 
@@ -34,6 +36,19 @@ Once users depend on a behavior, removing it feels like a regression.
 ## The Problem
 
 **UX shapes behavior. Behavior shapes recompute. Recompute shapes cost.**
+
+```mermaid
+flowchart LR
+    UX[UX Design] -->|shapes| Behavior[User Behavior]
+    Behavior -->|triggers| Recompute[Recompute]
+    Recompute -->|determines| Cost[Cost]
+    Cost -->|constrains| UX
+    
+    style UX fill:#4dabf7,stroke:#1971c2
+    style Behavior fill:#69db7c,stroke:#2f9e44
+    style Recompute fill:#ffd43b,stroke:#fab005
+    style Cost fill:#ff6b6b,stroke:#c92a2a
+```
 
 If your interaction contract allows users to trigger expensive compute without knowing it, they will. Not because they are malicious, but because you made it easy.
 
@@ -78,6 +93,30 @@ Measure these monthly:
 ### 1. Distinguish Explore vs Commit Actions
 
 Exploration should be cheap. Commitment should be explicit.
+
+```mermaid
+flowchart LR
+    subgraph Explore["EXPLORE MODE"]
+        E1[Cheap]
+        E2[Cached]
+        E3[Reversible]
+    end
+    
+    subgraph Commit["COMMIT MODE"]
+        C1[Confirmed]
+        C2[Tracked]
+        C3[Permanent]
+    end
+    
+    User[User] --> Explore
+    Explore -->|"Ready to finalize"| Gate{Confirm?}
+    Gate -->|Yes| Commit
+    Gate -->|No| Explore
+    
+    style Explore fill:#e7f5ff,stroke:#1971c2
+    style Commit fill:#d3f9d8,stroke:#2f9e44
+    style Gate fill:#fff3bf,stroke:#fab005
+```
 
 | Mode | Characteristics |
 |------|-----------------|

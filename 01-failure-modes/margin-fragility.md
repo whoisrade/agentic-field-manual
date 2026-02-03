@@ -1,12 +1,14 @@
 # Margin Fragility
 
+> [!TIP]
 > **Read this when:** Costs are growing faster than revenue, or you need to model economics at 10x scale.
->
-> **Time:** 25 min to read, then use [Cost Investigation](../03-economics/cost-investigation.md) for diagnosis.
->
-> **After reading:** You will understand the drivers, know what to monitor, and have a checklist of fixes.
->
-> **Prerequisites:** Know your current cost per outcome. If not, run [this query](../07-examples/metrics-reference.md#cost-per-successful-outcome) first.
+
+| | |
+|---|---|
+| **Time** | 25 min read, then use Cost Investigation for diagnosis |
+| **Outcome** | Driver understanding, monitoring guidance, fix checklist |
+| **Prerequisites** | Know your [cost per outcome](../07-examples/metrics-reference.md#cost-per-successful-outcome) |
+| **Related** | [Cost Investigation](../03-economics/cost-investigation.md) ・ [Hidden Recompute](../03-economics/hidden-recompute.md) |
 
 ---
 
@@ -117,6 +119,25 @@ See: [API vs Owned](../03-economics/api-vs-owned.md)
 ## The Margin Fragility Test
 
 At 10x usage, do your unit economics improve, stay flat, or collapse?
+
+```mermaid
+flowchart LR
+    Usage[10x Usage] --> Test{How does<br/>cost scale?}
+    
+    Test -->|"< 10x cost"| Scale["SCALE<br/>Caching, shared compute"]
+    Test -->|"= 10x cost"| Business["BUSINESS<br/>Linear growth works"]
+    Test -->|"> 10x cost"| Demo["DEMO<br/>Margin collapses"]
+    
+    Scale --> Ready[Ready for growth]
+    Business --> Optimize[Optimize before scaling]
+    Demo --> Rebuild[Fix architecture first]
+    
+    style Scale fill:#69db7c,stroke:#2f9e44
+    style Business fill:#ffd43b,stroke:#fab005
+    style Demo fill:#ff6b6b,stroke:#c92a2a
+    style Ready fill:#d3f9d8,stroke:#2f9e44
+    style Rebuild fill:#ffe3e3,stroke:#c92a2a
+```
 
 | Answer | Interpretation |
 |--------|----------------|

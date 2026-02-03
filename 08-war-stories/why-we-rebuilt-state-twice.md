@@ -1,10 +1,13 @@
 # Why We Rebuilt State Twice
 
+> [!NOTE]
 > **Read this when:** Designing your state model, or struggling with expensive migrations.
->
-> **Time:** 15 min to read. Use the decision factors for your own architecture.
->
-> **After reading:** You will understand when to use document vs relational state and how to avoid costly migrations.
+
+| | |
+|---|---|
+| **Time** | 15 min read |
+| **Outcome** | Document vs relational decision guidance, migration avoidance |
+| **Related** | [State Model](../02-architecture/state-model.md) ・ [Legibility Loss](../01-failure-modes/legibility-loss.md) |
 
 ---
 

@@ -1,12 +1,14 @@
 # Capacity Planning
 
+> [!TIP]
 > **Read this when:** Planning infrastructure for growth, or after hitting capacity limits.
->
-> **Time:** 20 min to read. Run the capacity model with your actual numbers.
->
-> **After reading:** You will have a capacity model that accounts for AI-specific burstiness.
->
-> **Prerequisites:** Know your current peak traffic and cost per outcome.
+
+| | |
+|---|---|
+| **Time** | 20 min read |
+| **Outcome** | Capacity model accounting for AI-specific burstiness |
+| **Prerequisites** | Peak traffic and cost per outcome data |
+| **Related** | [API vs Owned](api-vs-owned.md) ・ [Cost Model](cost-model.md) |
 
 ---
 
@@ -103,10 +105,10 @@ required_capacity =
 ```
 
 Where:
-- `peak_requests_per_second` = your 99th percentile or planned peak
-- `recompute_multiplier` = hidden work factor
-- `throughput_per_gpu` = benchmarked for your model/hardware
-- `headroom_buffer` = typically 20-30%
+- **Peak requests per second** = your 99th percentile or planned peak
+- **Recompute multiplier** = hidden work factor
+- **Throughput per GPU** = benchmarked for your model/hardware
+- **Headroom buffer** = typically 20-30%
 
 ---
 

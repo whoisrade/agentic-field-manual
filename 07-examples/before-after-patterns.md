@@ -1,10 +1,13 @@
 # Before/After Patterns
 
+> [!TIP]
 > **Read this when:** Reviewing code for traceability issues, or fixing failure modes.
->
-> **Time:** 20 min to read. Copy and adapt the "After" patterns to your codebase.
->
-> **After reading:** You will recognize common anti-patterns and have concrete fixes.
+
+| | |
+|---|---|
+| **Time** | 20 min read (copy and adapt patterns) |
+| **Outcome** | Anti-pattern recognition, concrete fix implementations |
+| **Related** | [Legibility Loss](../01-failure-modes/legibility-loss.md) ・ [State Model](../02-architecture/state-model.md) |
 
 ---
 
@@ -492,7 +495,7 @@ async def approve_content(
 
 | Anti-Pattern | Signal | Fix |
 |--------------|--------|-----|
-| Missing trigger type | Cannot explain cost spikes | Add `trigger_type` to all requests |
+| Missing trigger type | Cannot explain cost spikes | Add trigger type to all requests |
 | No version tracking | Cannot reproduce issues | Log model, prompt, guardrails versions |
 | Silent retries | Hidden recompute | Log every retry with attempt count |
 | No state provenance | Cannot explain current state | Version all state, link to prior |

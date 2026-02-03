@@ -1,12 +1,14 @@
 # Sovereignty
 
+> [!TIP]
 > **Read this when:** Enterprise customers ask about data residency, or you are entering regulated markets.
->
-> **Time:** 25 min to read. Check your current compliance against the table below.
->
-> **After reading:** You will understand the regulatory landscape and have an architecture checklist.
->
-> **Prerequisites:** None. See [Operational Independence](operational-independence.md) for vendor risk aspects.
+
+| | |
+|---|---|
+| **Time** | 25 min read |
+| **Outcome** | Regulatory landscape understanding, architecture checklist |
+| **Prerequisites** | None |
+| **Related** | [Operational Independence](operational-independence.md) ・ [Data Privacy](../06-operations/data-privacy.md) |
 
 ---
 

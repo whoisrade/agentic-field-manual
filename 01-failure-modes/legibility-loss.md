@@ -1,12 +1,14 @@
 # Legibility Loss
 
+> [!TIP]
 > **Read this when:** You cannot explain why the system produced a specific output.
->
-> **Time:** 20 min to read, 2-4 hours to implement fixes.
->
-> **After reading:** You will know the root cause, have a checklist of fixes, and understand what to monitor.
->
-> **Prerequisites:** None.
+
+| | |
+|---|---|
+| **Time** | 20 min read, 2-4 hours to implement |
+| **Outcome** | Root cause understanding, fix checklist, monitoring guidance |
+| **Prerequisites** | None |
+| **Related** | [State Model](../02-architecture/state-model.md) ・ [Pre-Ship Checklist](../00-templates/pre-ship-checklist.md) |
 
 ---
 
@@ -20,20 +22,22 @@ Legibility loss is not a performance problem. It is a control problem. When you 
 
 Legibility loss is a loop, not a bug.
 
-```
-User behavior mutates state
-        |
-        v
-State triggers recompute
-        |
-        v
-Recompute alters latency and quality
-        |
-        v
-Latency and quality change behavior
-        |
-        v
-(repeat until traceability breaks)
+```mermaid
+flowchart TD
+    A[User behavior mutates state] --> B[State triggers recompute]
+    B --> C[Recompute alters latency & quality]
+    C --> D[Latency & quality change behavior]
+    D --> A
+    
+    D --> E{Traceability<br/>intact?}
+    E -->|Yes| A
+    E -->|No| F[LEGIBILITY LOST]
+    
+    style F fill:#ff6b6b,stroke:#c92a2a,color:#fff
+    style A fill:#4dabf7,stroke:#1971c2
+    style B fill:#69db7c,stroke:#2f9e44
+    style C fill:#ffd43b,stroke:#fab005
+    style D fill:#da77f2,stroke:#ae3ec9
 ```
 
 This loop compounds until no one can explain what happened.
@@ -79,8 +83,20 @@ The fix is straightforward: attach a decision envelope to every output. Doing it
 
 Every output should be traceable through this chain:
 
-```
-User action -> State snapshot -> Tool calls -> Output
+```mermaid
+flowchart LR
+    A[User Action] --> B[State Snapshot]
+    B --> C[Tool Calls]
+    C --> D[Output]
+    
+    A -.->|trace_id| B
+    B -.->|trace_id| C
+    C -.->|trace_id| D
+    
+    style A fill:#4dabf7,stroke:#1971c2
+    style B fill:#69db7c,stroke:#2f9e44
+    style C fill:#ffd43b,stroke:#fab005
+    style D fill:#da77f2,stroke:#ae3ec9
 ```
 
 <details>

@@ -1,12 +1,14 @@
 # Auditability Gap
 
+> [!TIP]
 > **Read this when:** A customer or auditor asked how you made a decision and you could not answer.
->
-> **Time:** 20 min to read, 4-8 hours to implement decision envelopes.
->
-> **After reading:** You will know what evidence to capture and have a schema to implement.
->
-> **Prerequisites:** None. See [Audit Preparation](../04-compliance/audit-preparation.md) for the full audit process.
+
+| | |
+|---|---|
+| **Time** | 20 min read, 4-8 hours to implement |
+| **Outcome** | Evidence capture requirements, implementation schema |
+| **Prerequisites** | None |
+| **Related** | [Audit Preparation](../04-compliance/audit-preparation.md) ・ [State Model](../02-architecture/state-model.md) |
 
 ---
 
@@ -19,6 +21,31 @@ Auditability is not logging. Logging tells you what happened. Auditability prove
 ## The Gap
 
 Most AI systems have this problem:
+
+```mermaid
+flowchart TB
+    subgraph Current["WHAT MOST SYSTEMS LOG"]
+        O["Outputs: Logged"]
+        I["Inputs: Sometimes"]
+        R["Rationale: Missing"]
+        P["Policy Versions: Missing"]
+        H["Human Approvals: Not recorded"]
+    end
+    
+    subgraph Needed["WHAT AUDITORS NEED"]
+        N1["Complete decision trail"]
+        N2["Policy at decision time"]
+        N3["Human accountability"]
+        N4["Reconstruction capability"]
+    end
+    
+    Current -->|"Gap"| Gap[Evidence Chain Broken]
+    Gap --> Consequence["Can show activity<br/>Can't prove intent"]
+    
+    style Current fill:#ffe3e3,stroke:#c92a2a
+    style Needed fill:#d3f9d8,stroke:#2f9e44
+    style Gap fill:#ff6b6b,stroke:#c92a2a,color:#fff
+```
 
 | Component | Logged? | Auditable? |
 |-----------|---------|------------|

@@ -1,10 +1,13 @@
 # First 48 Hours
 
+> [!CAUTION]
 > **Use when:** System is failing, margin collapsing, quality dropping, or unexplained behavior at scale.
->
-> **Time:** Fill in as you go. This is your incident log.
->
-> **After completing:** You will have containment, root cause, fixes planned, and stakeholders informed.
+
+| | |
+|---|---|
+| **Time** | Fill in as you go (this is your incident log) |
+| **Outcome** | Containment, root cause, fixes planned, stakeholders informed |
+| **Related** | [Cost Spike Runbook](cost-spike-runbook.md) ・ [Incident Post-Mortem](incident-postmortem.md) |
 
 ---
 
@@ -13,23 +16,39 @@ Crisis playbook for when margin is collapsing, quality is dropping, or the syste
 Use this when you do not have time for a full investigation. Act first, understand later.
 
 ```mermaid
-flowchart LR
-    A[Hour 0-2<br/>TRIAGE] --> B[Hour 2-8<br/>INSTRUMENT]
-    B --> C[Hour 8-24<br/>MITIGATE]
-    C --> D[Hour 24-48<br/>UNDERSTAND]
-    D --> E[POST-INCIDENT<br/>PREVENT]
+flowchart TB
+    subgraph T["HOUR 0-2: TRIAGE"]
+        A1[Identify signal]
+        A2[Contain immediately]
+    end
     
-    A --> A1[Identify signal]
-    A --> A2[Contain immediately]
+    subgraph I["HOUR 2-8: INSTRUMENT"]
+        B1[Pull metrics]
+        B2[Find root cause]
+    end
     
-    B --> B1[Pull metrics]
-    B --> B2[Find root cause]
+    subgraph M["HOUR 8-24: MITIGATE"]
+        C1[Deploy fix]
+        C2[Verify impact]
+    end
     
-    C --> C1[Deploy fix]
-    C --> C2[Verify impact]
+    subgraph U["HOUR 24-48: UNDERSTAND"]
+        D1[Root cause analysis]
+        D2[Plan long-term fixes]
+    end
     
-    D --> D1[Root cause analysis]
-    D --> D2[Plan long-term fixes]
+    subgraph P["POST-INCIDENT"]
+        E1[Document learnings]
+        E2[Improve monitoring]
+    end
+    
+    T --> I --> M --> U --> P
+    
+    style T fill:#ff6b6b,stroke:#c92a2a
+    style I fill:#ffd43b,stroke:#fab005
+    style M fill:#69db7c,stroke:#2f9e44
+    style U fill:#4dabf7,stroke:#1971c2
+    style P fill:#da77f2,stroke:#ae3ec9
 ```
 
 ---
@@ -55,9 +74,11 @@ Run through this list. Stop at the first option that applies.
 - [ ] Can we rate-limit the affected path?
 - [ ] Can we route traffic away from the problem?
 
-| Containment Action | Time Applied |
-|-------------------|--------------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Containment Action | Time Applied | Effective? |
+|-------------------|--------------|------------|
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; |
 
 ---
 
@@ -103,7 +124,9 @@ ORDER BY 1;
 
 | Most likely root cause |
 |------------------------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; |
+| &emsp; |
 
 ---
 
@@ -143,9 +166,11 @@ Pick the fastest path to stability:
 
 | Fix | Owner | Timeline | Priority |
 |-----|-------|----------|----------|
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
+| &emsp; | &emsp; | &emsp; | &emsp; |
 
 ---
 
