@@ -1,13 +1,10 @@
 # Control Surface Drift
 
-> [!TIP]
-> **Read this when:** Costs are rising but traffic is flat, and you suspect UX is driving hidden compute.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Costs are rising but traffic is flat, and you suspect UX is driving hidden compute |
 | **Time** | 20 min read, then use Cost Investigation for diagnosis |
 | **Outcome** | Understanding of UX-cost relationship, fix patterns |
-| **Prerequisites** | Know your [hidden recompute ratio](../07-examples/metrics-reference.md#hidden-recompute-ratio) |
 | **Related** | [Cost Investigation](../03-economics/cost-investigation.md) ・ [Hidden Recompute](../03-economics/hidden-recompute.md) |
 
 ---

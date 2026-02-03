@@ -1,10 +1,11 @@
 # Incident Post-Mortem
 
-> **Use when:** After resolving any P0 or P1 incident, or any incident that affected customers.
->
-> **Time:** 1-2 hours to complete. Schedule within 48 hours of resolution.
->
-> **After completing:** You will have documented learnings and assigned preventive actions.
+| | |
+|:--|:--|
+| **Use when** | After resolving any P0 or P1 incident, or any incident that affected customers |
+| **Time** | 1-2 hours to complete (schedule within 48 hours of resolution) |
+| **Outcome** | Documented learnings and assigned preventive actions |
+| **Related** | [Crisis Playbook](crisis-playbook.md) ・ [System Drift Review](../06-operations/system-drift-review.md) |
 
 ---
 

@@ -1,13 +1,10 @@
 # Auditability
 
-> [!TIP]
-> **Read this when:** Designing audit logging, or after discovering you cannot answer an auditor's question.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Designing audit logging, or after discovering you cannot answer an auditor's question |
 | **Time** | 20 min read |
 | **Outcome** | Minimum evidence set required for auditability |
-| **Prerequisites** | None (foundational) |
 | **Related** | [decision-envelope-schema.json](../07-examples/decision-envelope-schema.json) ・ [Audit Preparation](audit-preparation.md) |
 
 ---

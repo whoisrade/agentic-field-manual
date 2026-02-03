@@ -1,10 +1,8 @@
 # Before/After Patterns
 
-> [!TIP]
-> **Read this when:** Reviewing code for traceability issues, or fixing failure modes.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Reviewing code for traceability issues, or fixing failure modes |
 | **Time** | 20 min read (copy and adapt patterns) |
 | **Outcome** | Anti-pattern recognition, concrete fix implementations |
 | **Related** | [Legibility Loss](../01-failure-modes/legibility-loss.md) ・ [State Model](../02-architecture/state-model.md) |

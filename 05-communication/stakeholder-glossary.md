@@ -1,13 +1,10 @@
 # Stakeholder Glossary
 
-> [!TIP]
-> **Read this when:** Preparing for a meeting with non-technical stakeholders, or writing executive communications.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Preparing for a meeting with non-technical stakeholders, or writing executive communications |
 | **Time** | Reference as needed |
 | **Outcome** | Plain-language definitions for every technical concept |
-| **Prerequisites** | None |
 | **Related** | [Conversation Scripts](conversation-scripts.md) ・ [Board Explainer](board-explainer.md) |
 
 ---

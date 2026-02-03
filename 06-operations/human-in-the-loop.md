@@ -1,13 +1,10 @@
 # Human in the Loop
 
-> [!TIP]
-> **Read this when:** Designing approval workflows, or after accountability was unclear in an incident.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Designing approval workflows, or after accountability was unclear in an incident |
 | **Time** | 15 min read |
 | **Outcome** | Clear HITL ownership model with named responsibilities |
-| **Prerequisites** | Know your system's critical outputs |
 | **Related** | [Safety Surface](safety-surface.md) ・ [Audit Preparation](../04-compliance/audit-preparation.md) |
 
 ---

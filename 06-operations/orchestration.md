@@ -1,13 +1,10 @@
 # Orchestration
 
-> [!TIP]
-> **Read this when:** Designing multi-agent coordination, or debugging why agents are not working together.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Designing multi-agent coordination, or debugging why agents are not working together |
 | **Time** | 30 min read |
 | **Outcome** | Orchestration patterns, failure mode awareness, reference implementation |
-| **Prerequisites** | [State Model](../02-architecture/state-model.md) |
 | **Related** | [orchestrator.py](../07-examples/orchestrator.py) ・ [Tool Reliability](tool-reliability.md) |
 
 ---

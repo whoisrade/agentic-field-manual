@@ -1,13 +1,10 @@
 # Sovereignty
 
-> [!TIP]
-> **Read this when:** Enterprise customers ask about data residency, or you are entering regulated markets.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Enterprise customers ask about data residency, or you are entering regulated markets |
 | **Time** | 25 min read |
 | **Outcome** | Regulatory landscape understanding, architecture checklist |
-| **Prerequisites** | None |
 | **Related** | [Operational Independence](operational-independence.md) ・ [Data Privacy](../06-operations/data-privacy.md) |
 
 ---

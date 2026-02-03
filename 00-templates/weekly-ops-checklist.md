@@ -1,10 +1,11 @@
 # Weekly Operations Checklist
 
-> **Use when:** Every Monday morning, or at your regular ops review.
->
-> **Time:** 30 minutes.
->
-> **After completing:** You will have caught drift before it becomes a crisis.
+| | |
+|:--|:--|
+| **Use when** | Every Monday morning, or at your regular ops review |
+| **Time** | 30 minutes |
+| **Outcome** | Caught drift before it becomes a crisis |
+| **Related** | [System Drift Review](../06-operations/system-drift-review.md) ・ [Metrics Reference](../07-examples/metrics-reference.md) |
 
 ---
 

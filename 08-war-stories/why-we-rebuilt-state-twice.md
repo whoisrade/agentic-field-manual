@@ -1,10 +1,8 @@
 # Why We Rebuilt State Twice
 
-> [!NOTE]
-> **Read this when:** Designing your state model, or struggling with expensive migrations.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Designing your state model, or struggling with expensive migrations |
 | **Time** | 15 min read |
 | **Outcome** | Document vs relational decision guidance, migration avoidance |
 | **Related** | [State Model](../02-architecture/state-model.md) ・ [Legibility Loss](../01-failure-modes/legibility-loss.md) |

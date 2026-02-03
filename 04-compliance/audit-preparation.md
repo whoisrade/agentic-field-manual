@@ -1,13 +1,10 @@
 # Audit Preparation
 
-> [!TIP]
-> **Read this when:** An enterprise customer requests a security review, or you are preparing for a compliance audit.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | An enterprise customer requests a security review, or you are preparing for a compliance audit |
 | **Time** | 2-4 hours (start 1 week before audit) |
 | **Outcome** | Documentation ready, evidence queued, talking points prepared |
-| **Prerequisites** | Basic logging in place |
 | **Related** | [Auditability Gap](../01-failure-modes/auditability-gap.md) ・ [Auditability](auditability.md) |
 
 ---

@@ -1,13 +1,10 @@
 # Capacity Planning
 
-> [!TIP]
-> **Read this when:** Planning infrastructure for growth, or after hitting capacity limits.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Planning infrastructure for growth, or after hitting capacity limits |
 | **Time** | 20 min read |
 | **Outcome** | Capacity model accounting for AI-specific burstiness |
-| **Prerequisites** | Peak traffic and cost per outcome data |
 | **Related** | [API vs Owned](api-vs-owned.md) ・ [Cost Model](cost-model.md) |
 
 ---

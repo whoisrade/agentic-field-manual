@@ -1,13 +1,10 @@
 # LLM-as-Judge Evaluation Prompts
 
-> [!TIP]
-> **Read this when:** Setting up automated quality evaluation, or gating deployments on output quality.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Setting up automated quality evaluation, or gating deployments on output quality |
 | **Time** | 1-2 hours to adapt prompts |
 | **Outcome** | Production prompts for helpfulness, accuracy, safety evaluation |
-| **Prerequisites** | [Eval and Regression](../06-operations/eval-and-regression.md) concepts |
 | **Related** | [eval-gate.yml](eval-gate.yml) ・ [Before/After Patterns](before-after-patterns.md) |
 
 ---

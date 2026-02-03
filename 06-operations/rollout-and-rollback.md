@@ -1,13 +1,10 @@
 # Rollout and Rollback
 
-> [!TIP]
-> **Read this when:** Planning a deployment, or after a rollback took too long.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Planning a deployment, or after a rollback took too long |
 | **Time** | 20 min read (target rollback: <5 min) |
 | **Outcome** | Deployment strategy covering model, prompt, and policy versions |
-| **Prerequisites** | None (foundational) |
 | **Related** | [Pre-Ship Checklist](../00-templates/pre-ship-checklist.md) ・ [Tool Reliability](tool-reliability.md) |
 
 ---

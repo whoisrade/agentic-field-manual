@@ -1,13 +1,10 @@
 # Conversation Scripts
 
-> [!TIP]
-> **Read this when:** You have a meeting with executives, customers, or auditors about AI system concerns.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | You have a meeting with executives, customers, or auditors about AI system concerns |
 | **Time** | 5 min to find scenario, then practice |
 | **Outcome** | Ready-to-use scripts with follow-up question answers |
-| **Prerequisites** | None |
 | **Related** | [Stakeholder Glossary](stakeholder-glossary.md) ・ [Board Explainer](board-explainer.md) |
 
 Exact words to use in common stakeholder conversations.

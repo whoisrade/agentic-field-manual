@@ -75,13 +75,12 @@ Each document should include:
 ```markdown
 # Title
 
-> **Read this when:** [situation]
->
-> **Time:** [reading/working time]
->
-> **After reading:** You will [outcome]
->
-> **Prerequisites:** [if any]
+| | |
+|:--|:--|
+| **Use when** | [situation] |
+| **Time** | [reading/working time] |
+| **Outcome** | [what reader will achieve] |
+| **Related** | [links to related documents] |
 
 ---
 
@@ -92,10 +91,6 @@ Each document should include:
 ## The Litmus Test
 
 > [Core question to validate understanding]
-
----
-
-## Related
 
 - [Link to related doc]
 ```

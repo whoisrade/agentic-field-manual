@@ -1,10 +1,11 @@
 # Cost Spike Runbook
 
-> **Use when:** Inference costs have spiked unexpectedly (>20% above baseline).
->
-> **Time:** 30-60 minutes for initial triage.
->
-> **Outcome:** Root cause identified, immediate mitigation applied.
+| | |
+|:--|:--|
+| **Use when** | Inference costs have spiked unexpectedly (>20% above baseline) |
+| **Time** | 30-60 minutes for initial triage |
+| **Outcome** | Root cause identified, immediate mitigation applied |
+| **Related** | [Cost Investigation](../03-economics/cost-investigation.md) ・ [Crisis Playbook](crisis-playbook.md) |
 
 ---
 

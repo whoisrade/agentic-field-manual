@@ -1,10 +1,11 @@
 # System Assessment
 
-> **Use when:** Inheriting a system, quarterly review, pre-acquisition due diligence, or scoping a remediation project.
->
-> **Time:** 30-45 minutes for full assessment.
->
-> **After completing:** You will have a maturity score, gap analysis, and prioritized action plan.
+| | |
+|:--|:--|
+| **Use when** | Inheriting a system, quarterly review, pre-acquisition due diligence, or scoping a remediation project |
+| **Time** | 30-45 minutes for full assessment |
+| **Outcome** | Maturity score, gap analysis, and prioritized action plan |
+| **Related** | [Adoption Guide](ADOPTION.md) ・ [Quick Reference](QUICK-REFERENCE.md) |
 
 ---
 

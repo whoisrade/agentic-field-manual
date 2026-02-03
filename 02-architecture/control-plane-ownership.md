@@ -1,13 +1,10 @@
 # Control Plane Ownership
 
-> [!TIP]
-> **Read this when:** Evaluating build vs buy, or assessing vendor dependency risk.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Evaluating build vs buy, or assessing vendor dependency risk |
 | **Time** | 30 min read |
 | **Outcome** | Own vs rent framework, exit planning guidance |
-| **Prerequisites** | None |
 | **Related** | [API vs Owned](../03-economics/api-vs-owned.md) ・ [From API to Owned in 90 Days](../08-war-stories/from-api-to-owned-in-90-days.md) |
 
 ---

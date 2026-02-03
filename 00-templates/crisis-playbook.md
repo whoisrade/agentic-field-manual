@@ -1,10 +1,8 @@
 # Crisis Playbook
 
-> [!CAUTION]
-> **Use when:** System is failing, margin collapsing, quality dropping, or unexplained behavior at scale.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | System is failing, margin collapsing, quality dropping, or unexplained behavior at scale |
 | **Time** | Fill in as you go (this is your incident log) |
 | **Outcome** | Containment, root cause, fixes planned, stakeholders informed |
 | **Related** | [Cost Spike Runbook](cost-spike-runbook.md) ・ [Incident Post-Mortem](incident-postmortem.md) |

@@ -1,13 +1,10 @@
 # Cost Model
 
-> [!TIP]
-> **Read this when:** You need to track cost per outcome, or CFO is asking about unit economics.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | You need to track cost per outcome, or CFO is asking about unit economics |
 | **Time** | 20 min read |
 | **Outcome** | Cost calculation formulas and ready-to-run queries |
-| **Prerequisites** | Access to inference logs with cost data |
 | **Related** | [Metrics Reference](../07-examples/metrics-reference.md) ・ [Margin Fragility](../01-failure-modes/margin-fragility.md) |
 
 ---

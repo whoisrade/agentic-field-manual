@@ -1,13 +1,10 @@
 # API vs Owned
 
-> [!TIP]
-> **Read this when:** Evaluating whether to run your own inference, or vendor costs are becoming unsustainable.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Evaluating whether to run your own inference, or vendor costs are becoming unsustainable |
 | **Time** | 25 min read |
 | **Outcome** | Rent vs own decision framework, migration triggers |
-| **Prerequisites** | Know your [cost per outcome](cost-model.md) |
 | **Related** | [From API to Owned in 90 Days](../08-war-stories/from-api-to-owned-in-90-days.md) ・ [Control Plane Ownership](../02-architecture/control-plane-ownership.md) |
 
 ---

@@ -1,13 +1,10 @@
 # Interaction Contract
 
-> [!TIP]
-> **Read this when:** Designing what user actions trigger compute, or debugging why costs are tied to UX.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Designing what user actions trigger compute, or debugging why costs are tied to UX |
 | **Time** | 25 min read, 2-4 hours to document |
 | **Outcome** | UX-cost relationship understanding, cost-aware interaction framework |
-| **Prerequisites** | [Control Surface Drift](../01-failure-modes/control-surface-drift.md) |
 | **Related** | [Cost Investigation](../03-economics/cost-investigation.md) ・ [System Drift Review](../06-operations/system-drift-review.md) |
 
 ---

@@ -1,13 +1,10 @@
 # System Drift Review
 
-> [!TIP]
-> **Read this when:** Conducting your quarterly architecture review, or after noticing unexplained changes in system behavior.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Conducting your quarterly architecture review, or after noticing unexplained changes in system behavior |
 | **Time** | 2-4 hours with your team |
 | **Outcome** | Drift identification in cost, quality, control surface, architecture |
-| **Prerequisites** | Cost data, quality metrics, user behavior analytics |
 | **Related** | [Weekly Ops Checklist](../00-templates/weekly-ops-checklist.md) ・ [Metrics Reference](../07-examples/metrics-reference.md) |
 
 ---

@@ -1,13 +1,10 @@
 # Cost Investigation
 
-> [!TIP]
-> **Read this when:** Costs are rising but traffic is flat, or CFO is asking questions.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Costs are rising but traffic is flat, or CFO is asking questions |
 | **Time** | 1-2 hours for full investigation |
 | **Outcome** | Cost driver identification, specific fixes |
-| **Prerequisites** | Access to inference logs and cost data |
 | **Related** | [Cost Model](cost-model.md) ・ [Margin Fragility](../01-failure-modes/margin-fragility.md) |
 
 ---

@@ -1,13 +1,10 @@
 # Safety Surface
 
-> [!TIP]
-> **Read this when:** Designing guardrails, preparing for security review, or after a safety incident.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Designing guardrails, preparing for security review, or after a safety incident |
 | **Time** | 30 min read |
 | **Outcome** | Threat model understanding, layered defense pattern |
-| **Prerequisites** | None (foundational) |
 | **Related** | [guardrails.py](../07-examples/guardrails.py) ・ [Human in the Loop](human-in-the-loop.md) |
 
 ---

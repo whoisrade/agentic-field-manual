@@ -1,13 +1,10 @@
 # Hidden Recompute
 
-> [!TIP]
-> **Read this when:** Costs are rising but traffic is flat, or you suspect UX is driving invisible compute.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Costs are rising but traffic is flat, or you suspect UX is driving invisible compute |
 | **Time** | 15 min read |
 | **Outcome** | Hidden recompute source identification, fix patterns |
-| **Prerequisites** | Inference logs with trigger type data |
 | **Related** | [Metrics Reference](../07-examples/metrics-reference.md#hidden-recompute-ratio) ・ [Control Surface Drift](../01-failure-modes/control-surface-drift.md) |
 
 ---

@@ -1,13 +1,10 @@
 # Latency and SLO Coupling
 
-> [!TIP]
-> **Read this when:** Users are complaining about speed, or retries are spiking without traffic increase.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Users are complaining about speed, or retries are spiking without traffic increase |
 | **Time** | 15 min read |
 | **Outcome** | Latency-behavior feedback loop understanding, break patterns |
-| **Prerequisites** | Access to latency metrics (p50/p95) |
 | **Related** | [Metrics Reference](../07-examples/metrics-reference.md) ・ [Control Surface Drift](../01-failure-modes/control-surface-drift.md) |
 
 ---

@@ -1,13 +1,10 @@
 # Board Explainer
 
-> [!TIP]
-> **Read this when:** You have a board meeting, investor update, or executive presentation about AI risk.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | You have a board meeting, investor update, or executive presentation about AI risk |
 | **Time** | 30 min to customize, 15 min to present |
 | **Outcome** | Complete presentation structure with talking points |
-| **Prerequisites** | Know your current metrics via [ASSESS.md](../ASSESS.md) |
 | **Related** | [Stakeholder Glossary](stakeholder-glossary.md) ・ [Conversation Scripts](conversation-scripts.md) |
 
 ---

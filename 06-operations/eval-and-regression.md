@@ -1,13 +1,10 @@
 # Eval and Regression
 
-> [!TIP]
-> **Read this when:** Setting up quality gates, or after shipping a regression you did not catch.
-
 | | |
-|---|---|
+|:--|:--|
+| **Use when** | Setting up quality gates, or after shipping a regression you did not catch |
 | **Time** | 30 min read |
 | **Outcome** | Eval landscape understanding, implementation patterns, anti-pattern awareness |
-| **Prerequisites** | None (have test cases ready) |
 | **Related** | [eval-gate.yml](../07-examples/eval-gate.yml) ・ [LLM-as-Judge Prompts](../07-examples/llm-as-judge-prompts.md) |
 
 ---

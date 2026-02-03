@@ -1,13 +1,13 @@
 # Glossary
 
-> **Read this when:** You encounter an unfamiliar term, or need to explain a concept to stakeholders.
->
-> **Time:** Reference as needed.
->
-> **After reading:** You will understand every term in technical and executive language.
+| | |
+|:--|:--|
+| **Use when** | You encounter an unfamiliar term, or need to explain a concept to stakeholders |
+| **Time** | Reference as needed |
+| **Outcome** | Understanding of every term in technical and executive language |
+| **Related** | [Stakeholder Glossary](05-communication/stakeholder-glossary.md) ・ [README](README.md) |
 
 ---
-
 Terms used in this manual, with definitions for both technical and executive audiences.
 
 ---
