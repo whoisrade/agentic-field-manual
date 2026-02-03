@@ -36,17 +36,19 @@
 
 ---
 
-## Used By
-
-<div align="center">
-
-| | | | |
-|:---:|:---:|:---:|:---:|
-| [**Filekit**](https://filekit.ai) | [**ShortlistIQ**](https://shortlistiq.com) | [**Olovka**](https://olovka.ai) | [**Rumora**](https://rumora.ai) |
-| Agentic document generation | Autonomous interview agents | Academic AI with 100K+ users | 50K+ social media agents |
-| McKinsey-level docs at scale | First-round candidate screening | 20M source citation database | Brand placement orchestration |
-
-</div>
+<details>
+<summary><b>Used in production by</b></summary>
+<br/>
+<p align="center">
+<a href="https://filekit.ai"><img src="assets/logos/filekit.png" alt="Filekit" height="28"/></a>
+&emsp;
+<a href="https://shortlistiq.com"><img src="assets/logos/shortlist.png" alt="ShortlistIQ" height="28"/></a>
+&emsp;
+<a href="https://olovka.ai"><img src="assets/logos/olovka.png" alt="Olovka" height="28"/></a>
+&emsp;
+<a href="https://rumora.ai"><img src="assets/logos/rumora.png" alt="Rumora" height="28"/></a>
+</p>
+</details>
 
 ---
 
