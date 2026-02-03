@@ -22,8 +22,9 @@ Production patterns for teams building autonomous AI systems.
 |-----------|---------|------|
 | System is failing, costs exploding, quality collapsing | [First 48 Hours](00-templates/first-48-hours.md) | 2-8 hours |
 | Cannot explain why the system did something | [Legibility Loss](01-failure-modes/legibility-loss.md) | 30 min read, then fix |
-| Costs rising but traffic is flat | [Cost Investigation](03-economics/cost-investigation.md) | 1-2 hours |
+| Costs rising but traffic is flat | [Cost Spike Runbook](00-templates/cost-spike-runbook.md) | 30-60 min |
 | Enterprise deal dying due to audit questions | [Audit Preparation](04-compliance/audit-preparation.md) | 2-4 hours |
+| Just resolved a P0/P1 incident | [Incident Post-Mortem](00-templates/incident-postmortem.md) | 1-2 hours |
 
 ### I'm About to Ship
 
@@ -64,9 +65,17 @@ Production patterns for teams building autonomous AI systems.
 | Phase | Key Documents |
 |-------|---------------|
 | Design | [State Model](02-architecture/state-model.md), [Interaction Contract](02-architecture/interaction-contract.md), [Orchestration](06-operations/orchestration.md) |
-| Implementation | [Examples](07-examples/README.md), [Metrics Reference](07-examples/metrics-reference.md) |
+| Implementation | [Before/After Patterns](07-examples/before-after-patterns.md), [Metrics Reference](07-examples/metrics-reference.md) |
 | Pre-Launch | [Pre-Ship Checklist](00-templates/pre-ship-checklist.md) |
-| Post-Launch | [Eval and Regression](06-operations/eval-and-regression.md), [System Drift Review](06-operations/system-drift-review.md) |
+| Post-Launch | [Weekly Ops Checklist](00-templates/weekly-ops-checklist.md), [System Drift Review](06-operations/system-drift-review.md) |
+
+### I'm Setting Up Evals
+
+| Task | Document | Time |
+|------|----------|------|
+| Understand eval approaches | [Eval and Regression](06-operations/eval-and-regression.md) | 30 min |
+| Get LLM-as-judge prompts | [LLM-as-Judge Prompts](07-examples/llm-as-judge-prompts.md) | 20 min |
+| Set up CI/CD quality gates | [Examples](07-examples/README.md) | 2-4 hours |
 
 ---
 
