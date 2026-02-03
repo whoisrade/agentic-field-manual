@@ -1,11 +1,9 @@
 # Metrics Reference
 
-| | |
-|:--|:--|
-| **Use when** | You need to calculate any metric mentioned in the manual, or setting up observability |
-| **Time** | Reference as needed (use Ctrl+F) |
-| **Outcome** | Formulas and queries for every metric |
-| **Related** | [Cost Model](../03-economics/cost-model.md) ・ [System Drift Review](../06-operations/system-drift-review.md) |
+- **Use when**: You need to calculate any metric mentioned in the manual, or setting up observability
+- **Time**: Reference as needed (use Ctrl+F)
+- **Outcome**: Formulas and queries for every metric
+- **Related**: [Cost Model](../03-economics/cost-model.md) ・ [System Drift Review](../06-operations/system-drift-review.md)
 
 ---
 

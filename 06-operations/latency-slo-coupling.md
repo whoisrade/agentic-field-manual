@@ -1,11 +1,9 @@
 # Latency and SLO Coupling
 
-| | |
-|:--|:--|
-| **Use when** | Users are complaining about speed, or retries are spiking without traffic increase |
-| **Time** | 15 min read |
-| **Outcome** | Latency-behavior feedback loop understanding, break patterns |
-| **Related** | [Metrics Reference](../07-examples/metrics-reference.md) ・ [Control Surface Drift](../01-failure-modes/control-surface-drift.md) |
+- **Use when**: Users are complaining about speed, or retries are spiking without traffic increase
+- **Time**: 15 min read
+- **Outcome**: Latency-behavior feedback loop understanding, break patterns
+- **Related**: [Metrics Reference](../07-examples/metrics-reference.md) ・ [Control Surface Drift](../01-failure-modes/control-surface-drift.md)
 
 ---
 

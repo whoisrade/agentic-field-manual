@@ -1,11 +1,9 @@
 # Operational Independence
 
-| | |
-|:--|:--|
-| **Use when** | Assessing vendor risk, designing failover, or after a vendor outage affected you |
-| **Time** | 20 min read |
-| **Outcome** | Vendor risk assessment framework, resilience patterns |
-| **Related** | [API vs Owned](../03-economics/api-vs-owned.md) ・ [Control Plane Ownership](../02-architecture/control-plane-ownership.md) |
+- **Use when**: Assessing vendor risk, designing failover, or after a vendor outage affected you
+- **Time**: 20 min read
+- **Outcome**: Vendor risk assessment framework, resilience patterns
+- **Related**: [API vs Owned](../03-economics/api-vs-owned.md) ・ [Control Plane Ownership](../02-architecture/control-plane-ownership.md)
 
 ---
 

@@ -1,11 +1,9 @@
 # Pre-Ship Checklist
 
-| | |
-|:--|:--|
-| **Use when** | Deploying any agentic feature or major AI system change |
-| **Time** | 1-2 hours to complete thoroughly |
-| **Outcome** | Signed-off deployment with all traceability gates met |
-| **Related** | [Rollout and Rollback](../06-operations/rollout-and-rollback.md) ・ [Eval and Regression](../06-operations/eval-and-regression.md) |
+- **Use when**: Deploying any agentic feature or major AI system change
+- **Time**: 1-2 hours to complete thoroughly
+- **Outcome**: Signed-off deployment with all traceability gates met
+- **Related**: [Rollout and Rollback](../06-operations/rollout-and-rollback.md) ・ [Eval and Regression](../06-operations/eval-and-regression.md)
 
 ---
 

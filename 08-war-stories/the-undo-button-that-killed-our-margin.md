@@ -1,11 +1,9 @@
 # The Undo Button That Killed Our Margin
 
-| | |
-|:--|:--|
-| **Use when** | Costs are rising but traffic is flat, or you are adding "free" UX features |
-| **Time** | 15 min read |
-| **Outcome** | Hidden recompute pattern recognition, instrumentation approach |
-| **Related** | [Control Surface Drift](../01-failure-modes/control-surface-drift.md) ・ [Hidden Recompute](../03-economics/hidden-recompute.md) |
+- **Use when**: Costs are rising but traffic is flat, or you are adding "free" UX features
+- **Time**: 15 min read
+- **Outcome**: Hidden recompute pattern recognition, instrumentation approach
+- **Related**: [Control Surface Drift](../01-failure-modes/control-surface-drift.md) ・ [Hidden Recompute](../03-economics/hidden-recompute.md)
 
 ---
 

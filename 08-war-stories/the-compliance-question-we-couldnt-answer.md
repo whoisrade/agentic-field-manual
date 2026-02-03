@@ -1,11 +1,9 @@
 # The Compliance Question We Couldn't Answer
 
-| | |
-|:--|:--|
-| **Use when** | Preparing for enterprise sales, or after losing a deal due to compliance gaps |
-| **Time** | 15 min read |
-| **Outcome** | Enterprise audit question awareness, compliance-ready architecture |
-| **Related** | [Auditability Gap](../01-failure-modes/auditability-gap.md) ・ [Audit Preparation](../04-compliance/audit-preparation.md) |
+- **Use when**: Preparing for enterprise sales, or after losing a deal due to compliance gaps
+- **Time**: 15 min read
+- **Outcome**: Enterprise audit question awareness, compliance-ready architecture
+- **Related**: [Auditability Gap](../01-failure-modes/auditability-gap.md) ・ [Audit Preparation](../04-compliance/audit-preparation.md)
 
 ---
 

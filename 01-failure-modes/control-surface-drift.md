@@ -1,11 +1,9 @@
 # Control Surface Drift
 
-| | |
-|:--|:--|
-| **Use when** | Costs are rising but traffic is flat, and you suspect UX is driving hidden compute |
-| **Time** | 20 min read, then use Cost Investigation for diagnosis |
-| **Outcome** | Understanding of UX-cost relationship, fix patterns |
-| **Related** | [Cost Investigation](../03-economics/cost-investigation.md) ・ [Hidden Recompute](../03-economics/hidden-recompute.md) |
+- **Use when**: Costs are rising but traffic is flat, and you suspect UX is driving hidden compute
+- **Time**: 20 min read, then use Cost Investigation for diagnosis
+- **Outcome**: Understanding of UX-cost relationship, fix patterns
+- **Related**: [Cost Investigation](../03-economics/cost-investigation.md) ・ [Hidden Recompute](../03-economics/hidden-recompute.md)
 
 ---
 

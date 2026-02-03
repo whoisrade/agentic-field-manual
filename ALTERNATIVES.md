@@ -1,11 +1,9 @@
 # How This Compares to Alternatives
 
-| | |
-|:--|:--|
-| **Use when** | Evaluating whether to use this manual vs other resources |
-| **Time** | 5 min read |
-| **Outcome** | Clarity on when to use this manual vs alternatives |
-| **Related** | [Adoption Guide](ADOPTION.md) ・ [README](README.md) |
+- **Use when**: Evaluating whether to use this manual vs other resources
+- **Time**: 5 min read
+- **Outcome**: Clarity on when to use this manual vs alternatives
+- **Related**: [Adoption Guide](ADOPTION.md) ・ [README](README.md)
 
 ---
 

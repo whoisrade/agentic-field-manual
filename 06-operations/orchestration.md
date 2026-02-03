@@ -1,11 +1,9 @@
 # Orchestration
 
-| | |
-|:--|:--|
-| **Use when** | Designing multi-agent coordination, or debugging why agents are not working together |
-| **Time** | 30 min read |
-| **Outcome** | Orchestration patterns, failure mode awareness, reference implementation |
-| **Related** | [orchestrator.py](../07-examples/orchestrator.py) ・ [Tool Reliability](tool-reliability.md) |
+- **Use when**: Designing multi-agent coordination, or debugging why agents are not working together
+- **Time**: 30 min read
+- **Outcome**: Orchestration patterns, failure mode awareness, reference implementation
+- **Related**: [orchestrator.py](../07-examples/orchestrator.py) ・ [Tool Reliability](tool-reliability.md)
 
 ---
 

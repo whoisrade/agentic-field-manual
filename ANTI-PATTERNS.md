@@ -1,11 +1,9 @@
 # Anti-Patterns in Agentic Systems
 
-| | |
-|:--|:--|
-| **Use when** | Reviewing architecture, conducting code reviews, or debugging unexpected behavior |
-| **Time** | 15 min read, ongoing to apply |
-| **Outcome** | Recognition of common mistakes before they become expensive |
-| **Related** | [Before/After Patterns](07-examples/before-after-patterns.md) ・ [Failure Modes](01-failure-modes/README.md) |
+- **Use when**: Reviewing architecture, conducting code reviews, or debugging unexpected behavior
+- **Time**: 15 min read, ongoing to apply
+- **Outcome**: Recognition of common mistakes before they become expensive
+- **Related**: [Before/After Patterns](07-examples/before-after-patterns.md) ・ [Failure Modes](01-failure-modes/README.md)
 
 ---
 

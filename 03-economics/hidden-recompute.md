@@ -1,11 +1,9 @@
 # Hidden Recompute
 
-| | |
-|:--|:--|
-| **Use when** | Costs are rising but traffic is flat, or you suspect UX is driving invisible compute |
-| **Time** | 15 min read |
-| **Outcome** | Hidden recompute source identification, fix patterns |
-| **Related** | [Metrics Reference](../07-examples/metrics-reference.md#hidden-recompute-ratio) ・ [Control Surface Drift](../01-failure-modes/control-surface-drift.md) |
+- **Use when**: Costs are rising but traffic is flat, or you suspect UX is driving invisible compute
+- **Time**: 15 min read
+- **Outcome**: Hidden recompute source identification, fix patterns
+- **Related**: [Metrics Reference](../07-examples/metrics-reference.md#hidden-recompute-ratio) ・ [Control Surface Drift](../01-failure-modes/control-surface-drift.md)
 
 ---
 

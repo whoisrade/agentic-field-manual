@@ -1,11 +1,9 @@
 # Margin Fragility
 
-| | |
-|:--|:--|
-| **Use when** | Costs are growing faster than revenue, or you need to model economics at 10x scale |
-| **Time** | 25 min read, then use Cost Investigation for diagnosis |
-| **Outcome** | Driver understanding, monitoring guidance, fix checklist |
-| **Related** | [Cost Investigation](../03-economics/cost-investigation.md) ・ [Hidden Recompute](../03-economics/hidden-recompute.md) |
+- **Use when**: Costs are growing faster than revenue, or you need to model economics at 10x scale
+- **Time**: 25 min read, then use Cost Investigation for diagnosis
+- **Outcome**: Driver understanding, monitoring guidance, fix checklist
+- **Related**: [Cost Investigation](../03-economics/cost-investigation.md) ・ [Hidden Recompute](../03-economics/hidden-recompute.md)
 
 ---
 

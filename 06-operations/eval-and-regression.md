@@ -1,11 +1,9 @@
 # Eval and Regression
 
-| | |
-|:--|:--|
-| **Use when** | Setting up quality gates, or after shipping a regression you did not catch |
-| **Time** | 30 min read |
-| **Outcome** | Eval landscape understanding, implementation patterns, anti-pattern awareness |
-| **Related** | [eval-gate.yml](../07-examples/eval-gate.yml) ・ [LLM-as-Judge Prompts](../07-examples/llm-as-judge-prompts.md) |
+- **Use when**: Setting up quality gates, or after shipping a regression you did not catch
+- **Time**: 30 min read
+- **Outcome**: Eval landscape understanding, implementation patterns, anti-pattern awareness
+- **Related**: [eval-gate.yml](../07-examples/eval-gate.yml) ・ [LLM-as-Judge Prompts](../07-examples/llm-as-judge-prompts.md)
 
 ---
 

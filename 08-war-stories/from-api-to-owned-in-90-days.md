@@ -1,11 +1,9 @@
 # From API to Owned in 90 Days
 
-| | |
-|:--|:--|
-| **Use when** | API costs are unsustainable, or evaluating whether to run your own inference |
-| **Time** | 20 min read |
-| **Outcome** | API vs owned decision framework, migration timeline |
-| **Related** | [API vs Owned](../03-economics/api-vs-owned.md) ・ [Control Plane Ownership](../02-architecture/control-plane-ownership.md) |
+- **Use when**: API costs are unsustainable, or evaluating whether to run your own inference
+- **Time**: 20 min read
+- **Outcome**: API vs owned decision framework, migration timeline
+- **Related**: [API vs Owned](../03-economics/api-vs-owned.md) ・ [Control Plane Ownership](../02-architecture/control-plane-ownership.md)
 
 ---
 

@@ -1,11 +1,9 @@
 # Adoption Guide
 
-| | |
-|:--|:--|
-| **Use when** | You want to apply these patterns to an existing system incrementally |
-| **Time** | 10 min read, 2-4 weeks to implement Phase 1 |
-| **Outcome** | Prioritized adoption plan based on your starting point |
-| **Related** | [ASSESS.md](ASSESS.md) ・ [Quick Reference](QUICK-REFERENCE.md) |
+- **Use when**: You want to apply these patterns to an existing system incrementally
+- **Time**: 10 min read, 2-4 weeks to implement Phase 1
+- **Outcome**: Prioritized adoption plan based on your starting point
+- **Related**: [ASSESS.md](ASSESS.md) ・ [Quick Reference](QUICK-REFERENCE.md)
 
 ---
 

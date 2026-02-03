@@ -1,11 +1,9 @@
 # Interaction Contract
 
-| | |
-|:--|:--|
-| **Use when** | Designing what user actions trigger compute, or debugging why costs are tied to UX |
-| **Time** | 25 min read, 2-4 hours to document |
-| **Outcome** | UX-cost relationship understanding, cost-aware interaction framework |
-| **Related** | [Cost Investigation](../03-economics/cost-investigation.md) ・ [System Drift Review](../06-operations/system-drift-review.md) |
+- **Use when**: Designing what user actions trigger compute, or debugging why costs are tied to UX
+- **Time**: 25 min read, 2-4 hours to document
+- **Outcome**: UX-cost relationship understanding, cost-aware interaction framework
+- **Related**: [Cost Investigation](../03-economics/cost-investigation.md) ・ [System Drift Review](../06-operations/system-drift-review.md)
 
 ---
 

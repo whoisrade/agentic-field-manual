@@ -1,11 +1,9 @@
 # Tool Reliability
 
-| | |
-|:--|:--|
-| **Use when** | Agents are failing due to external tool issues, or you are designing a new agent system |
-| **Time** | 25 min read |
-| **Outcome** | Tool failure pattern understanding, resilience patterns |
-| **Related** | [orchestrator.py](../07-examples/orchestrator.py) ・ [Rollout and Rollback](rollout-and-rollback.md) |
+- **Use when**: Agents are failing due to external tool issues, or you are designing a new agent system
+- **Time**: 25 min read
+- **Outcome**: Tool failure pattern understanding, resilience patterns
+- **Related**: [orchestrator.py](../07-examples/orchestrator.py) ・ [Rollout and Rollback](rollout-and-rollback.md)
 
 ---
 

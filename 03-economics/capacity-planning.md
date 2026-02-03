@@ -1,11 +1,9 @@
 # Capacity Planning
 
-| | |
-|:--|:--|
-| **Use when** | Planning infrastructure for growth, or after hitting capacity limits |
-| **Time** | 20 min read |
-| **Outcome** | Capacity model accounting for AI-specific burstiness |
-| **Related** | [API vs Owned](api-vs-owned.md) ・ [Cost Model](cost-model.md) |
+- **Use when**: Planning infrastructure for growth, or after hitting capacity limits
+- **Time**: 20 min read
+- **Outcome**: Capacity model accounting for AI-specific burstiness
+- **Related**: [API vs Owned](api-vs-owned.md) ・ [Cost Model](cost-model.md)
 
 ---
 

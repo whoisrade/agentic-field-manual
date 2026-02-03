@@ -70,12 +70,10 @@ Each document should include:
 ```markdown
 # Title
 
-| | |
-|:--|:--|
-| **Use when** | [situation] |
-| **Time** | [reading/working time] |
-| **Outcome** | [what reader will achieve] |
-| **Related** | [links to related documents] |
+- **Use when**: [situation]
+- **Time**: [reading/working time]
+- **Outcome**: [what reader will achieve]
+- **Related**: [links to related documents]
 
 ---
 

@@ -1,11 +1,9 @@
 # Decision Record
 
-| | |
-|:--|:--|
-| **Use when** | Making or recording any architecture decision that will be hard to reverse |
-| **Time** | 15-30 min for routine decisions, 30-60 min for complex decisions |
-| **Outcome** | Documented decision with options, trade-offs, and owner |
-| **Related** | [State Model](../02-architecture/state-model.md) ・ [Control Plane Ownership](../02-architecture/control-plane-ownership.md) |
+- **Use when**: Making or recording any architecture decision that will be hard to reverse
+- **Time**: 15-30 min for routine decisions, 30-60 min for complex decisions
+- **Outcome**: Documented decision with options, trade-offs, and owner
+- **Related**: [State Model](../02-architecture/state-model.md) ・ [Control Plane Ownership](../02-architecture/control-plane-ownership.md)
 
 ---
 

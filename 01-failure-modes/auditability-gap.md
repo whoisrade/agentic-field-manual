@@ -1,11 +1,9 @@
 # Auditability Gap
 
-| | |
-|:--|:--|
-| **Use when** | A customer or auditor asked how you made a decision and you could not answer |
-| **Time** | 20 min read, 4-8 hours to implement |
-| **Outcome** | Evidence capture requirements, implementation schema |
-| **Related** | [Audit Preparation](../04-compliance/audit-preparation.md) ・ [State Model](../02-architecture/state-model.md) |
+- **Use when**: A customer or auditor asked how you made a decision and you could not answer
+- **Time**: 20 min read, 4-8 hours to implement
+- **Outcome**: Evidence capture requirements, implementation schema
+- **Related**: [Audit Preparation](../04-compliance/audit-preparation.md) ・ [State Model](../02-architecture/state-model.md)
 
 ---
 

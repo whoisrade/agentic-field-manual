@@ -1,11 +1,9 @@
 # State Model
 
-| | |
-|:--|:--|
-| **Use when** | Designing a new system, or inheriting one and assessing what is locked in |
-| **Time** | 30 min read, 2-4 hours to apply |
-| **Outcome** | Persistence strategy, versioning approach, avoid rebuilding twice |
-| **Related** | [Decision Envelope Schema](../07-examples/decision-envelope-schema.json) ・ [Legibility Loss](../01-failure-modes/legibility-loss.md) |
+- **Use when**: Designing a new system, or inheriting one and assessing what is locked in
+- **Time**: 30 min read, 2-4 hours to apply
+- **Outcome**: Persistence strategy, versioning approach, avoid rebuilding twice
+- **Related**: [Decision Envelope Schema](../07-examples/decision-envelope-schema.json) ・ [Legibility Loss](../01-failure-modes/legibility-loss.md)
 
 ---
 

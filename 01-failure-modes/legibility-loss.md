@@ -1,11 +1,9 @@
 # Legibility Loss
 
-| | |
-|:--|:--|
-| **Use when** | You cannot explain why the system produced a specific output |
-| **Time** | 20 min read, 2-4 hours to implement |
-| **Outcome** | Root cause understanding, fix checklist, monitoring guidance |
-| **Related** | [State Model](../02-architecture/state-model.md) ・ [Pre-Ship Checklist](../00-templates/pre-ship-checklist.md) |
+- **Use when**: You cannot explain why the system produced a specific output
+- **Time**: 20 min read, 2-4 hours to implement
+- **Outcome**: Root cause understanding, fix checklist, monitoring guidance
+- **Related**: [State Model](../02-architecture/state-model.md) ・ [Pre-Ship Checklist](../00-templates/pre-ship-checklist.md)
 
 ---
 

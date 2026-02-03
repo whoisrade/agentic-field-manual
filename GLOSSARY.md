@@ -1,6 +1,5 @@
 # Glossary
 
-| | |
 |:--|:--|
 | **Use when** | You encounter an unfamiliar term, or need to explain a concept to stakeholders |
 | **Time** | Reference as needed |

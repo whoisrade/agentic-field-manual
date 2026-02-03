@@ -1,11 +1,9 @@
 # Human in the Loop
 
-| | |
-|:--|:--|
-| **Use when** | Designing approval workflows, or after accountability was unclear in an incident |
-| **Time** | 15 min read |
-| **Outcome** | Clear HITL ownership model with named responsibilities |
-| **Related** | [Safety Surface](safety-surface.md) ・ [Audit Preparation](../04-compliance/audit-preparation.md) |
+- **Use when**: Designing approval workflows, or after accountability was unclear in an incident
+- **Time**: 15 min read
+- **Outcome**: Clear HITL ownership model with named responsibilities
+- **Related**: [Safety Surface](safety-surface.md) ・ [Audit Preparation](../04-compliance/audit-preparation.md)
 
 ---
 

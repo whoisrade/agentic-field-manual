@@ -1,11 +1,9 @@
 # Data Privacy and Retention
 
-| | |
-|:--|:--|
-| **Use when** | Designing data handling, responding to a deletion request, or preparing for GDPR/privacy audit |
-| **Time** | 15 min read |
-| **Outcome** | Privacy architecture checklist, implementation guidance |
-| **Related** | [Sovereignty](../04-compliance/sovereignty.md) ・ [Auditability](../04-compliance/auditability.md) |
+- **Use when**: Designing data handling, responding to a deletion request, or preparing for GDPR/privacy audit
+- **Time**: 15 min read
+- **Outcome**: Privacy architecture checklist, implementation guidance
+- **Related**: [Sovereignty](../04-compliance/sovereignty.md) ・ [Auditability](../04-compliance/auditability.md)
 
 ---
 
