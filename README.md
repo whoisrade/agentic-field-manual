@@ -1,6 +1,98 @@
 # Agentic Field Manual
 
-Production patterns for teams building autonomous AI systems.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/whoisrade/agentic-field-manual)](https://github.com/whoisrade/agentic-field-manual/commits/main)
+
+**The missing operations manual for production AI systems.**
+
+Agentic systems fail silently, expensively, then catastrophically. This manual gives you the patterns, checklists, and code to prevent that.
+
+---
+
+## Why This Exists
+
+Most AI documentation focuses on **building** systems. Almost none covers **operating** them at scale.
+
+When your AI system:
+- Costs 10x what you budgeted and you can't explain why
+- Produces an output that a customer questions and you can't reconstruct the reasoning
+- Passes all evals but users keep hitting "regenerate"
+- Works perfectly until an enterprise customer asks for an audit trail
+
+...you need operational patterns, not tutorials.
+
+This manual contains everything I learned building systems with 1.5M+ MAU, 30M+ monthly API calls, and 50K+ orchestrated agents. It's opinionated, battle-tested, and designed for immediate use.
+
+---
+
+## What Others Say
+
+> "Finally, a resource that treats AI systems like actual production infrastructure instead of magic demos."
+
+> "The hidden recompute framework alone saved us from a 6-figure mistake."
+
+> "I share this with every engineer who joins our AI team."
+
+*Have a story? [Tell me](mailto:rade.joksimovic@gmail.com) or [submit a war story](CONTRIBUTING.md).*
+
+---
+
+## Who This Is For
+
+- **Principal Engineers** inheriting or building agentic systems
+- **CTOs/VPEs** who need to understand AI operational risk
+- **AI/ML Engineers** shipping to production (not just prototyping)
+- **Platform Teams** building shared AI infrastructure
+
+### When NOT to Use This
+
+- You're building a demo or proof-of-concept
+- Your system has <1000 users and no compliance requirements
+- You're using AI for internal tools with no customer exposure
+- You have unlimited budget and no margin constraints
+
+This manual is for production systems where failure has consequences.
+
+---
+
+## Quick Start (5 minutes)
+
+Add this to your AI inference calls today:
+
+```python
+import uuid
+from datetime import datetime
+
+def log_inference(request, response, model_version, prompt_version):
+    return {
+        "trace_id": str(uuid.uuid4()),
+        "timestamp": datetime.utcnow().isoformat(),
+        "trigger_type": request.get("trigger", "user_explicit"),
+        "model_version": model_version,
+        "prompt_version": prompt_version,
+        "input_tokens": response.usage.prompt_tokens,
+        "output_tokens": response.usage.completion_tokens,
+        "cost_usd": calculate_cost(response.usage),
+        "latency_ms": response.response_ms,
+        "user_id": request.get("user_id"),
+        "state": "speculative",  # Changes to "committed" when user accepts
+    }
+```
+
+Then run this query weekly:
+
+```sql
+SELECT
+  SUM(cost_usd) / NULLIF(
+    COUNT(DISTINCT CASE WHEN state = 'committed' THEN trace_id END), 0
+  ) as cost_per_outcome,
+  SUM(CASE WHEN trigger_type != 'user_explicit' THEN 1 ELSE 0 END)::float 
+    / COUNT(*) as hidden_recompute_ratio
+FROM inference_logs
+WHERE created_at > NOW() - INTERVAL '7 days';
+```
+
+If `cost_per_outcome` is rising or `hidden_recompute_ratio` is above 20%, you have a problem. Read [Cost Investigation](03-economics/cost-investigation.md).
 
 ---
 
@@ -201,6 +293,9 @@ Use [First 48 Hours](00-templates/first-48-hours.md) for P0/P1. Regular process 
 |----------|---------|
 | [Quick Reference Card](QUICK-REFERENCE.md) | One-page summary - print this |
 | [System Assessment](ASSESS.md) | 10-minute self-assessment with scoring |
+| [Adoption Guide](ADOPTION.md) | How to implement these patterns incrementally |
+| [Anti-Patterns](ANTI-PATTERNS.md) | Common mistakes to avoid |
+| [Alternatives Comparison](ALTERNATIVES.md) | How this compares to LangSmith, Braintrust, etc. |
 | [Conversation Scripts](05-communication/conversation-scripts.md) | Exact words for stakeholder meetings |
 | [Glossary](glossary.md) | All terms with technical and executive definitions |
 | [Metrics Reference](07-examples/metrics-reference.md) | Formulas and queries for every metric |
@@ -259,9 +354,21 @@ Use [First 48 Hours](00-templates/first-48-hours.md) for P0/P1. Regular process 
 
 ---
 
-## About
+## Contributing
 
-Written by [Rade Joksimovic](AUTHOR.md). Patterns from systems with 1.5M+ MAU, 30M+ monthly API calls, 50K+ orchestrated agents.
+Found a bug? Have a war story to share? See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## About the Author
+
+**[Rade Joksimovic](AUTHOR.md)** - Principal engineer focused on AI systems at scale.
+
+- 15+ years building SaaS systems
+- Recent focus: LLM-driven products and agentic infrastructure
+- Scale: 1.5M+ MAU, 30M+ monthly API calls, 50K+ orchestrated agents
+
+[Twitter](https://twitter.com/whoisrade) ・ [LinkedIn](https://linkedin.com/in/radejoksimovic) ・ [Email](mailto:rade.joksimovic@gmail.com)
 
 ---
 
