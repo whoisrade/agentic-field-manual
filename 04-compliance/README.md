@@ -34,11 +34,11 @@ Can you answer these with evidence?
 
 | Question | Yes with Evidence | Yes with Narrative | No |
 |----------|-------------------|--------------------|----|
-| Where is data stored and processed? | | | |
-| Can you prove locality under audit? | | | |
-| Can you isolate tenants by region? | | | |
-| Can you run without third-party dependency? | | | |
-| Can you reproduce any decision from last quarter? | | | |
+| Where is data stored and processed? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp; |
+| Can you prove locality under audit? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp; |
+| Can you isolate tenants by region? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp; |
+| Can you run without third-party dependency? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp; |
+| Can you reproduce any decision from last quarter? | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp; |
 
 - **Yes with Evidence:** Healthy
 - **Yes with Narrative:** Warning - you have gaps

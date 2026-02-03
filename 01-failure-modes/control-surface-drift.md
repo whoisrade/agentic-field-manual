@@ -62,7 +62,7 @@ List every user action that can trigger inference. For each one, answer:
 
 | User Action | Visible to User | User Knows Cost | User Can Avoid |
 |-------------|-----------------|-----------------|----------------|
-| | | | |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 <details>
 <summary><strong>Example: Control surface audit</strong></summary>

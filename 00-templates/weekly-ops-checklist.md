@@ -22,9 +22,9 @@ Copy this checklist weekly. Fill in the values. Flag anything in Warning or Crit
 
 | Metric | This Week | Last Week | Status |
 |--------|-----------|-----------|--------|
-| Cost per outcome | $ | $ | |
-| Total inference cost | $ | $ | |
-| Hidden recompute ratio | % | % | |
+| Cost per outcome | $&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | $&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Total inference cost | $&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | $&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Hidden recompute ratio | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;% | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;% | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 **Status Guide:**
 - Healthy: Stable or declining
@@ -52,9 +52,9 @@ GROUP BY 1 ORDER BY 1;
 
 | Metric | This Week | Last Week | Status |
 |--------|-----------|-----------|--------|
-| Eval pass rate | % | % | |
-| User acceptance rate | % | % | |
-| Regeneration rate | % | % | |
+| Eval pass rate | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;% | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;% | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| User acceptance rate | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;% | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;% | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Regeneration rate | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;% | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;% | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 **Status Guide:**
 - Healthy: >90% eval pass, <15% regeneration
@@ -69,9 +69,9 @@ GROUP BY 1 ORDER BY 1;
 
 | Metric | This Week | Last Week | Status |
 |--------|-----------|-----------|--------|
-| Tool success rate | % | % | |
-| Circuit breaker trips | | | |
-| p95 latency | ms | ms | |
+| Tool success rate | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;% | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;% | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| Circuit breaker trips | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| p95 latency | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ms | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ms | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 **Status Guide:**
 - Healthy: >98% tool success, 0 circuit breaker trips
@@ -112,8 +112,8 @@ GROUP BY 1 ORDER BY success_rate ASC;
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
-| | | | |
-| | | | |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ---
 
@@ -121,9 +121,9 @@ GROUP BY 1 ORDER BY success_rate ASC;
 
 | Item | Owner | Status |
 |------|-------|--------|
-| | | [ ] Done [ ] In Progress [ ] Blocked |
-| | | [ ] Done [ ] In Progress [ ] Blocked |
-| | | [ ] Done [ ] In Progress [ ] Blocked |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ---
 
@@ -131,9 +131,9 @@ GROUP BY 1 ORDER BY success_rate ASC;
 
 | Item | Owner | Due |
 |------|-------|-----|
-| | | |
-| | | |
-| | | |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ---
 

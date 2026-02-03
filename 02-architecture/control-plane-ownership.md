@@ -102,7 +102,7 @@ Which workloads require isolation, auditability, or guaranteed latency? These ar
 
 | Workload | Isolation Required | Audit Required | Latency SLO | Ownership Candidate |
 |----------|-------------------|----------------|-------------|---------------------|
-| | | | | |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ### 2. Separate Control Plane From Execution Plane
 
@@ -121,7 +121,7 @@ For every critical path, document: "What do we do if the vendor is unreachable?"
 
 | Critical Path | Vendor | Runbook Without Vendor | Gap |
 |---------------|--------|------------------------|-----|
-| | | | |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; |
 
 ### 4. Model Cost at 10x Before Committing
 
