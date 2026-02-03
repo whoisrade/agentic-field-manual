@@ -11,7 +11,8 @@
 
 **Policies and controls that ensure sensitive data is used, stored, and deleted correctly.**
 
-Privacy is not just legal. It's architectural. You can't bolt it on later.
+> [!IMPORTANT]
+> Privacy is not just legal. It's architectural. You can't bolt it on later.
 
 ---
 

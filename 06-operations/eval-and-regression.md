@@ -98,7 +98,8 @@ def llm_judge(output, criteria):
     return call_judge_model(prompt)
 ```
 
-**Warning**: LLM-as-judge has biases (verbosity preference, position bias). Calibrate against human labels.
+> [!WARNING]
+> LLM-as-judge has biases (verbosity preference, position bias). Calibrate against human labels.
 
 **3. Regression detection via embeddings**
 
@@ -194,7 +195,8 @@ Track these over time, not just per-release:
 | **Drift distance** | Semantic distance from baseline outputs |
 | **Eval stability** | Do evals give consistent results across runs? |
 
-**Warning**: If your eval stability is low (same input, different scores), your eval framework is broken.
+> [!WARNING]
+> If your eval stability is low (same input, different scores), your eval framework is broken.
 
 ---
 

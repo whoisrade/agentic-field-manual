@@ -15,13 +15,8 @@ Thank you for your interest in contributing. This manual is designed to be pract
 - **Template improvements**: Filling gaps in existing templates
 - **Corrections**: Factual errors, broken links, outdated patterns
 
-### What We'll Likely Decline
-
-- Theoretical patterns without production evidence
-- Vendor-specific implementations (we're technology-agnostic)
-- Marketing-style content
-- Major structural reorganization without prior discussion
-- AI-generated content that hasn't been validated in production
+> [!NOTE]
+> **What We'll Likely Decline**: Theoretical patterns without production evidence, vendor-specific implementations, marketing-style content, major structural reorganization without prior discussion, or AI-generated content that hasn't been validated in production.
 
 ---
 

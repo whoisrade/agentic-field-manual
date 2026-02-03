@@ -16,7 +16,8 @@ Production-ready code you can adapt for your stack.
 | Need to find margin leaks | [diagnostic-queries.sql](diagnostic-queries.sql) | 30 min to run |
 | Need to track any metric | [metrics-reference.md](metrics-reference.md) | Reference as needed |
 
-**Prerequisites:** Know your stack. These examples use Python, PostgreSQL, and GitHub Actions. Translate the patterns, not the syntax.
+> [!NOTE]
+> These examples use Python, PostgreSQL, and GitHub Actions. Translate the patterns, not the syntax.
 
 ---
 

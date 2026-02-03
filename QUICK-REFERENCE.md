@@ -1,6 +1,7 @@
 # Quick Reference Card
 
-Print this. Keep it visible.
+> [!TIP]
+> Print this. Keep it visible.
 
 ---
 

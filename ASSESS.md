@@ -11,11 +11,12 @@
 
 ## How to Use This Assessment
 
-1. Answer each question based on evidence, not belief
-2. "Partial" means you have something but it does not fully work
-3. Score each section
-4. Read the diagnosis for your lowest sections
-5. Follow the recommended actions in priority order
+> [!IMPORTANT]
+> Answer each question based on **evidence, not belief**. "Partial" means you have something but it does not fully work.
+
+1. Score each section
+2. Read the diagnosis for your lowest sections
+3. Follow the recommended actions in priority order
 
 ---
 

@@ -9,7 +9,8 @@
 
 ---
 
-Use before deploying any agentic feature. If any critical item is unchecked, deployment is blocked.
+> [!IMPORTANT]
+> If any critical item is unchecked, deployment is blocked.
 
 ---
 

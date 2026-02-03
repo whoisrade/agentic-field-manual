@@ -27,7 +27,8 @@ In 2026, sovereignty is no longer a "future" concern. It's a vendor-selection re
 | **US State Privacy Laws** | CA, VA, CO, CT, etc. | Varying data rights, opt-out requirements | Active |
 | **China PIPL** | Personal info in China | Localization requirements, cross-border restrictions | Active |
 
-**The trend**: Regulations are converging on requiring *proof* of control, not just *claims* of compliance.
+> [!IMPORTANT]
+> Regulations are converging on requiring *proof* of control, not just *claims* of compliance.
 
 ---
 

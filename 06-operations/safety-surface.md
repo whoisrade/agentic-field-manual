@@ -26,7 +26,8 @@ Agentic systems expand the abuse surface. Every tool, every state mutation, ever
 | **Jailbreaking via multi-turn** | High | Variable | Adversarial users |
 | **Cross-tenant leakage** | Low (often accidental) | Critical | Common bug pattern |
 
-**The shift**: In 2024, prompt injection was "interesting research." In 2026, it's the primary attack vector for AI systems. Treat user content as potentially adversarial.
+> [!CAUTION]
+> **The shift**: In 2024, prompt injection was "interesting research." In 2026, it's the primary attack vector for AI systems. Treat user content as potentially adversarial.
 
 ---
 

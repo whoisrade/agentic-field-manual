@@ -36,7 +36,8 @@ recompute_ratio = total_api_calls / successful_outcomes
 cost_per_user = total_daily_cost / unique_active_users
 ```
 
-If recompute_ratio is above 3, you have significant hidden compute.
+> [!WARNING]
+> If recompute_ratio is above 3, you have significant hidden compute.
 
 ---
 
