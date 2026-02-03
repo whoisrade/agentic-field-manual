@@ -73,7 +73,8 @@ FROM inference_logs WHERE created_at > NOW() - INTERVAL '7 days';
 | **Setting up observability** | [Metrics Reference](07-examples/metrics-reference.md) |
 | **Preparing for an audit** | [Audit Preparation](04-compliance/audit-preparation.md) |
 
-> [!TIP] **First time here?** Run the [10-minute assessment](ASSESS.md) to identify your gaps and get personalized recommendations.
+> [!TIP]
+> **First time here?** Run the [10-minute assessment](ASSESS.md) to identify your gaps and get personalized recommendations.
 
 ---
 
