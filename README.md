@@ -14,20 +14,6 @@ Production patterns for teams building autonomous AI systems.
 
 ---
 
-## Quick Wins (30 min or less)
-
-Do one of these today:
-
-| Action | Impact | Time |
-|--------|--------|------|
-| Add trace IDs to all inference calls | Debug any output | 30 min |
-| Log trigger type with every compute | Find hidden recompute | 15 min |
-| Run [cost per outcome query](07-examples/metrics-reference.md#cost-per-successful-outcome) | Know your economics | 10 min |
-| Add model + prompt version to logs | Enable reproducibility | 20 min |
-| Set up weekly cost trend alert | Catch drift early | 15 min |
-
----
-
 ## What's Your Situation?
 
 ### Something Is On Fire
