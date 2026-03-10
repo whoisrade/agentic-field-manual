@@ -198,11 +198,11 @@ Found a bug? Have a war story to share? See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## About the Author
 
-**[Rade Joksimovic](AUTHOR.md)** - Principal engineer focused on AI systems at scale.
+**[Rade Joksimovic](AUTHOR.md)** - Serial founder. 20 years building software products end-to-end.
 
-- 15+ years building SaaS systems
-- Recent focus: LLM-driven products and agentic infrastructure
+- 10 AI-native products in production
 - Scale: 1.5M+ MAU, 30M+ monthly API calls, 50K+ orchestrated agents
+- This manual is the documentation I wished existed while building them
 
 [Twitter](https://twitter.com/whoisrade) ・ [LinkedIn](https://linkedin.com/in/radejoksimovic) ・ [Email](mailto:rade.joksimovic@gmail.com)
 
